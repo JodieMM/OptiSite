@@ -13,14 +13,15 @@
 		<nav>
 			<ul>
 				<a href=\"../index.php\"><li>Optimator</li></a>
-				<a href=\"../Pages/pieces.php\"><li>Pieces</li></a>
+				<a href=\"../Pages/Pieces.php\"><li>Pieces</li></a>
 				<div class=\"dropdown\">
-					<li>Account</li>
+					<li>Forms</li>
 					<div class=\"dropdown-options\">
-						<a href=\"../Pages/logout.php\">Logout</a>
-						<a href=\"../Pages/update.php\">Update</a>
+						<a href=\"../Pages/terms_and_conditions.php\">Terms and Conditions</a>
+						<a href=\"../Pages/privacy_policy.php\">Privacy Policy</a>
 					</div>
 				</div>
+				<a href=\"../Pages/contact_us.php\"><li>Contact Us</li></a>
 			</ul>
 		</nav>
 	</div>";
