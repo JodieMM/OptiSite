@@ -1,0 +1,133 @@
+body{
+    margin: 0;
+	font-family: 'Dosis', sans-serif;
+    font-size: 28px;
+    background-color: #f2f2f2;
+	height: 100%;
+}
+
+/*--- HEADER STYLES ---*/
+.header{
+	background: linear-gradient(to bottom, #cc99ff, #9999ff);
+}
+
+
+/* Header - Menu */
+nav{
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.header a:hover{
+	font-weight: bold;
+}
+
+li{
+    list-style: none;
+    font-size: 38px;
+	display: inline-block;
+	padding-top: 3%;
+	padding-bottom: 3%;
+	padding-left: 35px;
+	padding-right: 35px;
+	color: black;
+}
+
+ul{
+	margin: 0;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-options {
+    display: none;
+    position: absolute;
+	min-width: 140px;
+    background-color: #f2f2f2;
+}
+
+.dropdown-options a {
+    color: black;
+    padding: 4px 4px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-options {
+    display: block;
+}
+
+
+/*--- CONTENT STYLES ---*/
+.content{
+	width: 70%;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	background-color: #ffffff;
+	padding-top: 20px;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 15%;
+}
+
+.content canvas{
+	float: left;
+}
+
+.content a{
+	text-decoration: none;
+	color: black;
+	font-size: 35;
+}
+
+.piecesMenu{
+	float:right;
+	width: 180;
+	height: 646px;
+	background-color: #ccccff;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.piecesMenu h1{
+	font-size: 32;
+	padding-top: 0;
+}
+
+/* Hover Buttons */
+.switchClick{
+  position: absolute;
+  top: 100px;
+  left: 1105px;
+}
+
+
+/*--- FOOTER STYLES ---*/
+.footer{
+	background-color: #333333;
+	color: white;
+	padding-left: 10%;
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+
+.footer a{
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+
+
+	
+	
+	
+	
+	
+	
