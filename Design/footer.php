@@ -1,6 +1,6 @@
 <?php
 	echo"
 	<div class=\"footer\">
-			Optimator is part of the Opti company. Optimator is in early development.
+			Optimator is product of Opti Technology Pty Ltd. Optimator is in early development.
 	</div></body>";
 ?>
