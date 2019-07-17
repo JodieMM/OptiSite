@@ -1,5 +1,5 @@
 <?php
-	include 'Design/header.php';
+	include 'Design/SectorConstants/header.php';
 ?>
 <body>	
 	<section class="content">
@@ -9,6 +9,6 @@
 	</section>
 	
 	<?php
-		include 'Design/footer.php';
+		include 'Design/SectorConstants/footer.php';
 	?>
 </body>

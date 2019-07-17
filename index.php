@@ -1,5 +1,5 @@
 <?php
-	include 'Design/header.php';
+	include 'Design/SectorConstants/header.php';
 ?>
 <body>	
 	<section class="content">
@@ -8,14 +8,8 @@
 		<p> Current Project: Optimator </p>
 		<br><br>
 	</section>
-
-	<section class="bgimg">
-		<h1> Optimator </h1>
-		<a href="pieces">Find out more...</a>
-		<img src='Design/Images/coverbg.png' alt="Triangle in Optimator">
-	</section>
 	
 	<?php
-		include 'Design/footer.php';
+		include 'Design/SectorConstants/footer.php';
 	?>
 </body>

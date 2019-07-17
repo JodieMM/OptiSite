@@ -1,38 +1,38 @@
 body{
     margin: 0;
-	font-family: 'Actor', 'Tahoma', sans-serif;
+	font-family: 'Montserrat', 'Actor', 'Tahoma', sans-serif;
     font-size: 24px;
-    background-color: #f2f2f2;
+    background-color: #33cc;
 }
 
 
 
 /*--- HEADER STYLES ---*/
 
-.header{
-	background: linear-gradient(to bottom, #cc99ff, #9999ff);
+ul{
+	display: inline-block;
+	vertical-align: middle;
+	width: 100%;
+	margin: 0;
+	padding: 0.5em 0;
+	background-color: #f2f2f2;
+	font-size: 28px;
+	color: black;
+}
+
+li{ 
+	display: inline-block;
+	vertical-align: middle;
+	width: 4.5em;
+	padding: 0 0.5em;
+	text-align: center;
+	color: black;
 }
 
 .header img{
-	height: 1.5em;
-	padding-right: -1em;
-}
-
-nav{
-	padding: 0.5em;
-	padding-left: 1em;
-}
-
-ul{
-	margin: 0;
-	padding: 0;
-}
-
-li{
-	vertical-align: middle;
-	padding-right: 2em;
 	display: inline-block;
-	color: black;
+	height: 2em;
+	margin: auto;
 }
 
 li:hover{
@@ -46,6 +46,12 @@ li:hover{
 
 .dropdown:hover .dropdown-options{
     display: block;
+	animation: dropdownslide 1s;
+}
+
+@keyframes dropdownslide{
+	from {top: 0.8em; opacity: 0;}
+	to {top: 1.21em; opacity: 1;}
 }
 
 .dropdown-options{
@@ -67,15 +73,30 @@ li:hover{
 	font-weight: bold;
 }
 
+@media all and (max-width: 660px){
+	li{
+		padding: 0em 0.5em 0.5em 0.5em;
+	}
+	
+	ul{
+		padding: 0em;
+		padding-top: 0.5em;
+	}
+}
+
 
 
 /*--- FOOTER STYLES ---*/
 .footer{
-	position: relative;
-	background-color: #333333;
+	display: block;
+	padding: 2em 3em;
+	background: linear-gradient(to bottom, #4d4d4d, #333333);
 	color: white;
-	padding: 2em;
-	padding-bottom: 4em;
+}
+
+.footer img{
+	height: 2em;
+	padding-right: 1em;
 }
 
 
