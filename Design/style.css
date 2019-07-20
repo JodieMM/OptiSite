@@ -1,50 +1,169 @@
 /*--- CONTENT STYLES ---*/
 
-/* For Mobile */
-.content{
-	display: block;
-	min-height: 75%;
-	width: 100%;
-	margin: auto;
-	/*padding: 1em 2em;*/
-	background-color: #ffffff;
+/* Clear Originals */
+p{
+	margin: 0;
+	padding: 0;
 }
 
 h1{
 	margin: 0;
-	padding: 1em 50px 0.5em 20px;
-}
-
-p{
-	padding: 0 50px 0 20px;
+	padding: 0;
 }
 
 
-/* For Desktop/ Larger Screens */
+/* For Mobile */
+.content{
+	display: block;
+	min-height: 75%;
+}
+
+.headtext{
+	display: block;
+	width: 100%;
+	padding: 1em;
+	z-index: 4;
+	background-color: #ffffff;
+}
+
+.headtext h1{
+	margin: 0;
+}
+
+.headtext p{
+	font-size: 26px;
+	padding-top: 0.5em;
+}
+
+.separater
+{
+    position: absolute;
+    width: 10em;
+    height: 2px;
+	border-radius: 1px;
+    background: #000000;
+}
+
+.head img{
+	min-width: 100%;
+	height: 10em;
+	z-index: 3;
+}
+
+.middle{
+	padding: 1.5em 1em;
+}
+
+.middle p{
+	display: inline-block;
+	padding-top: 1em;
+	vertical-align: top;
+}
+
+.middle img{
+	display: none;
+	vertical-align: middle;
+}
+
+.middle a{
+	display: block;
+	width: 15em;
+	margin: 2em auto;
+	padding: 0.5em;
+	vertical-align: bottom;
+	text-align: center;
+	border-bottom: 0.5em solid #2eb82e;
+	border-radius: 3em;
+	background-color: #47d147; /*#9966ff*/
+	text-decoration: none;
+	color: white;
+}
+
+.middle a:hover{
+	background-color: #5ce21d;
+	border-color: #47d147;
+}
+
+.purple a{
+	background-color: #9966ff;
+	border-color: #7733ff;
+}
+
+.purple a:hover{
+	background-color: #bb99ff;
+	border-color: #9966ff;
+}
+
+
+/* For Tablets */
 @media only screen and (min-width: 768px){
-	.content{
-		width: 40em;
+	.head img{
+		height: 15em;
+		box-shadow: -0 5px 5px -5px grey;
 	}
 	
-	h1{
-		padding-left: 50px;
+	.headtext{
+		position: absolute;
+		width: 15em;
+		left: 2em;
+		top: 7em;
+		animation: fadein 1.5s;
+		animation-timing-function: linear;
+		animation-fill-mode: forwards;
 	}
 	
-	p{
-		padding-left: 50px;
+	@keyframes fadein{
+		from {top: 4em; opacity: 0;}
+		to {top: 6em; opacity: 1;}
+	}
+	
+	.middle p{
+		width: 85%;
+	}
+	
+	.full p{
+		width: auto;
+	}
+}
+
+
+/* For Desktop */
+@media only screen and (min-width: 860px){
+	.middle img{
+		display: inline-block;
+		width: 25%;
+		margin-left: 2%;
+	}
+	
+	.middle p{
+		width: 70%;
+	}
+	
+	.full p{
+		width: auto;
 	}
 }
 
 
 
-/*--- HOMEPAGE STYLES ---*/
-
-/* For Mobile and Screen */
+/*--- SPECIAL STYLES ---*/
 .homepage img{
 	display: block;
 	width: 100%;
 }
 
+.icon img{
+	display: block;
+	width: 10em;
+	margin: 1em auto;
+	border-radius: 5em;
+	box-shadow: 0 0 20px grey;
+	transition: transform 1s;
+}
+
+.icon img:hover{
+	transform: scale(1.1, 1.1);
+}
 
 
 

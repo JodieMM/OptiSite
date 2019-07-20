@@ -5,6 +5,7 @@
 	<!-- Design Components -->
 	<link href="Design/header.css" rel="stylesheet" type="text/css"/>
     <link href="Design/style.css" rel="stylesheet" type="text/css"/>
+	<link href="Design/timeline.css" rel="stylesheet" type="text/css"/>
 	<link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'/>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 	<link rel="icon" href="Design/Images/logo.png"/>
@@ -22,15 +23,18 @@
 				<li>Projects</li>
 				<div class="dropdown-options">
 					<a href="optimator">Optimator</a>
+					<a href="timeline">Timeline</a>
 				</div>
 			</div>
 			<div class="dropdown">
 				<li>About</li>
 				<div class="dropdown-options">
-					<a href="terms_and_conditions">Terms and Conditions</a>
-					<a href="privacy_policy">Privacy Policy</a>
+					<a href="contact_us"><li>Contact</li></a>
+					<a href="about_me"><li>Me</li></a>
+					<a href="about_opti"><li>Opti</li></a>
+					<a href="our_policies"><li>Policies</li></a>
 				</div>
 			</div>
-			<a href="contact_us"><li>Account</li></a>
+			<a href="account_in"><li>Account</li></a>
 		</ul>
 	</div>

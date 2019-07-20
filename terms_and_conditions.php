@@ -3,9 +3,18 @@
 ?>
 <body>	
 	<section class="content">
-		<h1> Optimator </h1>
-		<p>Terms and Conditions will go here </p>
-		<br><br>
+		<div class="head">
+			<img src="Design/Images/coverbg2.png" alt="Handshake">
+			<div class="headtext">
+				<h1> Optimator Terms and Conditions </h1>
+				<div class="separater"></div>
+				<p> The terms for using Optimator </p>
+			</div>
+		</div>
+		<div class="middle">
+			<h1> Terms and Conditions </h1>
+			<p> Optimator Terms and Conditions</p>
+		</div>
 	</section>
 	
 	<?php

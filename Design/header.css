@@ -2,7 +2,7 @@ body{
     margin: 0;
 	font-family: 'Montserrat', 'Actor', 'Tahoma', sans-serif;
     font-size: 24px;
-    background-color: #33cc;
+    background-color: #f2f2f2;
 }
 
 
@@ -27,6 +27,10 @@ li{
 	padding: 0 0.5em;
 	text-align: center;
 	color: black;
+}
+
+.header{
+	background-color: #f2f2f2;
 }
 
 .header img{
@@ -60,6 +64,7 @@ li:hover{
     position: absolute;
 	padding: 0 0.5em;
 	padding-top: 0.5em;
+	z-index: 10;
 }
 
 .dropdown-options a{

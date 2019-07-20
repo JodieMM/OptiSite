@@ -3,10 +3,18 @@
 ?>
 <body>	
 	<section class="content">
-		<h1> Optimator </h1>
-		<p>Privacy Policy will go here </p>
-		<p> Privacy concerns can be sent to privacy@opti.technology </p>
-		<br><br>
+		<div class="head">
+			<img src="Design/Images/coverbg2.png" alt="Handshake">
+			<div class="headtext">
+				<h1> Privacy Policy </h1>
+				<div class="separater"></div>
+				<p> How we handle the information you give us </p>
+			</div>
+		</div>
+		<div class="middle">
+			<h1> Privacy Policy </h1>
+			<p> Every account made with Opti is handled with the Privacy Policy outlined here.</p>
+		</div>
 	</section>
 	
 	<?php
