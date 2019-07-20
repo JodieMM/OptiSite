@@ -14,7 +14,7 @@
 		<div class="middle">
 			<h1> Privacy Policy </h1>
 			<p> Every account made with Opti is handled with the Privacy Policy outlined here.
-			Privacy concerns can be sent to privacy@opti.technology
+			Privacy concerns can be sent to privacy@opti.technology.
 			<a href="privacy_policy">Privacy Policy</a></p>
 			<img src="Design/Images/coverbg.png" alt="Lily making the motion for 'shh'">
 			

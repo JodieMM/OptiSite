@@ -23,7 +23,7 @@ ul{
 li{ 
 	display: inline-block;
 	vertical-align: middle;
-	width: 4.5em;
+	width: 5em;
 	padding: 0 0.5em;
 	text-align: center;
 	color: black;
@@ -62,8 +62,9 @@ li:hover{
 	background-color: #f2f2f2;
     display: none;
     position: absolute;
-	padding: 0 0.5em;
+	width: 6em;
 	padding-top: 0.5em;
+	text-align: center;
 	z-index: 10;
 }
 
