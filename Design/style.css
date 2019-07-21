@@ -77,11 +77,13 @@ h1{
 	background-color: #47d147; /*#9966ff*/
 	text-decoration: none;
 	color: white;
+	transition: transform 0.3s;
 }
 
 .middle a:hover{
 	background-color: #5ce21d;
 	border-color: #47d147;
+	transform: scale(1.05, 1.05);
 }
 
 .purple a{
