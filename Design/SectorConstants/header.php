@@ -35,6 +35,6 @@
 					<a href="our_policies"><li>Policies</li></a>
 				</div>
 			</div>
-			<a href="account_in"><li>Account</li></a>
+			<a href="account_in"><li class="boldhover">Account</li></a>
 		</ul>
 	</div>

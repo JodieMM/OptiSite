@@ -3,9 +3,20 @@
 ?>
 <body>	
 	<section class="content">
-		<h1> Optimator </h1>
-		<p> Information on Optimator, including Download, will go here. </p>
-		<br><br>
+		<div class="white">
+			<div class="split left">
+				<a href target="blank">
+					<h1> Sign Up </h1>
+					<p> Create an Opti account to download software or register for updates.</p>
+				</a>
+			</div>
+			<div class="split right">
+				<a href target="blank">
+					<h1> Log In </h1>
+					<p> Login to you existing account to update your details or download new software or updates.</p>
+				</a>
+			</div>
+		</div>
 	</section>
 	
 	<?php

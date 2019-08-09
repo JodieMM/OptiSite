@@ -39,7 +39,7 @@ li{
 	margin: auto;
 }
 
-li:hover{
+li.boldhover:hover{
 	font-weight: bold;
 }
 

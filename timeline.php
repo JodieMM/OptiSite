@@ -4,7 +4,7 @@
 <body>	
 	<section class="content">
 		<div class="head">
-			<img src="Design/Images/coverbg2.png" alt="Calendar and clock">
+			<img src="Design/Images/coverbg3.png" alt="Calendar and clock">
 			<div class="headtext">
 				<h1> Timeline </h1>
 				<div class="separater"></div>

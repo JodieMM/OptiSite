@@ -16,6 +16,7 @@
 			<p> Information on Optimator, including Download, will go here. </p>
 			<p> Also includes a backlog and list of known bugs </p>
 			<p> As well as downloads </p>
+			<p> And tutorials </p>
 			<img src="Design/Images/coverbg.png" alt="Lily on the phone">
 		</div>
 	</section>
