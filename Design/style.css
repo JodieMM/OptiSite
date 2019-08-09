@@ -138,6 +138,12 @@ h1{
 	border-bottom-color: #6666ff;
 }
 
+.thindivider{
+	width: 100%;
+	height: 2px;
+	background-color: #adadad;
+}
+
 
 /* For Tablets */
 @media only screen and (min-width: 768px){

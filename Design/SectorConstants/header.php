@@ -17,8 +17,8 @@
 </head>
 <body>
 	<div class="header">
+	<a href="index"><img src="Design/Images/logoPNb.png" alt="Optimator Logo"></a>
 		<ul>
-			<a href="index"><li><img src="Design/Images/logoPNb.png" alt="Optimator Logo"></li></a>
 			<div class="dropdown">
 				<li>Projects</li>
 				<div class="dropdown-options">
@@ -35,6 +35,7 @@
 					<a href="our_policies"><li>Policies</li></a>
 				</div>
 			</div>
-			<a href="account_in"><li class="boldhover">Account</li></a>
+			<a href="account_in"><li>Account</li></a>
 		</ul>
 	</div>
+	<div class="thindivider"></div>

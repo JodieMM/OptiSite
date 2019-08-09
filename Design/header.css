@@ -9,42 +9,38 @@ body{
 
 /*--- HEADER STYLES ---*/
 
-ul{
-	display: inline-block;
-	vertical-align: middle;
-	width: 100%;
-	margin: 0;
-	padding: 0.5em 0;
+.header{
 	background-color: #f2f2f2;
+	height: 3em;
 	font-size: 28px;
-	color: black;
 }
 
-li{ 
+.header img{
+	height: 2em;
+	padding: 0.5em;
+}
+
+.header ul{
 	display: inline-block;
-	vertical-align: middle;
+	position: absolute;
+	right: 0;
+	margin: 0;
+	padding: 0.5em 0;
+}
+
+.header li{ 
+	display: inline-block;
 	width: 5em;
-	padding: 0 0.5em;
+	padding: 0.3em 0.5em;
 	text-align: center;
 	color: black;
 }
 
-.header{
-	background-color: #f2f2f2;
-}
-
-.header img{
-	display: inline-block;
-	height: 2em;
-	margin: auto;
-}
-
-li.boldhover:hover{
+.header a:hover{
 	font-weight: bold;
 }
 
 .dropdown{
-    position: relative;
     display: inline-block;
 }
 
@@ -55,7 +51,7 @@ li.boldhover:hover{
 
 @keyframes dropdownslide{
 	from {top: 0.8em; opacity: 0;}
-	to {top: 1.21em; opacity: 1;}
+	to {top: 2.31em; opacity: 1;}
 }
 
 .dropdown-options{
@@ -75,16 +71,13 @@ li.boldhover:hover{
 	padding-bottom: 0.5em;
 }
 
-.dropdown-options a:hover{
-	font-weight: bold;
-}
 
 @media all and (max-width: 660px){
-	li{
+	.header li{
 		padding: 0em 0.5em 0.5em 0.5em;
 	}
 	
-	ul{
+	.header ul{
 		padding: 0em;
 		padding-top: 0.5em;
 	}
@@ -94,10 +87,9 @@ li.boldhover:hover{
 
 /*--- FOOTER STYLES ---*/
 .footer{
-	display: block;
-	padding: 2em 3em;
-	background: linear-gradient(to bottom, #4d4d4d, #333333);
-	color: white;
+	padding: 0.5em;
+	background: linear-gradient(to left, #333333, #4d4d4d, #333333);
+	text-align: center;
 }
 
 .footer img{
