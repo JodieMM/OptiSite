@@ -2,7 +2,7 @@ body{
     margin: 0;
 	font-family: 'Montserrat', 'Actor', 'Tahoma', sans-serif;
     font-size: 24px;
-    background-color: #f2f2f2;
+    background-color: #ffffff;
 }
 
 
@@ -13,6 +13,7 @@ body{
 	background-color: #f2f2f2;
 	height: 3em;
 	font-size: 28px;
+	border-bottom: 2px solid #adadad;
 }
 
 .header img{
@@ -90,6 +91,7 @@ body{
 	padding: 0.5em;
 	background: linear-gradient(to left, #333333, #4d4d4d, #333333);
 	text-align: center;
+	border-top: 2px solid #adadad;
 }
 
 .footer img{

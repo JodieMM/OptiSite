@@ -1,0 +1,79 @@
+/*--- BASE STYLES ---*/
+
+/* Homepage */
+.homepage img{
+	display: block;
+	width: 100%;
+}
+
+
+/* About Me */
+.icon img{
+	display: block;
+	width: 10em;
+	margin: 1em auto;
+	border-radius: 5em;
+	box-shadow: 0 0 20px grey;
+	transition: transform 1s;
+}
+
+.icon img:hover{
+	transform: scale(1.1, 1.1);
+}
+
+
+/* Sign In/Up */
+.white{
+	background-color: #ffffff;
+	min-height: 75%;
+}
+
+.split{
+	display: inline-block;
+	margin: 1em;
+	padding: 1.5em;
+	border-radius: 3em;
+	border-bottom: 0.5em solid #99ff66;
+	vertical-align: middle;
+}
+
+.split a{
+	text-decoration: none;
+	color: black;
+}
+
+.split h1{
+	padding-bottom: 0.5em;
+}
+
+.left{
+	background-color: #bbff99;
+}
+
+.left:hover{
+	background-color: #99ff66;
+	border-bottom-color: #5cd65c;
+}
+
+.right{
+	background-color: #b3b3ff;
+	border-bottom-color: #9999ff;
+}
+
+.right:hover{
+	background-color: #9999ff;
+	border-bottom-color: #6666ff;
+}
+
+/* For Desktop */
+@media only screen and (min-width: 860px){
+	.split{
+		min-width: 13em;
+		width: 35%;
+		height: 8em;
+	}
+	
+	.right{
+		margin-left: -0.25em;
+	}
+}

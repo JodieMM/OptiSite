@@ -1,4 +1,3 @@
-<div class="thindivider"></div>
 <div class="footer">
 	<a href="https://www.youtube.com/channel/UCiip8jvHNeyuF37XpmbgNog/" target="_blank"><img src="Design/Images/ytlogo.png" alt="Opti YouTube"></a>
 	<a href="https://twitter.com/OptiJodie/" target="_blank"><img src="Design/Images/twitterlogo.png" alt="Opti Twitter"></a>

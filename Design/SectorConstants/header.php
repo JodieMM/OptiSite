@@ -3,15 +3,24 @@
     <title>Opti</title>
 	
 	<!-- Design Components -->
+	
+	<!-- CSS -->
 	<link href="Design/header.css" rel="stylesheet" type="text/css"/>
     <link href="Design/style.css" rel="stylesheet" type="text/css"/>
 	<link href="Design/timeline.css" rel="stylesheet" type="text/css"/>
+	<link href="Design/special.css" rel="stylesheet" type="text/css"/>
+	
+	<!-- Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'/>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	
+	<!-- Images -->
 	<link rel="icon" href="Design/Images/logo.png"/>
 	<link rel="apple-touch-icon" href="Design/Images/logo.png"/>
 	
+	
 	<!-- Code Components -->
+	
 	<!--<script type="text/javascript" src="Functions/JSFunctions.js"/></script>-->
 	
 </head>
@@ -38,4 +47,3 @@
 			<a href="account_in"><li>Account</li></a>
 		</ul>
 	</div>
-	<div class="thindivider"></div>

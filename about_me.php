@@ -11,7 +11,8 @@
 				<p> Get to know the Founder and Chair of Opti </p>
 			</div>
 		</div>
-		<div class="full purple icon middle">
+		
+		<div class="full icon middle">
 			<img src="Design/Images/jodie.jpg" alt="Jodie">
 			<h1> Jodie </h1>
 			<p> A 2019 graduate of QUT, I'm not the most experienced programmer; but it's something I love and I am
@@ -20,9 +21,9 @@
 			<p> Besides programming, I play around with a plethora of other activities including singing, voice acting,
 			animation and dance. You can see some of my other passions at play with the links below- and don't forget
 			the Opti social media too~!</p>
-			<a href="" target="_blank">Vlogs</a>
-			<a href="" target="_blank">ASMR (Relaxation Videos)</a>
-			<a href="" target="_blank">Singing</a>
+			<a class="button" href="" target="_blank">Vlogs</a>
+			<a class="button" href="" target="_blank">ASMR (Relaxation Videos)</a>
+			<a class="button" href="" target="_blank">Singing</a>
 		</div>
 	</section>
 	

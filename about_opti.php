@@ -11,6 +11,7 @@
 				<p> OPTImum OPTIons </p>
 			</div>
 		</div>
+		
 		<div class="middle">
 			<h1> Opti Values </h1>
 			<p> Opti is dedicated to creating software that is user-friendly and makes things
