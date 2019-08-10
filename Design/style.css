@@ -58,6 +58,7 @@ h1{
 .middle img{
 	display: none;
 	vertical-align: middle;
+	border: 2px solid #adadad;
 }
 
 a.button {
@@ -78,16 +79,6 @@ a.button:hover{
 	background-color: #824c9a;
 	border-color: #653b78;
 	transform: scale(1.05, 1.05);
-}
-
-.purple a{
-	background-color: #9966ff;
-	border-color: #7733ff;
-}
-
-.purple a:hover{
-	background-color: #bb99ff;
-	border-color: #9966ff;
 }
 
 

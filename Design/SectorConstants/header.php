@@ -2,7 +2,8 @@
 <head>
     <title>Opti</title>
 	
-	<!-- Design Components -->
+	
+	<!-- -- Design Components -- -->
 	
 	<!-- CSS -->
 	<link href="Design/header.css" rel="stylesheet" type="text/css"/>
@@ -19,9 +20,11 @@
 	<link rel="apple-touch-icon" href="Design/Images/logo.png"/>
 	
 	
-	<!-- Code Components -->
+	<!-- -- Code Components -- -->
 	
+	<!-- JavaScript -->
 	<!--<script type="text/javascript" src="Functions/JSFunctions.js"/></script>-->
+	
 	
 </head>
 <body>
