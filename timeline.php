@@ -15,10 +15,6 @@
 			<h1> Optimator </h1>
 			<p> As the only project currently in progress, Optimator dominates our predicted timeline.</p>
 		</div>
-		<div class="timeline" month="July">
-			<span class="month-pointer"></span>
-			<p>This month will have passed before this goes live.</p>
-		</div>
 		<div class="timeline" month="August">
 			<span class="month-pointer"></span>
 			<p>August is a big month for Optimator with the offical site
