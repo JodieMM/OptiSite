@@ -19,11 +19,11 @@
 			more than happy to pour hours of a day into a project I'm passionate about. For me, Opti is a 
 			way to share this passion with others. Most of the things I build solve a problem I face myself.</p>
 			<p> Besides programming, I play around with a plethora of other activities including singing, voice acting,
-			animation and dance. You can see some of my other passions at play with the links below- and don't forget
-			the Opti social media too~!</p>
+			animation and dance. <!--You can see some of my other passions at play with the links below- and don't forget
+			the Opti social media too~!--></p><!--
 			<a class="button" href="" target="_blank">Vlogs</a>
 			<a class="button" href="" target="_blank">ASMR (Relaxation Videos)</a>
-			<a class="button" href="" target="_blank">Singing</a>
+			<a class="button" href="" target="_blank">Singing</a>-->
 		</div>
 	</section>
 	
