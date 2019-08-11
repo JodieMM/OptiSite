@@ -2,8 +2,8 @@
 	include 'Design/SectorConstants/header.php';
 ?>
 <body>	
-	<section class="homepage">
-		<img src="Design/Images/coverbg2.png">
+	<section class="content">
+		<img class="big" src="Design/Images/coverbg2.png">
 		
 		<div class="middle full">
 			<h1> Welcome to Opti! </h1>
@@ -21,7 +21,7 @@
 				<input type="password" id="passwordconfirm" placeholder="Confirm Password"></input>
 			</div>
 			<div class="inputline">
-				<button>Sign Up</button>
+				<button id="signupbtn">Sign Up</button>
 			</div>
 		</div>
 	</section>
@@ -29,4 +29,8 @@
 	<?php
 		include 'Design/SectorConstants/footer.php';
 	?>
+	
+	<!-- JavaScript -->
+	<script type="text/javascript" src="Functions/validation.js"/></script>
+	<script type="text/javascript" src="Functions/flow.js"/></script>
 </body>

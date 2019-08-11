@@ -3,44 +3,18 @@
 ?>
 <body>	
 	<section class="content">
-		<div class="head">
-			<img src="Design/Images/coverbg2.png" alt="Group Hug">
-			<div class="headtext">
-				<h1> Your Account </h1>
-				<div class="separater"></div>
-				<p> Make an account or login </p>
-			</div>
-		</div>
+		<img class="big" src="Design/Images/coverbg2.png" alt="Lily Welcomes You">
 		
 		<div class="full middle">
-			<h1> Sign Up </h1>
-			<p> Create an Opti account to download software or register for updates. </p>
-			<a class="button">
-				Sign Up
-			</a>
-			<h1> Log In </h1>
-			<p> Login to your existing account to update your details or download new software or updates. </p>
-			<a class="button">
-				Log In
-			</a>
+			<h1> Account Submitted </h1>
+			<p> Please check your emails for a confirmation from us. </p>
+		</div>
+		
+		<div class="signup">
+			<h1> You're so close! </h1>
+			<p> Until you confirm your email address, you will be unable to log in- this means you won't be able to download any 
+			software or demos, and won't receive updates from us!</p>
 		</div>	
-	
-	
-	<!--
-		<div class="white">
-			<div class="split left">
-				<a href target="blank">
-					<h1> Sign Up </h1>
-					<p> Create an Opti account to download software or register for updates.</p>
-				</a>
-			</div>
-			<div class="split right">
-				<a href target="blank">
-					<h1> Log In </h1>
-					<p> Login to you existing account to update your details or download new software or updates.</p>
-				</a>
-			</div>
-		</div>-->
 	</section>
 	
 	<?php
