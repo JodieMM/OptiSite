@@ -11,7 +11,7 @@
 				<p> The expected projection for Opti </p>
 			</div>
 		</div>
-		<div class="middle full">
+		<div class="middle full" style="border: none;">
 			<h1> Optimator </h1>
 			<p> As the only project currently in progress, Optimator dominates our predicted timeline.</p>
 		</div>

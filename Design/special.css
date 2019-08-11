@@ -4,6 +4,7 @@
 .homepage img{
 	display: block;
 	width: 100%;
+	border-bottom: 2px solid #adadad;
 }
 
 
@@ -21,59 +22,50 @@
 	transform: scale(1.1, 1.1);
 }
 
-
-/* Sign In/Up */
-.white{
-	background-color: #ffffff;
-	min-height: 75%;
+/* Sign Up */
+.signup{
+	padding: 1em;
+	border-bottom: 2px solid #adadad;
+	background: linear-gradient(to bottom right, #9a61b2, #d147a3);
+	color: white;
 }
 
-.split{
-	display: inline-block;
-	margin: 1em;
-	padding: 1.5em;
-	border-radius: 3em;
-	border-bottom: 0.5em solid #99ff66;
-	vertical-align: middle;
-}
-
-.split a{
-	text-decoration: none;
-	color: black;
-}
-
-.split h1{
+.signup h1{
 	padding-bottom: 0.5em;
 }
 
-.left{
-	background-color: #bbff99;
+.inputline{
+	text-align: center;
+	padding: 1em;
 }
 
-.left:hover{
-	background-color: #99ff66;
-	border-bottom-color: #5cd65c;
+.inputline input{
+	width: 30%;
+	margin: 0.5em;
+	padding-left: 0.5em;
+	font: inherit;
 }
 
-.right{
-	background-color: #b3b3ff;
-	border-bottom-color: #9999ff;
+.inputline button{
+	width: 15em;
+	height: 3em;
+	margin: auto;
+	border: none;
+	border-radius: 3em;
+	box-shadow: 0 0 15px #decce5;
+	background: linear-gradient(to bottom, #653b78 0%, #9a61b2 50%, #824c9a 51%, #b287c4 100%);
+	font: inherit;
+	color: white;
+	cursor: pointer;
+	transition: transform 0.3s;
 }
 
-.right:hover{
-	background-color: #9999ff;
-	border-bottom-color: #6666ff;
+.inputline button:hover{
+	transform: scale(1.05, 1.05);
 }
 
-/* For Desktop */
-@media only screen and (min-width: 860px){
-	.split{
-		min-width: 13em;
-		width: 35%;
-		height: 8em;
-	}
-	
-	.right{
-		margin-left: -0.25em;
-	}
+.fourty input{
+	width: 40%;
+	margin-bottom: 0em;
 }
+

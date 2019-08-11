@@ -3,27 +3,24 @@
 ?>
 <body>	
 	<section class="content">
-		<div class="signup">
-			<h1> Sign Up </h1>
-			<p> Create an Opti account to download software or register for updates. </p>
-			<div class="inputline">
-				<input type="textbox" id="email" placeholder="Email"></input>
-				<input type="password" id="password" placeholder="Password"></input>
-				<input type="password" id="passwordconfirm" placeholder="Confirm Password"></input>
-			</div>
-			<div class="inputline">
-				<button>Sign Up</button>
+		<div class="head">
+			<img src="Design/Images/coverbg2.png" alt="Group Hug">
+			<div class="headtext">
+				<h1> Your Account </h1>
+				<div class="separater"></div>
+				<p> Make an account or login </p>
 			</div>
 		</div>
 		
 		<div class="full middle">
+			<h1> Sign Up </h1>
+			<p> Create an Opti account to download software or register for updates. </p>
+			<a class="button">
+				Sign Up
+			</a>
 			<h1> Log In </h1>
 			<p> Login to your existing account to update your details or download new software or updates. </p>
-			<div class="inputline fourty">
-				<input type="textbox" id="loginemail" placeholder="Email"></input>
-				<input type="password" id="loginpassword" placeholder="Password"></input>
-			</div>
-			<a class="button lowbtn">
+			<a class="button">
 				Log In
 			</a>
 		</div>	

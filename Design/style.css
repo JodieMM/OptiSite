@@ -2,7 +2,10 @@
 
 /* Colours */
 /*
-	PURPLE: #9a61b2; #824c9a; #653b78
+	PURPLE: #decce5; #b287c4; (MAIN) #9a61b2; #824c9a; #653b78;
+	PINK: #d147a3;
+	GREY: #adadad;
+	GOLD: #ada485;
 */
 
 /* Clear Originals */
@@ -47,6 +50,7 @@ h1{
 
 .middle{
 	padding: 1.5em 1em;
+	border-bottom: 2px solid #adadad;
 }
 
 .middle p{
@@ -72,6 +76,7 @@ a.button {
 	background-color: #9a61b2;
 	text-decoration: none;
 	color: white;
+	cursor: pointer;
 	transition: transform 0.3s;
 }
 
