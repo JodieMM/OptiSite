@@ -18,7 +18,7 @@
 			<a class="button" href="privacy_policy">Privacy Policy</a></p>
 			<img src="Design/Images/coverbg.png" alt="Lily making the motion for 'shh'">
 
-			<p></p><p></p>
+			<div class="break"></div>
 			<h1> Terms and Conditions </h1>
 			<p> When you download any software from Opti, you must accept the Terms and Conditions of use
 			for that software. You can peruse these below.

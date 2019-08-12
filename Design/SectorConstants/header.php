@@ -9,6 +9,8 @@
 	<link href="Design/header.css" rel="stylesheet" type="text/css"/>
     <link href="Design/style.css" rel="stylesheet" type="text/css"/>
 	<link href="Design/timeline.css" rel="stylesheet" type="text/css"/>
+	<link href="Design/list.css" rel="stylesheet" type="text/css"/>
+	<link href="Design/signup.css" rel="stylesheet" type="text/css"/>
 	<link href="Design/special.css" rel="stylesheet" type="text/css"/>
 	
 	<!-- Fonts -->

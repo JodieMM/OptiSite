@@ -106,8 +106,9 @@ a.button:hover{
 	transform: scale(1.05, 1.05);
 }
 
-br{
-	margin: 1em;
+.break{
+	display: block;
+	height: 40px;
 }
 
 
