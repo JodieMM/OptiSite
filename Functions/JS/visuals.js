@@ -3,9 +3,12 @@
 // Burger Bar
 function burgerBarToggle(el, bar, list){
 	if (list.css('display') == 'none'){
-		$('.header ul').css('display', 'inline-block');
+		bar.addClass('clicked');
+		list.attr('style', 'display: inline-block; animation: burgerrightslide 1s');
 	}
 	else{
-		$('.header ul').css('display', 'none');
+		bar.removeClass('clicked');
+		list.attr('style', 'display: inline-block; animation: burgerleftslide 1s');
+		setTimeout(function() { list.attr('style', 'opacity: 0; display:none');}, 1000);
 	}
 }

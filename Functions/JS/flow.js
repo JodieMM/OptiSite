@@ -18,7 +18,7 @@ var detpass = $('#detpass');
 var updatebtn = $('#updatebtn');
 
 var burgerbar = $('#burgerbar');
-var burger = $('#burger');
+var burger = $('.burger');
 var headerul = $('#headerul');
 
 

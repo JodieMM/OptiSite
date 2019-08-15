@@ -36,7 +36,11 @@
 <body>
 	<div class="header">
 		<a href="index"><img src="Design/Images/logoPNb.png" alt="Optimator Logo"></a>
-		<div class="burgerbar" id="burgerbar"><div class="burger" id="burger"></div></div>
+		<div class="burgerbar" id="burgerbar">
+			<div class="burger" id="burgertop"></div>
+			<div class="burger" id="burgermid"></div>
+			<div class="burger" id="burgerbot"></div>
+		</div>
 		<ul id="headerul">
 			<div class="dropdown">
 				<li>Projects</li>

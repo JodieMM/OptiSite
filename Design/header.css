@@ -32,6 +32,7 @@ body{
 	border: 2px solid #adadad;
 	border-right: none;
 	background-color: #f2f2f2;
+	overflow-x: hidden;
 }
 
 .header li{ 
@@ -63,6 +64,16 @@ body{
 	animation: dropdownslide 1s;
 }
 
+@keyframes burgerrightslide{
+	from {width: 0em; opacity: 0;}
+	to {width: 7em; opacity: 1;}
+}
+
+@keyframes burgerleftslide{
+	from {width: 7em; opacity: 1;}
+	to {width: 0em; opacity: 0;}
+}
+
 .dropdown-options{
 	background-color: #f2f2f2;
     display: block;
@@ -91,23 +102,26 @@ body{
 	cursor: pointer;
 }
 
-.burger, .burger:before, .burger:after{
+.burger{
 	width: 1.5em;
 	height: 4px;
-	margin-top: 48%;
+	margin-bottom: 0.5em;
 	border-radius: 2px;
 	background-color: #9a61b2;
-	content: "";
+	transform: rotate(0deg);
+    transition: .5s ease-in-out;
 }
 
-.burger:before{
-	position: absolute;
-	margin-top: -0.5em;
+#burgertop.burger.clicked{
+	transform: translateY(0.65em) rotate(45deg);
 }
 
-.burger:after{
-	position: absolute;
-	margin-top: 0.5em;
+#burgerbot.burger.clicked{
+	transform: translateY(-0.65em) rotate(-45deg);
+}
+
+#burgermid.burger.clicked{
+	opacity: 0;
 }
 
 
@@ -119,6 +133,8 @@ body{
 		padding: 0.5em 0;
 		border: none;
 		background-color: inherit;
+		opacity: 1;
+		overflow-x: initial;
 	}
 	
 	.header li{ 
