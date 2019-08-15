@@ -20,6 +20,7 @@
 				<input type="password" id="password" placeholder="Password"></input>
 				<input type="password" id="passwordconfirm" placeholder="Confirm Password"></input>
 			</div>
+			<p class="error" id="signuperror"></p>
 			<div class="inputline">
 				<button id="signupbtn">Sign Up</button>
 			</div>
@@ -29,8 +30,4 @@
 	<?php
 		include 'Design/SectorConstants/footer.php';
 	?>
-	
-	<!-- JavaScript -->
-	<script type="text/javascript" src="Functions/validation.js"/></script>
-	<script type="text/javascript" src="Functions/flow.js"/></script>
 </body>

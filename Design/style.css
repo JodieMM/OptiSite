@@ -8,6 +8,14 @@
 	GOLD: #ada485;
 */
 
+/* Sizing Widths */
+/*
+	Mobile: <768px
+	Tablet: <860px
+	Desktop: <960px
+	Fullscreen: >=960px
+*/
+
 /* Clear Originals */
 p{
 	margin: 0;
@@ -57,12 +65,13 @@ h1{
 	display: inline-block;
 	padding-top: 1em;
 	vertical-align: top;
+	text-align: center;
 }
 
 .middle h1{
-	width: 10em;
+	width: 7em;
 	margin: auto;
-	padding-bottom: 1em;
+	padding: 0em 0.5em 1em 0.5em;
 	text-align: center;
 	background-color: #ffffff;
 }
@@ -111,6 +120,10 @@ a.button:hover{
 	height: 40px;
 }
 
+.full p{
+	text-align: left;
+}
+
 
 /* For Tablets */
 @media only screen and (min-width: 768px){
@@ -133,8 +146,8 @@ a.button:hover{
 		to {top: 6em; opacity: 1;}
 	}
 	
-	.middle p{
-		width: 85%;
+	.middle h1{
+		width: 10em;
 	}
 	
 	.full p{
@@ -153,6 +166,7 @@ a.button:hover{
 	
 	.middle p{
 		width: 70%;
+		text-align: left;
 	}
 	
 	.full p{

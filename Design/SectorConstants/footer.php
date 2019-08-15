@@ -6,4 +6,4 @@
 </div>
 
 <!-- JavaScript (Event-Based) -->
-<script type="text/javascript" src="Functions/flow.js"/></script>
+<script type="text/javascript" src="Functions/JS/flow.js"/></script>

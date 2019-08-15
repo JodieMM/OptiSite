@@ -11,6 +11,7 @@
 				<input type="password" id="password" placeholder="Password"></input>
 				<input type="password" id="passwordconfirm" placeholder="Confirm Password"></input>
 			</div>
+			<p class="error" id="signuperror"></p>
 			<div class="inputline">
 				<button id="signupbtn">Sign Up</button>
 			</div>
@@ -23,6 +24,7 @@
 				<input type="textbox" id="loginemail" placeholder="Email"></input>
 				<input type="password" id="loginpassword" placeholder="Password"></input>
 			</div>
+			<p class="error" id="empasserror"></p>
 			<a class="button lowbtn" id="loginbtn">
 				Log In
 			</a>

@@ -1,5 +1,7 @@
 /*--- SIGNUP STYLES ---*/
 
+/* For Mobile */
+
 /* Sign Up */
 .signup{
 	padding: 1em;
@@ -18,7 +20,7 @@
 }
 
 .inputline input{
-	width: 30%;
+	width: 50%;
 	margin: 0.5em;
 	padding-left: 0.5em;
 	border: 1px solid #adadad;
@@ -49,8 +51,79 @@
 	transform: scale(1.05, 1.05);
 }
 
+.inputline button:focus{
+	outline: none;
+}
+
+p.error{
+	display: none;
+	font-style: italic;
+	font-size: 22px;
+}
+
 /* Log In */
 .fourty input{
-	width: 40%;
+	/* width: 50%; */
 	margin-bottom: 0em;
+}
+
+/* Account Details */
+.inputline.details{
+	text-align: left;
+}
+
+.details p{
+	padding: 0;
+	width: 9em;
+}
+
+.details input{
+	width: 10em;
+	margin: 0em;
+	margin-left: 1em;
+}
+
+.details input[type=checkbox]{
+	width: 2em;
+	height: 2em;
+	margin-left: 2em;
+	margin-right: 2em;
+}
+
+.details input[type=checkbox]:focus{
+	box-shadow: none;
+}
+
+
+/* For Tablets */
+@media only screen and (min-width: 768px){
+	.inputline input{
+		width: 40%;
+	}
+	
+	.fourty input{
+		width: 40%;
+	}
+	
+	.details p{
+		width: 11em;
+		text-align: right;
+	}
+	
+	.details input[type=checkbox]{
+		margin-left: 5em;
+		margin-right: 4em;
+	}
+}
+
+
+/* For Full Screen */
+@media only screen and (min-width: 960px){
+	.inputline input{
+		width: 30%;
+	}
+	
+	.fourty input{
+		width: 40%;
+	}
 }

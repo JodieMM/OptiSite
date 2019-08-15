@@ -28,19 +28,21 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	
 	<!-- JavaScript -->
-	<script type="text/javascript" src="Functions/validation.js"/></script>	
+	<script type="text/javascript" src="Functions/JS/validation.js"/></script>
+	<script type="text/javascript" src="Functions/JS/visuals.js"/></script>	
 	
 	
 </head>
 <body>
 	<div class="header">
-	<a href="index"><img src="Design/Images/logoPNb.png" alt="Optimator Logo"></a>
-		<ul>
+		<a href="index"><img src="Design/Images/logoPNb.png" alt="Optimator Logo"></a>
+		<div class="burgerbar" id="burgerbar"><div class="burger" id="burger"></div></div>
+		<ul id="headerul">
 			<div class="dropdown">
 				<li>Projects</li>
 				<div class="dropdown-options">
-					<a href="optimator">Optimator</a>
-					<a href="timeline">Timeline</a>
+					<a href="optimator"><li>Optimator</li></a>
+					<a href="timeline"><li>Timeline</li></a>
 				</div>
 			</div>
 			<div class="dropdown">
