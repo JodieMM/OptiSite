@@ -11,9 +11,11 @@
 				<p> The terms for using Optimator </p>
 			</div>
 		</div>
-		<div class="middle">
+		<div class="full middle">
 			<h1> Terms and Conditions </h1>
-			<p> Optimator Terms and Conditions</p>
+			<?php
+				include 'Design/Policies/opti_terms.php';
+			?>
 		</div>
 	</section>
 	

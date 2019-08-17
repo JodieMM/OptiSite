@@ -11,9 +11,11 @@
 				<p> How we handle the information you give us </p>
 			</div>
 		</div>
-		<div class="middle">
+		<div class="full middle">
 			<h1> Privacy Policy </h1>
-			<p> Every account made with Opti is handled with the Privacy Policy outlined here.</p>
+			<?php
+				include 'Design/Policies/privacy_policy.php';
+			?>	
 		</div>
 	</section>
 	

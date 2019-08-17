@@ -45,7 +45,7 @@
 			<div class="list">(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ Undo!</div>
 			
 			<div class="break"></div>
-			<p> If you find a bug not mentioned here when running the latest version of Optimator, please email us at jodie@opti.technology </p>
+			<p> If you find a bug not mentioned here when running the latest version of Optimator, please email us at <a href="mailto:jodie@opti.technology">jodie@opti.technology</a>.</p>
 		</div>
 	</section>
 	

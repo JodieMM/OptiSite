@@ -13,7 +13,7 @@
 		</div>
 		<div class="middle">
 			<h1> General Enquiries </h1>
-			<p> Contact us at jodie@opti.technology for general enquiries. 
+			<p> Contact us at <a href="mailto:jodie@opti.technology">jodie@opti.technology</a> for general enquiries. 
 			Every endeavour will be made to respond within 7 working days.</p>
 			<img src="Design/Images/coverbg.png" alt="Lily on the phone">
 		</div>

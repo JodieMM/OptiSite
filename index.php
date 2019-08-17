@@ -22,7 +22,7 @@
 			</div>
 			<div class="inputline">
 				<input type="checkbox" id="ppcheckbox"> 
-				I understand and agree to the <a target="_blank", href="privacy_policy">Privacy Policy</a>
+				I understand and agree to the <a target="_blank", href="privacy_policy">Privacy Policy</a> and Opti <a target="_blank", href="terms_and_conditions">Terms and Conditions.</a>
 			</div>
 			<p class="error" id="signuperror"></p>
 			<div class="inputline">

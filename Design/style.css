@@ -30,8 +30,24 @@ h1{
 
 /* For Mobile */
 
+a{
+	color: #653b78;
+}
+
+a:active{
+	color: #d147a3;
+}
+
+h2{
+	margin-bottom: 0.5em;
+}
+
+h4{
+	padding-left: 0.5em;
+}
+
 .head img{
-	min-width: 100%;
+	width: 100%;
 	height: 10em;
 	border-bottom: 2px solid #adadad;
 }
@@ -50,7 +66,7 @@ h1{
 .separater
 {
     position: absolute;
-    width: 10em;
+    width: 80%;
     height: 2px;
 	border-radius: 1px;
     background: #000000;
@@ -120,6 +136,21 @@ a.button:hover{
 	height: 40px;
 }
 
+p.tab{
+	display: block;
+	padding: 0.5em 0em 0.5em 1em;
+}
+
+p.tab2{
+	display: block;
+	padding: 0em 0em 0.5em 2em;
+}
+
+p.tab3{
+	display: block;
+	padding: 0em 0em 0.5em 3em;
+}
+
 .full p{
 	text-align: left;
 }
@@ -152,6 +183,11 @@ a.button:hover{
 	
 	.full p{
 		width: auto;
+	}
+	
+	.separater
+	{
+		width: 10em;
 	}
 }
 

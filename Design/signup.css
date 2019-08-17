@@ -41,14 +41,6 @@
 	box-shadow: 0 0 4px #61C5FA;
 }
 
-.inputline a{
-	color: #653b78;
-}
-
-.inputline a:active{
-	color: #d147a3;
-}
-
 .inputline button{
 	width: 15em;
 	height: 3em;
