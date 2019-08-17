@@ -6,6 +6,7 @@ var signupbtn = $('#signupbtn');
 var email = $('#email');
 var pass1 = $('#password');
 var pass2 = $('#passwordconfirm');
+var privacy = $('#ppcheckbox');
 var signuperror = $('#signuperror');
 
 var loginemail = $('#loginemail');
@@ -28,7 +29,7 @@ var headerul = $('#headerul');
 email.click(function(){ stopGlow(email)});
 pass1.click(function(){ stopGlow(pass1)});
 pass2.click(function(){ stopGlow(pass2)});
-signupbtn.click(function(){ validateSignUp(email, pass1, pass2);});
+signupbtn.click(function(){ validateSignUp(email, pass1, pass2, privacy);});
 
 loginemail.click(function(){ stopGlow(loginemail)});
 loginpass.click(function(){ stopGlow(loginpass)});

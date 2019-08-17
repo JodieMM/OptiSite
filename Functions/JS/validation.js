@@ -21,8 +21,7 @@ function validatePassword(p1){
 	}
 }
 
-function validatePasswordMatch(p1, p2)
-{
+function validatePasswordMatch(p1, p2){
 	if (p1.val() != p2.val()){
 		return false;
 	}
@@ -30,6 +29,17 @@ function validatePasswordMatch(p1, p2)
 		return true;
 	}
 }
+
+// Checkbox
+function validatePrivacy(pp){
+	if (pp.prop('checked') == false){
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+
 
 // ----- VISUAL RESULTS ----- //
 
@@ -55,7 +65,7 @@ function showEl(el){
 // ----- CHECKING VALIDATION ----- //
 
 // Sign Up
-function validateSignUp(em, p1, p2){
+function validateSignUp(em, p1, p2, pp){
 	var validated = true;
 	signuperror.html("");
 	showEl(signuperror);
@@ -80,6 +90,13 @@ function validateSignUp(em, p1, p2){
 		validated = false;
 		if (signuperror.html() == ""){
 			signuperror.html("Passwords must match.");
+		}
+	}
+	
+	if (!validatePrivacy(pp)){
+		validated = false;
+		if (signuperror.html() == ""){
+			signuperror.html("You must accept the Privacy Policy to make an account.");
 		}
 	}
 	

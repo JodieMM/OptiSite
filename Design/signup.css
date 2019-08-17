@@ -28,9 +28,25 @@
 	font: inherit;
 }
 
+.inputline input[type=checkbox]{
+	width: auto;
+}
+
+.inputline input[type=checkbox]:focus{
+	box-shadow: none;
+}
+
 .inputline input:focus{
 	border: 1px solid #adadad;
 	box-shadow: 0 0 4px #61C5FA;
+}
+
+.inputline a{
+	color: #653b78;
+}
+
+.inputline a:active{
+	color: #d147a3;
 }
 
 .inputline button{
