@@ -31,8 +31,8 @@ function validatePasswordMatch(p1, p2){
 }
 
 // Checkbox
-function validatePrivacy(pp){
-	if (pp.prop('checked') == false){
+function validateCb(cb){
+	if (cb.prop('checked') == false){
 		return false;
 	}
 	else {
@@ -93,10 +93,10 @@ function validateSignUp(em, p1, p2, pp){
 		}
 	}
 	
-	if (!validatePrivacy(pp)){
+	if (!validateCb(pp)){
 		validated = false;
 		if (signuperror.html() == ""){
-			signuperror.html("You must accept the Privacy Policy to make an account.");
+			signuperror.html("You must accept the Privacy Policy and Terms and Conditions to make an account.");
 		}
 	}
 	
@@ -138,8 +138,6 @@ function validateUpdate(em, pass)
 	var validated = true;
 	empasserror.html("");
 	showEl(empasserror);
-	stopGlow(em);
-	stopGlow(pass);
 	
 	if (em.val() != "" && !validateEmail(em)){
 		glow(em, '#ff4d4d');
@@ -152,6 +150,39 @@ function validateUpdate(em, pass)
 		validated = false;
 		if (empasserror.html() == ""){
 			empasserror.html("Your password must be at least 6 characters.");
+		}
+	}
+	
+	if (empasserror.html() == ""){
+		hideEl(empasserror);
+	}
+	return validated;
+}
+
+// Account Deletion
+function validateDelete(em, pass, check){
+	var validated = true;
+	empasserror.html("");
+	showEl(empasserror);
+	
+	if (!validateEmail(em)){
+		glow(em, '#ff4d4d');
+		validated = false;
+		empasserror.html("Please enter a valid email address.");
+	}
+	
+	if (!validatePassword(pass)){
+		glow(pass, '#ff4d4d');
+		validated = false;
+		if (empasserror.html() == ""){
+			empasserror.html("Your password must be at least 6 characters.");
+		}
+	}
+	
+	if(!validateCb(check)){
+		validated = false;
+		if (empasserror.html() == ""){
+			empasserror.html("You must accept the terms to delete your account.");
 		}
 	}
 	

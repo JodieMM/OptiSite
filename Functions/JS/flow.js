@@ -18,6 +18,11 @@ var detemail = $('#detemail');
 var detpass = $('#detpass');
 var updatebtn = $('#updatebtn');
 
+var deleteemail = $('#deleteemail');
+var deletepass = $('#deletepass');
+var deletecheckbox = $('#delcheckbox');
+var deleteaccbtn = $('#deleteaccconfbtn');
+
 var burgerbar = $('#burgerbar');
 var burger = $('.burger');
 var headerul = $('#headerul');
@@ -38,5 +43,9 @@ loginbtn.click(function(){ validateLogin(loginemail, loginpass);});
 detemail.click(function(){ stopGlow(detemail)});
 detpass.click(function(){ stopGlow(detpass)});
 updatebtn.click(function(){ validateUpdate(detemail, detpass);});
+
+deleteemail.click(function(){ stopGlow(deleteemail)});
+deletepass.click(function(){ stopGlow(deletepass)});
+deleteaccbtn.click(function(){ validateDelete(deleteemail, deletepass, deletecheckbox)});
 
 burgerbar.click(function(){ burgerBarToggle(burgerbar, burger, headerul);});

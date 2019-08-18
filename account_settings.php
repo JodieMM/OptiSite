@@ -41,6 +41,16 @@
 			<h1> Licenses </h1>
 			<p> You don't currently have any licenses. Register for a Beta or purchase a product to receive a license. </p>
 			<p> If you believe there is an error in your licenses, please contact jodie@opti.technology for assistance. </p>
+			
+			<div class="break"></div><div class="break"></div>
+			<h1> Delete Account </h1>
+			<p> Permanently delete your account. All of your credentials will be removed from our system. </p>
+			<p style="font-weight: bold"> Once you delete your account your licenses will also be deleted. This means you will be unable to 
+			update any software you have currently downloaded and will be unable to use any software you have not verified.</p>
+			<a class="button" id="deleteaccbtn" href="account_delete">
+				Delete Account
+			</a>
+			
 		</div>
 	</section>
 	
