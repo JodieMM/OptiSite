@@ -34,15 +34,12 @@ var headerul = $('#headerul');
 email.click(function(){ stopGlow(email)});
 pass1.click(function(){ stopGlow(pass1)});
 pass2.click(function(){ stopGlow(pass2)});
-signupbtn.click(function(){ validateSignUp(email, pass1, pass2, privacy);});
 
 loginemail.click(function(){ stopGlow(loginemail)});
 loginpass.click(function(){ stopGlow(loginpass)});
-loginbtn.click(function(){ validateLogin(loginemail, loginpass);});
 
 detemail.click(function(){ stopGlow(detemail)});
 detpass.click(function(){ stopGlow(detpass)});
-updatebtn.click(function(){ validateUpdate(detemail, detpass);});
 
 deleteemail.click(function(){ stopGlow(deleteemail)});
 deletepass.click(function(){ stopGlow(deletepass)});

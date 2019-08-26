@@ -1,5 +1,6 @@
 <?php
 	include 'Design/SectorConstants/header.php';
+	session_start();
 ?>
 <body>	
 	<section class="content">
@@ -12,23 +13,12 @@
 			to see when releases are coming, or subscribe to updates below! </p>
 		</div>
 		
-		<div class="signup">
-			<h1> Sign Up </h1>
-			<p> Create an Opti account to download software or register for updates. </p>
-			<div class="inputline">
-				<input type="textbox" id="email" placeholder="Email">
-				<input type="password" id="password" placeholder="Password">
-				<input type="password" id="passwordconfirm" placeholder="Confirm Password">
-			</div>
-			<div class="inputline">
-				<input type="checkbox" id="ppcheckbox"> 
-				I understand and agree to the <a target="_blank", href="privacy_policy">Privacy Policy</a> and Optimator <a target="_blank", href="terms_and_conditions">Terms and Conditions.</a>
-			</div>
-			<p class="error" id="signuperror"></p>
-			<div class="inputline">
-				<button id="signupbtn">Sign Up</button>
-			</div>
-		</div>
+		<?php
+			if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] === false)
+			{
+				include 'Design/SectorConstants/signup.php';
+			}
+		?>
 	</section>
 	
 	<?php

@@ -21,9 +21,9 @@
 			<p> Besides programming, I play around with a plethora of other activities including singing, voice acting,
 			animation and dance. <!--You can see some of my other passions at play with the links below- and don't forget
 			the Opti social media too~!--></p><!--
-			<a class="button" href="" target="_blank">Vlogs</a>
-			<a class="button" href="" target="_blank">ASMR (Relaxation Videos)</a>
-			<a class="button" href="" target="_blank">Singing</a>-->
+			<button class="button" href="" target="_blank">Vlogs</button>
+			<button class="button" href="" target="_blank">ASMR (Relaxation Videos)</button>
+			<button class="button" href="" target="_blank">Singing</button>-->
 		</div>
 	</section>
 	

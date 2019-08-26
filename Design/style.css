@@ -110,25 +110,31 @@ h4{
 	border: 2px solid #adadad;
 }
 
-a.button {
+button.button {
 	display: block;
 	width: 15em;
 	margin: 1.5em auto;
 	padding: 0.5em;
 	text-align: center;
+	border: none;
 	border-bottom: 0.5em solid #824c9a;
 	border-radius: 3em;
 	background-color: #9a61b2;
+	font: inherit;
 	text-decoration: none;
 	color: white;
 	cursor: pointer;
 	transition: transform 0.3s;
 }
 
-a.button:hover{
+button.button:hover{
 	background-color: #824c9a;
 	border-color: #653b78;
 	transform: scale(1.05, 1.05);
+}
+
+button:focus{
+	outline: none;
 }
 
 .break{
@@ -152,7 +158,6 @@ p.tab3{
 }
 
 .full p{
-	display: block;
 	text-align: left;
 }
 

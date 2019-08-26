@@ -31,6 +31,13 @@
 	<script type="text/javascript" src="Functions/JS/validation.js"/></script>
 	<script type="text/javascript" src="Functions/JS/visuals.js"/></script>	
 	
+	<!-- PHP -->
+	<?php
+		include 'Functions/PHP/db_functions.php';
+		include 'Functions/PHP/validation_functions.php';
+		include 'Functions/PHP/on_run_functions.php';
+	?>
+	
 	
 </head>
 <body>

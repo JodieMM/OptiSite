@@ -1,37 +1,33 @@
 <?php
+	session_start();
+	if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
+	{
+		header("location: account_settings.php");
+		exit;
+	}
 	include 'Design/SectorConstants/header.php';
 ?>
 <body>	
 	<section class="content">
-		<div class="signup">
-			<h1> Sign Up </h1>
-			<p> Create an Opti account to download software or register for updates. </p>
-			<div class="inputline">
-				<input type="textbox" id="email" placeholder="Email">
-				<input type="password" id="password" placeholder="Password">
-				<input type="password" id="passwordconfirm" placeholder="Confirm Password">
-			</div>
-			<div class="inputline">
-				<input type="checkbox" id="ppcheckbox"> 
-				I understand and agree to the <a target="_blank", href="privacy_policy">Privacy Policy</a> and Optimator <a target="_blank", href="terms_and_conditions">Terms and Conditions.</a>
-			</div>
-			<p class="error" id="signuperror"></p>
-			<div class="inputline">
-				<button id="signupbtn">Sign Up</button>
-			</div>
-		</div>
+		<?php
+			include 'Design/SectorConstants/signup.php';
+		?>
 		
 		<div class="full middle">
+		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validateLogin()" method="post">
 			<h1> Log In </h1>
 			<p> Login to your existing account to update your details or download new software. </p>
 			<div class="inputline fourty">
-				<input type="textbox" id="loginemail" placeholder="Email">
-				<input type="password" id="loginpassword" placeholder="Password">
+				<input type="textbox" id="loginemail" name="loginemail" placeholder="Email" <?php if (isset($_POST['loginemail'])) {echo 'value = '.trim($_POST['loginemail']);}?>>
+				<input type="password" id="loginpassword" name="loginpassword" placeholder="Password">
 			</div>
-			<p class="error" id="empasserror"></p>
-			<a class="button lowbtn" id="loginbtn">
+			<p class="error" id="empasserror"<?php if (isset($_POST['loginemail']) && $error != '') {echo 'style="display:block;"';}?>>
+				<?php if (isset($_POST['loginemail']) && $error != '') {echo $error;}?>
+			</p>
+			<button class="button lowbtn" id="loginbtn">
 				Log In
-			</a>
+			</button>
+		</form>
 		</div>	
 	</section>
 	

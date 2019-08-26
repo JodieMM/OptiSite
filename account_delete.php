@@ -13,6 +13,7 @@
 		</div>
 		
 		<div class="full middle">	
+		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validateDelete()" method="post">
 			<h1> Delete your Account </h1>
 			<p> Permanently delete your account. All of your credentials will be removed from our system. </p>
 			<p style="font-weight: bold"> Once you delete your account your licenses will also be deleted. This means you will be unable to 
@@ -21,18 +22,20 @@
 			
 			<p> To verify you are the correct user, please confirm your details. </p>
 			<div class="inputline fourty">
-				<input type="textbox" id="deleteemail" placeholder="Email">
-				<input type="password" id="deletepass" placeholder="Password">
+				<input type="textbox" id="deleteemail" name="deleteemail" placeholder="Email" <?php if (isset($_POST['deleteemail'])) {echo 'value = '.trim($_POST['deleteemail']);}?>>
+				<input type="password" id="deletepass" name="deletepass" placeholder="Password">
 			</div>
 			<div class="inputline">
-				<input type="checkbox" id="delcheckbox"> 
+				<input type="checkbox" id="delcheckbox" name="delcheckbox"> 
 				I understand that deleting my account includes permanently deleting my licenses, including those I have paid for.
 			</div>
-			<p class="error" id="empasserror"></p>
-			<a class="button" id="deleteaccconfbtn">
+			<p class="error" id="empasserror" <?php if (isset($_POST['deleteemail']) && $error != '') {echo 'style="display:block;"';}?>>
+				<?php if (isset($_POST['deleteemail']) && $error != '') {echo $error;}?>
+			</p>
+			<button class="button" id="deleteaccconfbtn">
 				Delete Account
-			</a>
-			
+			</button>
+		</form>
 		</div>
 	</section>
 	
