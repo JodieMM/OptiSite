@@ -84,7 +84,7 @@
 						{
 							// Send registration email
 							include 'Design/Emails/registration_email.php';
-							sendEmail($email, 'Opti Email Registration', $registration_email_msg)
+							sendEmail($email, 'Opti Email Registration', $registration_email_msg);
 						}
 						else
 						{
