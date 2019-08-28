@@ -73,7 +73,7 @@
 				if (mysqli_stmt_execute($stmt))
 				{
 					// Add verification code to DB
-					$sql2 = "INSERT INTO verification_codes (email, vericode) VALUES (?, ?)";
+					$sql2 = "INSERT INTO verification_codes (email, vericode, use) VALUES (?, ?, 'R')";
 			 
 					if ($stmt2 = mysqli_prepare($link, $sql2))
 					{
@@ -105,94 +105,6 @@
 			}
 		}
     }
-	
-	function emailVerification($email, $vericode)
-	{
-		// Try Verifying New Account
-		if (!checkEmailUnused($email))
-		{
-			$sql = "SELECT email, vericode FROM verification_codes WHERE email = ? AND vericode = ?";
-			if ($stmt = mysqli_prepare($link, $sql))
-			{
-				mysqli_stmt_bind_param($stmt, "ss", $email, $vericode);
-				$email = cleanEmail($email);
-				$vericode = cleanInput($vericode);
-				
-				if (mysqli_stmt_execute($stmt))
-				{
-					mysqli_stmt_store_result($stmt);
-					if(mysqli_stmt_num_rows($stmt) > 0)
-					{
-						$sql2 = "UPDATE accounts SET confirmed = 1 WHERE email = ?";
-						if ($stmt2 = mysqli_prepare($link, $sql2))
-						{
-							mysqli_stmt_bind_param($stmt2, "s", $email);
-							if (mysqli_stmt_execute($stmt2))
-							{
-								// Clean DB
-								$sql3 = "DELETE FROM verification_codes WHERE email = ?";
-								if ($stmt3 = mysqli_prepare($link, $sql3))
-								{
-									mysqli_stmt_bind_param($stmt3, "s", $email);
-									mysqli_stmt_execute($stmt3);
-									mysqli_stmt_close($stmt3);
-								}	
-								
-								// Send welcome email
-								include 'Design/Emails/welcome_email.php';
-								sendEmail($email, 'Welcome to Opti!', $welcome_email_msg);						
-								return true;
-							}
-							mysqli_stmt_close($stmt2);
-						}
-					}
-				}
-				mysqli_stmt_close($stmt);
-			}
-		}
-		// Try Verifying Updated Email
-		else
-		{
-			$sql = "SELECT email, vericode, replacement FROM verification_codes WHERE replacement = ? AND vericode = ?";
-			if ($stmt = mysqli_prepare($link, $sql))
-			{
-				mysqli_stmt_bind_param($stmt, "ss", $replacement, $vericode);
-				$replacement = cleanEmail($email);
-				$vericode = cleanInput($vericode);
-				
-				if (mysqli_stmt_execute($stmt))
-				{
-					mysqli_stmt_store_result($stmt);
-					if(mysqli_stmt_num_rows($stmt) > 0)
-					{
-						mysqli_stmt_bind_result($stmt, $currem, $vericode, $replacement);
-						$currem = cleanEmail($currem);
-						
-						$sql2 = "UPDATE accounts SET email = ? WHERE email = ?";
-						if ($stmt2 = mysqli_prepare($link, $sql2))
-						{
-							mysqli_stmt_bind_param($stmt2, "ss", $replacement, $currem);
-							if (mysqli_stmt_execute($stmt2))
-							{
-								// Clean DB
-								$sql3 = "DELETE FROM verification_codes WHERE email = ? OR email = ?";
-								if ($stmt3 = mysqli_prepare($link, $sql3))
-								{
-									mysqli_stmt_bind_param($stmt3, "ss", $email, $currem);
-									mysqli_stmt_execute($stmt3);
-									mysqli_stmt_close($stmt3);
-								}								
-								return true;
-							}
-							mysqli_stmt_close($stmt2);
-						}
-					}
-				}
-				mysqli_stmt_close($stmt);
-			}
-		}
-		return false;
-	}
 	
 	
 	/* LOGIN */
@@ -253,7 +165,7 @@
 		
 		if ($email != "" && checkEmailUnused($email))
 		{
-			$sql = "INSERT INTO verification_codes (email, vericode, replacement) VALUES (?, ?, ?)";
+			$sql = "INSERT INTO verification_codes (email, vericode, replacement, use) VALUES (?, ?, ?, 'U')";
 			 
 			if ($stmt = mysqli_prepare($link, $sql))
 			{
@@ -393,7 +305,39 @@
 	/* RESET PASSWORD */
 	function resetPassword($email)
 	{
-		// TODO
+		global $link;
+		global $error;
+		
+		$email = cleanEmail($email);
+		if (!checkEmailUnused($email))
+		{
+			$sql = "INSERT INTO verification_codes (email, vericode, use) VALUES (?, ?, 'P')";
+			 
+			if ($stmt = mysqli_prepare($link, $sql))
+			{
+				mysqli_stmt_bind_param($stmt, "ss", $email, $vericode);
+				$vericode = bin2hex(random_bytes(50));
+
+				if (mysqli_stmt_execute($stmt))
+				{
+					// Send email
+					include 'Design/Emails/reset_pass_email.php';
+					if (!sendEmail($email, 'Reset Your Password', $reset_pass_email_msg))
+					{
+						$error = 'An error occurred. Please try again later.';
+					}
+				} 
+				else
+				{
+					$error = 'An error occurred. Please try again later.';
+				}
+				mysqli_stmt_close($stmt);
+			}
+		}
+		else
+		{
+			$error = "This email is not currently registered with Opti";
+		}
 	}
 	
 	/* LICENSE FUNCTIONS */

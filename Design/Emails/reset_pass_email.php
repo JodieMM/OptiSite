@@ -1,14 +1,12 @@
 <?php
-	$registration_email_msg = "
+	$reset_pass_email_msg = "
 		<html>
 		<head>
 		<title>HTML email</title>
 		</head>
 		<body>
 		<p>This email contains HTML Tags!</p>
-		<p>This email should make sense for new or updated emails</p>
-		<p> Let them know there's a time limit on registration </p>
-		<button href=link?email=" . $email . "?vericode=" . $vericode . "
+		<button href=site?email=" . $email . "&vericode=" . $vericode . "
 		<table>
 		<tr>
 		<th>Firstname</th>
