@@ -138,6 +138,9 @@ function validateUpdate()
 	var validated = true;
 	empasserror.html("");
 	showEl(empasserror);
+	stopGlow(detemail);
+	stopGlow(detpass);
+	stopGlow(detpassconfirm);
 	
 	if (detemail.val() != "" && !validateEmail(detemail)){
 		glow(detemail, '#ff4d4d');
@@ -147,13 +150,22 @@ function validateUpdate()
 	
 	if (detpass.val() != "" && !validatePassword(detpass)){
 		glow(detpass, '#ff4d4d');
+		glow(detpassconfirm, '#ff4d4d');
 		validated = false;
 		if (empasserror.html() == ""){
 			empasserror.html("Your password must be at least 6 characters.");
 		}
 	}
 	
-	if (detemail.val() == "" && detpass.val() == "")
+	if ((detpass.val() != "" || detpassconfirm.val() != "") && !validatePasswordMatch(detpass, detpassconfirm)){
+		glow(detpassconfirm, '#ff4d4d');
+		validated = false;
+		if (empasserror.html() == ""){
+			empasserror.html("Passwords must match.");
+		}
+	}
+	
+	if (detemail.val() == "" && detpass.val() == "" && detpassconfirm.val() == "")
 	{
 		validated = false;
 	}
@@ -184,7 +196,7 @@ function validateDelete(){
 		}
 	}
 	
-	if(!validateCb('deletecheckbox')){
+	if(!validateCb(deletecheckbox)){
 		validated = false;
 		if (empasserror.html() == ""){
 			empasserror.html("You must accept the terms to delete your account.");
@@ -195,6 +207,19 @@ function validateDelete(){
 		hideEl(empasserror);
 	}
 	return validated;
+}
+
+// Reset
+function validateReset(){
+	hideEl(reseterror);
+	if (!validateEmail(resetemail))
+	{
+		glow(resetemail, '#ff4d4d');
+		reseterror.html("Please enter a valid email address.");
+		showEl(reseterror);
+		return false;
+	}
+	return true;
 }
 
 

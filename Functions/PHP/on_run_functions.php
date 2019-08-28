@@ -24,7 +24,7 @@
 		// Update Details
 		else if (isset($_POST['detemail']))
 		{
-			if (checkUpdate($_POST['detemail'], $_POST['detpass']))
+			if (checkUpdate($_POST['detemail'], $_POST['detpass'], $_POST['detpassconfirm']))
 			{
 				update($_POST['detemail'], $_POST['detpass']);
 			}
@@ -37,9 +37,18 @@
 		// Delete Account
 		else if (isset($_POST['deleteemail']))
 		{
-			if (checkLogIn($_POST['deletemail'], $_POST['deletepass']))
+			if (checkDelete($_POST['deleteemail'], $_POST['deletepass'], 'delcheckbox'))
 			{
-				deleteAccount($_POST['deletemail'], $_POST['deletepass']);
+				deleteAccount($_POST['deleteemail'], $_POST['deletepass']);
+			}
+		}
+		
+		// Reset Password
+		else if (isset($_POST['resetemail']))
+		{
+			if (checkReset($_POST['resetemail']))
+			{
+				resetPassword($_POST['resetemail']);
 			}
 		}
 	}

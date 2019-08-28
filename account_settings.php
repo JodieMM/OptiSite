@@ -1,6 +1,33 @@
 <?php
-	include 'Design/SectorConstants/header.php';
 	session_start();
+	include 'Design/SectorConstants/header.php';
+	
+	// Get Notification Settings
+	global $link;
+	$notinewsoft = $notigeneral = false;
+	$sql = "SELECT newSoftwareEmails, generalEmails FROM accounts WHERE email = ?";
+	
+	if($stmt = mysqli_prepare($link, $sql))
+	{
+		mysqli_stmt_bind_param($stmt, "s", $email);
+		$email = cleanInput($_SESSION["email"]);
+		
+		// Attempt to execute the prepared statement
+		if(mysqli_stmt_execute($stmt))
+		{
+			mysqli_stmt_store_result($stmt);
+			
+			if(mysqli_stmt_num_rows($stmt) == 1)
+			{                    
+				mysqli_stmt_bind_result($stmt, $notinewsoft, $notigeneral);
+				mysqli_stmt_fetch($stmt);
+				$notinewsoft = boolval($notinewsoft);
+				$notigeneral = boolval($notigeneral);
+			} 
+		} 
+		mysqli_stmt_close($stmt);
+	}
+	
 ?>
 <body>	
 	<section class="content">
@@ -14,24 +41,28 @@
 		</div>
 		
 		<div class="full middle">	
-			<h1> Logout of Account </h1>
+			<h1> Log Out of Account </h1>
 			<form method="get" action="logout"><button class="button">
-				Logout
+				Log Out
 			</button></form>
 		
 		<div class="break"></div>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validateUpdate()" method="post">
 			<h1> Account Settings </h1>
 			<div class="inputline details">
-				<p>Email</p><input type="textbox" id="detemail" name="detemail" <?php if (isset($_POST['detemail'])) {echo 'value = '.trim($_POST['detemail']);}?>></input>
+				<p>Email</p><input type="textbox" id="detemail" name="detemail" <?php if (isset($_POST['detemail'])) {echo 'value = '.cleanEmail($_POST['detemail']);}?>></input>
 			</div>
 			<div class="inputline details">
-				<p>Password</p><input type="textbox" id="detpass" name="detpass"></input>
+				<p>Password</p><input type="password" id="detpass" name="detpass"></input>
+			</div>
+			<div class="inputline details">
+				<p>Confirm Password</p><input type="password" id="detpassconfirm" name="detpassconfirm"></input>
 			</div>
 			<p class="error" id="empasserror"<?php if (isset($_POST['detemail']) && $error != '') {echo 'style="display:block;"';}?>>
 				<?php if (isset($_POST['detemail']) && $error != '') {echo $error;}?>
 			</p>
-			<p style="padding-left: 15%"> Details left blank will not be updated. </p>
+			<p style="padding-left: 15%"> Details left blank will not be updated.</p>
+			<p style="padding-left: 15%"> You will need to confirm your new email address before it is changed. </p>
 			<button class="button" id="updatebtn">
 				Update Details
 			</button>
@@ -40,10 +71,10 @@
 		<div class="break"></div>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 			<div class="inputline details">
-				<p>Receive Emails about New Software</p><input type="checkbox" id="detnotinew" name="detnotinew"></input>
+				<p>Receive Emails about New Software</p><input type="checkbox" id="detnotinew" name="detnotinew" <?php if($notinewsoft) {echo 'checked';} ?>></input>
 			</div>
 			<div class="inputline details">
-				<p>Receive General Update Emails</p><input type="checkbox" id="detnotigen" name="detnotigen"></input>
+				<p>Receive General Update Emails</p><input type="checkbox" id="detnotigen" name="detnotigen" <?php if($notigeneral) {echo 'checked';} ?>></input>
 			</div>
 			<input type="hidden" name="nofiupdate">
 			<button class="button" id="updatenotibtn">

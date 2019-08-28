@@ -1,7 +1,7 @@
 <?php
+	session_start();
 	include 'Design/SectorConstants/header.php';
 	
-	session_start();
 	// Unset all of the session variables
 	$_SESSION = array();
 	session_destroy();

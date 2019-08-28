@@ -4,7 +4,12 @@
 	// Clean Input
 	function cleanInput($in)
 	{
-		return trim($in);
+		return filter_var(trim($in), FILTER_SANITIZE_STRING);
+	}
+	
+	function cleanEmail($em)
+	{
+		return filter_var(trim($em), FILTER_SANITIZE_EMAIL); 
 	}
 	
 	// Email
@@ -43,14 +48,18 @@
 	}
 	
 	// Checkboxes
-	function checkCheckbox($cb)
+	function checkCheckbox($cb, $errmsg)
 	{
 		global $error;
-		if (!isset($_POST[$cb]) && $error == '')
+		if (!isset($_POST[$cb]))
 		{
-			$error = 'You must accept the Privacy Policy and Terms and Conditions to make an account.';
+			if ($error == '')
+			{
+				$error = $errmsg;
+			}
+			return false;
 		}
-		return $cb;
+		return true;
 	}
 	
 	
@@ -59,11 +68,11 @@
 	// Sign Up
 	function checkSignUp($em, $p1, $p2, $cb)
 	{
-		$em = cleanInput($em);
+		$em = cleanEmail($em);
 		$p1 = cleanInput($p1);
 		$p2 = cleanInput($p2);
 		
-		if (!checkEmail($em) || !checkPass($p1) || !checkSamePass($p1, $p2) || !checkCheckbox($cb))
+		if (!checkEmail($em) || !checkPass($p1) || !checkSamePass($p1, $p2) || !checkCheckbox($cb, 'You must accept the Privacy Policy and Terms and Conditions to make an account.'))
 		{
 			return false;
 		}
@@ -73,7 +82,7 @@
 	// Log In
 	function checkLogIn($em, $p1)
 	{
-		$em = cleanInput($em);
+		$em = cleanEmail($em);
 		$p1 = cleanInput($p1);
 		
 		if (!checkEmail($em) || !checkPass($p1))
@@ -84,20 +93,45 @@
 	}
 	
 	// Update
-	function checkUpdate($em, $p1)
+	function checkUpdate($em, $p1, $p2)
 	{
-		$em = cleanInput($em);
+		$em = cleanEmail($em);
 		$p1 = cleanInput($p1);
 		
-		if (($em != "" && !checkEmail($em)) || ($p1 != "" && !checkPass($p1)))
+		if (($em != "" && !checkEmail($em)) || (($p1 != "" || $p2 != "") && (!checkPass($p1) || !checkSamePass($p1, $p2))))
 		{
 			return false;
 		}
-		else if ($em == "" && $p1 == "")
+		else if ($em == "" && $p1 == "" && $p2 == "")
 		{
 			return false;
 		}
 		return true;
+	}
+	
+	// Delete
+	function checkDelete($em, $p1, $cb)
+	{
+		$em = cleanEmail($em);
+		$p1 = cleanInput($p1);
+		
+		if (checkLogIn($em, $p1))
+		{
+			return checkCheckbox($cb, 'You must accept the terms to delete your account.');
+		}
+		return false;
+	}
+	
+	// Reset
+	function checkReset($em)
+	{
+		$em = cleanEmail($em);
+		
+		if (checkEmail($em))
+		{
+			return true;
+		}
+		return false;
 	}
 	
 ?>

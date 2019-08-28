@@ -33,8 +33,9 @@
 	
 	<!-- PHP -->
 	<?php
-		include 'Functions/PHP/db_functions.php';
 		include 'Functions/PHP/validation_functions.php';
+		include 'Functions/PHP/email_functions.php';
+		include 'Functions/PHP/db_functions.php';
 		include 'Functions/PHP/on_run_functions.php';
 	?>
 	

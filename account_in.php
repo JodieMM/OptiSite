@@ -18,7 +18,7 @@
 			<h1> Log In </h1>
 			<p> Login to your existing account to update your details or download new software. </p>
 			<div class="inputline fourty">
-				<input type="textbox" id="loginemail" name="loginemail" placeholder="Email" <?php if (isset($_POST['loginemail'])) {echo 'value = '.trim($_POST['loginemail']);}?>>
+				<input type="textbox" id="loginemail" name="loginemail" placeholder="Email" <?php if (isset($_POST['loginemail'])) {echo 'value = '.cleanEmail($_POST['loginemail']);}?>>
 				<input type="password" id="loginpassword" name="loginpassword" placeholder="Password">
 			</div>
 			<p class="error" id="empasserror"<?php if (isset($_POST['loginemail']) && $error != '') {echo 'style="display:block;"';}?>>
@@ -27,6 +27,18 @@
 			<button class="button lowbtn" id="loginbtn">
 				Log In
 			</button>
+		</form>
+		
+		<div class="break"></div>
+		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validateReset()" method="post">
+			<h1> Forgotten your password? </h1>
+			<div class="inputline fourty">
+				<input type="textbox" id="resetemail" name="resetemail" placeholder="Email" <?php if (isset($_POST['resetemail'])) {echo 'value = '.cleanEmail($_POST['resetemail']);}?>>
+			</div>
+			<p class="error" id="reseterror"<?php if (isset($_POST['resetemail']) && $error != '') {echo 'style="display:block;"';}?>>
+				<?php if (isset($_POST['resetemail']) && $error != '') {echo $error;}?>
+			</p>
+			<button class="button lowbtn" id="loginbtn">Reset Password</button>
 		</form>
 		</div>	
 	</section>
