@@ -134,4 +134,16 @@
 		return false;
 	}
 	
+	function checkResetPass($p1, $p2)
+	{
+		$p1 = cleanInput($p1);
+		$p2 = cleanInput($p2);
+		
+		if (checkPass($p1) && checkSamePass($p1, $p2))
+		{
+			return true;
+		}
+		return false;
+	}
+	
 ?>

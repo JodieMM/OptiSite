@@ -1,5 +1,5 @@
 <?php
-	logout();
+	logoutSession();
 	include 'Design/SectorConstants/header.php';
 ?>
 <body>	

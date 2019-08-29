@@ -26,12 +26,18 @@
 		{
 			if (checkUpdate($_POST['detemail'], $_POST['detpass'], $_POST['detpassconfirm']))
 			{
-				update($_POST['detemail'], $_POST['detpass']);
+				if (confirmLoggedIn($_SESSION['email'])) // TODO Add Cookie
+				{
+					update($_POST['detemail'], $_POST['detpass']);
+				}
 			}
 		}
 		else if (isset($_POST['nofiupdate']))
 		{
-			updateNotifications(isset($_POST['detnotinew']), isset($_POST['detnotigen']));
+			if (confirmLoggedIn($_SESSION['email'])) // TODO Add Cookie
+			{
+				updateNotifications(isset($_POST['detnotinew']), isset($_POST['detnotigen']));
+			}
 		}
 		
 		// Delete Account
@@ -39,7 +45,10 @@
 		{
 			if (checkDelete($_POST['deleteemail'], $_POST['deletepass'], 'delcheckbox'))
 			{
-				deleteAccount($_POST['deleteemail'], $_POST['deletepass']);
+				if (confirmLoggedIn($_SESSION['email'])) // TODO Add Cookie
+				{
+					deleteAccount($_POST['deleteemail'], $_POST['deletepass']);
+				}
 			}
 		}
 		
@@ -49,6 +58,13 @@
 			if (checkReset($_POST['resetemail']))
 			{
 				resetPassword($_POST['resetemail']);
+			}
+		}
+		else if (isset($_POST['resetpass']))
+		{
+			if (checkResetPass($_POST['resetpass'], $_POST['resetpassconfirm']))
+			{
+				emailVerificationPassReset($_GET['email'], $_GET['vericode'], $_POST['resetpass']);
 			}
 		}
 	}

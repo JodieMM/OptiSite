@@ -2,7 +2,7 @@
 	/* LOGGED IN FUNCTIONS */
 	
 	// Login
-	function login($email)
+	function loginSession($email)
 	{
 		session_start();
 		$_SESSION["loggedin"] = true;
@@ -10,10 +10,18 @@
 	}
 	
 	// Log Out
-	function logout()
+	function logoutSession()
 	{
 		session_start();
 		$_SESSION = array();
 		session_destroy();
 	}	
+	
+	// Confirm Logged In
+	function confirmLoggedIn($email)
+	{
+		global $error;
+		global $link;
+		$email = cleanEmail($email);
+	}
 ?>

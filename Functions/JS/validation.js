@@ -222,6 +222,23 @@ function validateReset(){
 	return true;
 }
 
+function validateResetPass(){
+	showEl(resetpasserror);
+	if (!validatePassword(resetpass)){
+		glow(resetpass, '#ff4d4d');
+		glow(resetpassconfirm, '#ff4d4d');
+		resetpasserror.html("Your password must be at least 6 characters.");
+		return false;
+	}
+	else if (!validatePasswordMatch(resetpass, resetpassconfirm)){
+		glow(resetpassconfirm, '#ff4d4d');
+		resetpasserror.html("Passwords must match.");
+		return false;
+	}
+	hideEl(resetpasserror);
+	return true;
+}
+
 
 
 

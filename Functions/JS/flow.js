@@ -23,6 +23,10 @@ var deletecheckbox = $('#delcheckbox');
 var resetemail = $('#resetemail');
 var reseterror = $('#reseterror');
 
+var resetpass = $('#resetpass');
+var resetpassconfirm = $('#resetpassconfirm');
+var resetpasserror = $('#resetpasserror');
+
 var burgerbar = $('#burgerbar');
 var burger = $('.burger');
 var headerul = $('#headerul');
@@ -45,5 +49,8 @@ deleteemail.click(function(){ stopGlow(deleteemail)});
 deletepass.click(function(){ stopGlow(deletepass)});
 
 resetemail.click(function(){ stopGlow(resetemail)});
+
+resetpass.click(function(){ stopGlow(resetpass)});
+resetpassconfirm.click(function(){ stopGlow(resetpassconfirm)});
 
 burgerbar.click(function(){ burgerBarToggle(burgerbar, burger, headerul);});

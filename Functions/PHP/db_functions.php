@@ -132,7 +132,7 @@
 					{
                         if(password_verify($pass, $hashed_password))
 						{
-							login(cleanEmail($email));                          
+							loginSession(cleanEmail($email));                          
                             header("location: account_settings.php");
                         } 
 						else
@@ -367,9 +367,10 @@
 		}
 	}
 	
+	
 	/* LICENSE FUNCTIONS */
 	
-	// Generate Optimator LICENSE
+	// Generate Optimator License
 	function generateOptimator()
 	{
 		global $link;

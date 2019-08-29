@@ -4,33 +4,27 @@
 	
 	if (!isset($_GET['vericode']) || !isset($_GET['email']))
 	{
-		// Unverified get, send to home page
+		// Unverified GET, send to home page
 		header("location: index.php");
 	}	
-	else if (isset($_POST['resetpass']))
-	{
-		$email = cleanEmail($_GET['email']);
-		$p1 = cleanInput($_POST['resetpass']);
-		$p2 = cleanInput($_POST['resetpassconfirm']);
-		$vericode = cleanInput($_GET['vericode']);
-		
-		if (checkEmail($email) && checkPass($pass) && checkSamePass($p1, $p2))
-		{
-			emailVerificationPassReset($email, $vericode, $p1);
-		}
-	}
 ?>
 <body>	
 	<section class="content">
 		<img class="big" src="Design/Images/coverbg2.png" alt="Lily Welcomes You">
 		
 		<div class="full middle">
-			<h1> Account Verified </h1>
-			<p> Your email has been verified! You can now access all of the features on the Opti site and access downloads by logging in with this email. </p>
-			<form method="get" action="account_in"><button class="button">
-				Login Now!
-			</button></form></p>
-			<!-- INCLUDE ERROR -->
+		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?email=" . cleanEmail($_GET['email']) . "&vericode=" . cleanInput($_GET['vericode']) ?>" onsubmit="return validateResetPass()" method="post">
+			<h1> Password Reset </h1>
+			<p> Please enter a new password for your email account <?php echo cleanEmail($_GET['email'])?>.</p>
+			<div class="inputline">
+				<input type="password" id="resetpass" name="resetpass" placeholder="New Password">
+				<input type="password" id="resetpassconfirm" name="resetpassconfirm" placeholder="Confirm New Password">
+			</div>
+			<p class="error" id="resetpasserror" <?php if (isset($_POST['resetpass']) && $error != '') {echo 'style="display:block;"';}?>>
+				<?php if (isset($_POST['resetpass']) && $error != '') {echo $error;}?>
+			</p>
+			<button class="button" id="resetnewpassbtn">Reset Password</button>
+		</form>
 		</div>
 	</section>
 	
