@@ -26,7 +26,7 @@
 		{
 			if (checkUpdate($_POST['detemail'], $_POST['detpass'], $_POST['detpassconfirm']))
 			{
-				if (confirmLoggedIn($_SESSION['email'])) // TODO Add Cookie
+				if (confirmLoggedIn($_SESSION['email']))
 				{
 					update($_POST['detemail'], $_POST['detpass']);
 				}
@@ -34,7 +34,7 @@
 		}
 		else if (isset($_POST['nofiupdate']))
 		{
-			if (confirmLoggedIn($_SESSION['email'])) // TODO Add Cookie
+			if (confirmLoggedIn($_SESSION['email']))
 			{
 				updateNotifications(isset($_POST['detnotinew']), isset($_POST['detnotigen']));
 			}
@@ -45,7 +45,7 @@
 		{
 			if (checkDelete($_POST['deleteemail'], $_POST['deletepass'], 'delcheckbox'))
 			{
-				if (confirmLoggedIn($_SESSION['email'])) // TODO Add Cookie
+				if (confirmLoggedIn($_SESSION['email']))
 				{
 					deleteAccount($_POST['deleteemail'], $_POST['deletepass']);
 				}
