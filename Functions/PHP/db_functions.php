@@ -132,9 +132,7 @@
 					{
                         if(password_verify($pass, $hashed_password))
 						{
-							session_start();
-                            $_SESSION["loggedin"] = true;
-                            $_SESSION["email"] = $email;                            
+							login(cleanEmail($email));                          
                             header("location: account_settings.php");
                         } 
 						else
@@ -311,32 +309,61 @@
 		$email = cleanEmail($email);
 		if (!checkEmailUnused($email))
 		{
-			$sql = "INSERT INTO verification_codes (email, vericode, use) VALUES (?, ?, 'P')";
-			 
-			if ($stmt = mysqli_prepare($link, $sql))
-			{
-				mysqli_stmt_bind_param($stmt, "ss", $email, $vericode);
-				$vericode = bin2hex(random_bytes(50));
-
-				if (mysqli_stmt_execute($stmt))
+			// Check Email Confirmed
+			$sql0 = "SELECT email, confirmed FROM accounts WHERE email = ? AND confirmed = 1";
+			if ($stmt0 = mysqli_prepare($link, $sql0))
+			{	
+				mysqli_stmt_bind_param($stmt0, "s", $email);
+				if (mysqli_stmt_execute($stmt0))
 				{
-					// Send email
-					include 'Design/Emails/reset_pass_email.php';
-					if (!sendEmail($email, 'Reset Your Password', $reset_pass_email_msg))
+					mysqli_stmt_store_result($stmt0);
+					if(mysqli_stmt_num_rows($stmt0) >= 1)
 					{
-						$error = 'An error occurred. Please try again later.';
+						$sql = "INSERT INTO verification_codes (email, vericode, use) VALUES (?, ?, 'P')";
+						 
+						if ($stmt = mysqli_prepare($link, $sql))
+						{
+							mysqli_stmt_bind_param($stmt, "ss", $email, $vericode);
+							$vericode = bin2hex(random_bytes(50));
+
+							if (mysqli_stmt_execute($stmt))
+							{
+								// Send email
+								include 'Design/Emails/reset_pass_email.php';
+								if (!sendEmail($email, 'Reset Your Password', $reset_pass_email_msg))
+								{
+									$error = 'An error occurred. Please try again later.';
+								}
+							} 
+							else
+							{
+								$error = 'An error occurred. Please try again later.';
+							}
+							mysqli_stmt_close($stmt);
+						}
+						else
+						{
+							$error = 'An error occurred. Please try again later.';
+						}
 					}
-				} 
+					else
+					{
+						$error = "This email is not currently verified with Opti.";
+					}
+				}
 				else
 				{
 					$error = 'An error occurred. Please try again later.';
 				}
-				mysqli_stmt_close($stmt);
+			}
+			else
+			{
+				$error = 'An error occurred. Please try again later.';
 			}
 		}
 		else
 		{
-			$error = "This email is not currently registered with Opti";
+			$error = "This email is not currently registered with Opti.";
 		}
 	}
 	

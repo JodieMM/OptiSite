@@ -1,10 +1,6 @@
 <?php
-	session_start();
+	logout();
 	include 'Design/SectorConstants/header.php';
-	
-	// Unset all of the session variables
-	$_SESSION = array();
-	session_destroy();
 ?>
 <body>	
 	<section class="content">
