@@ -219,7 +219,7 @@
 		}
 	}
 	
-	function updateNotifications($newSoft, $general)
+	function updateNotifications($newSoft, $general, $email)
 	{
 		global $link;
 		
@@ -228,7 +228,7 @@
         if($stmt = mysqli_prepare($link, $sql))
 		{
             mysqli_stmt_bind_param($stmt, "iis", $newSoft, $general, $email);
-			$email = cleanEmail($_SESSION["email"]);
+			$email = cleanEmail($email);
 			$newSoft = intval($newSoft);
 			$general = intval($general);
             

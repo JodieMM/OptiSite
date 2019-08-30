@@ -34,9 +34,13 @@
 		}
 		else if (isset($_POST['nofiupdate']))
 		{
-			if (confirmLoggedIn($_SESSION['email']))
+			if (isset($_GET['email']))
 			{
-				updateNotifications(isset($_POST['detnotinew']), isset($_POST['detnotigen']));
+				updateNotifications(isset($_POST['detnotinew']), isset($_POST['detnotigen']), $_GET['email']);
+			}
+			else if (confirmLoggedIn($_SESSION['email']))
+			{
+				updateNotifications(isset($_POST['detnotinew']), isset($_POST['detnotigen']), $_SESSION['email']);
 			}
 		}
 		

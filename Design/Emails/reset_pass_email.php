@@ -1,23 +1,30 @@
 <?php
+	$headContent = file_get_contents('email_head.php');
+
 	$reset_pass_email_msg = "
-		<html>
-		<head>
-		<title>HTML email</title>
-		</head>
+	<html>"
+	. $headContent . "
 		<body>
-		<p>This email contains HTML Tags!</p>
-		<button href=site?email=" . $email . "&vericode=" . $vericode . "
-		<table>
-		<tr>
-		<th>Firstname</th>
-		<th>Lastname</th>
-		</tr>
-		<tr>
-		<td>John</td>
-		<td>Doe</td>
-		</tr>
-		</table>
-		</body>
+		<div class='header'>
+			<img src='../Images/coverbg3.png' alt='Waterfall'>
+		</div>
+		<div class='content'>
+			<h1> Reset your Password </h1>
+			<p> Please reset your password using the button below.</p>
+			<form target='_blank' action='https://opti.technology/account_pass_reset?email=" . $email . "?vericode=" . $vericode . "'>
+				<button class='button'> Reset Password </button>
+			</form>
+			<p> This link will expire in 10 days </p>
+			<p>If you did not ask to reset your password, you can ignore this email and nothing will happen. 
+			If you require assistance, please contact <a href='mailto:jodie@opti.technology'>jodie@opti.technology</a>.</p>
+			</br>
+			<p style='font-weight: bold'> Visit <a href='https://www.opti.technology/' target='_blank'>Opti</a></p>
+		</div>
+		<div class='footer'>
+			<p> You can change your notification settings
+			<a href='https://www.opti.technology/account_unsubscribe?email=". $email ."' target='_blank'>here</a>. </p>
+		</div>
+		</body>		
 		</html>	
 	";
 ?>

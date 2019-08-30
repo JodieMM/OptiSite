@@ -10,7 +10,7 @@
 	if($stmt = mysqli_prepare($link, $sql))
 	{
 		mysqli_stmt_bind_param($stmt, "s", $email);
-		$email = cleanInput($_SESSION["email"]);
+		$email = cleanEmail($_SESSION["email"]);
 		
 		// Attempt to execute the prepared statement
 		if(mysqli_stmt_execute($stmt))
@@ -68,24 +68,13 @@
 			</button>
 		</form>
 			
-		<div class="break"></div>
-		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-			<div class="inputline details">
-				<p>Receive Emails about New Software</p><input type="checkbox" id="detnotinew" name="detnotinew" <?php if($notinewsoft) {echo 'checked';} ?>></input>
-			</div>
-			<div class="inputline details">
-				<p>Receive General Update Emails</p><input type="checkbox" id="detnotigen" name="detnotigen" <?php if($notigeneral) {echo 'checked';} ?>></input>
-			</div>
-			<input type="hidden" name="nofiupdate">
-			<button class="button" id="updatenotibtn">
-				Update Notifications
-			</button>
+			<div class="break"></div>
+			<?php include 'Design/SectorConstants/notification_update.php'; ?>
 			
 			<div class="break"></div>
 			<h1> Licenses </h1>
 			<p> You don't currently have any licenses. Register for a Beta or purchase a product to receive a license. </p>
 			<p> If you believe there is an error in your licenses, please contact jodie@opti.technology for assistance. </p>
-		</form>
 		
 			<div class="break"></div><div class="break"></div>
 			<h1> Delete Account </h1>
