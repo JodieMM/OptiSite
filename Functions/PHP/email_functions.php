@@ -27,7 +27,7 @@
 		// Try Verifying New Account
 		if (!checkEmailUnused($email))
 		{
-			$sql = "SELECT email, vericode FROM verification_codes WHERE email = ? AND vericode = ? AND use = 'R'";
+			$sql = "SELECT email, vericode FROM verification_codes WHERE email = ? AND vericode = ? AND use_code = 'R'";
 			if ($stmt = mysqli_prepare($link, $sql))
 			{
 				mysqli_stmt_bind_param($stmt, "ss", $email, $vericode);
@@ -69,7 +69,7 @@
 		// Try Verifying Updated Email
 		else
 		{
-			$sql = "SELECT email, vericode, replacement FROM verification_codes WHERE replacement = ? AND vericode = ? AND use = 'U'";
+			$sql = "SELECT email, vericode, replacement FROM verification_codes WHERE replacement = ? AND vericode = ? AND use_code = 'U'";
 			if ($stmt = mysqli_prepare($link, $sql))
 			{
 				mysqli_stmt_bind_param($stmt, "ss", $replacement, $vericode);
@@ -112,7 +112,7 @@
 	
 	function emailVerificationPassReset($email, $vericode, $pass)
 	{
-		$sql = "SELECT email, vericode FROM verification_codes WHERE email = ? AND vericode = ? AND use = 'P'";
+		$sql = "SELECT email, vericode FROM verification_codes WHERE email = ? AND vericode = ? AND use_code = 'P'";
 		if ($stmt = mysqli_prepare($link, $sql))
 		{
 			mysqli_stmt_bind_param($stmt, "ss", $email, $vericode);
@@ -132,7 +132,7 @@
 						if (mysqli_stmt_execute($stmt2))
 						{
 							// Clean DB
-							$sql3 = "DELETE FROM verification_codes WHERE email = ? AND use = 'P'";
+							$sql3 = "DELETE FROM verification_codes WHERE email = ? AND use_code = 'P'";
 							if ($stmt3 = mysqli_prepare($link, $sql3))
 							{
 								mysqli_stmt_bind_param($stmt3, "s", $email);

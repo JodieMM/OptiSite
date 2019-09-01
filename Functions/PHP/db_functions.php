@@ -2,8 +2,8 @@
 	/* GENERAL FUNCTIONS */
 	
 	define('DB_SERVER', 'localhost');
-	define('DB_USER', 'root');
-	define('DB_PASS', '');
+	define('DB_USER', 'system');
+	define('DB_PASS', 'hfktcaYh6SWENae8EJku');
 	define('DB_NAME', 'opti_db');
 	
 	$link = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
@@ -73,7 +73,7 @@
 				if (mysqli_stmt_execute($stmt))
 				{
 					// Add verification code to DB
-					$sql2 = "INSERT INTO verification_codes (email, vericode, use) VALUES (?, ?, 'R')";
+					$sql2 = "INSERT INTO verification_codes (email, vericode, use_code) VALUES (?, ?, 'R')";
 			 
 					if ($stmt2 = mysqli_prepare($link, $sql2))
 					{
@@ -163,7 +163,7 @@
 		
 		if ($email != "" && checkEmailUnused($email))
 		{
-			$sql = "INSERT INTO verification_codes (email, vericode, replacement, use) VALUES (?, ?, ?, 'U')";
+			$sql = "INSERT INTO verification_codes (email, vericode, replacement, use_code) VALUES (?, ?, ?, 'U')";
 			 
 			if ($stmt = mysqli_prepare($link, $sql))
 			{
@@ -319,7 +319,7 @@
 					mysqli_stmt_store_result($stmt0);
 					if(mysqli_stmt_num_rows($stmt0) >= 1)
 					{
-						$sql = "INSERT INTO verification_codes (email, vericode, use) VALUES (?, ?, 'P')";
+						$sql = "INSERT INTO verification_codes (email, vericode, use_code) VALUES (?, ?, 'P')";
 						 
 						if ($stmt = mysqli_prepare($link, $sql))
 						{
