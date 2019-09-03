@@ -37,7 +37,7 @@
 <body>	
 	<section class="content">
 		<div class="head">
-			<img src="Design/Images/coverbg2.png" alt="TBD">
+			<img src="Design/Images/settings_bg.png" alt="Orange Cog">
 			<div class="headtext">
 				<h1> Unsubscribe </h1>
 				<div class="separater"></div>

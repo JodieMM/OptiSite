@@ -10,7 +10,14 @@
 ?>
 <body>	
 	<section class="content">
-		<img class="big" src="Design/Images/coverbg2.png" alt="Lily Welcomes You">
+		<div class="head">
+			<img src="Design/Images/account_bg.png" alt="Green Padlock">
+			<div class="headtext">
+				<h1> Account Signed Up </h1>
+				<div class="separater"></div>
+				<p> Successful </p>
+			</div>
+		</div>
 		
 		<div class="full middle">
 			<h1> Account Verified </h1>

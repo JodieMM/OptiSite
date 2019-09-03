@@ -18,10 +18,12 @@
 			$email = cleanEmail($email);
 			if(mysqli_stmt_execute($stmt0))
 			{
-				$sql = "INSERT INTO logged_in (email, key) VALUES (?, ?)";
+				$sql = "INSERT INTO logged_in (email, verikey) VALUES (?, ?)";
         
 				if($stmt = mysqli_prepare($link, $sql))
 				{
+					session_start();
+				$_SESSION["working"] = true;
 					mysqli_stmt_bind_param($stmt, "ss", $email, $key);
 					$email = cleanEmail($email);
 					
@@ -57,7 +59,7 @@
 		global $error;
 		global $link;
 
-		$sql = "SELECT email, key FROM logged_in WHERE email = ? AND key = ?";
+		$sql = "SELECT email, verikey FROM logged_in WHERE email = ? AND verikey = ?";
 		if (isset($_COOKIE['validuser']) && $stmt = mysqli_prepare($link, $sql))
 		{
             mysqli_stmt_bind_param($stmt, "ss", $email, $key);

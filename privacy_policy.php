@@ -4,7 +4,7 @@
 <body>	
 	<section class="content">
 		<div class="head">
-			<img src="Design/Images/coverbg2.png" alt="Handshake">
+			<img src="Design/Images/secure_bg.png" alt="Blue Shield">
 			<div class="headtext">
 				<h1> Privacy Policy </h1>
 				<div class="separater"></div>

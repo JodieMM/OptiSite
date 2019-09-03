@@ -4,7 +4,7 @@
 <body>	
 	<section class="content">
 		<div class="head">
-			<img src="Design/Images/coverbg2.png" alt="Opti Team">
+			<img src="Design/Images/info_bg.png" alt="Blue Question Mark">
 			<div class="headtext">
 				<h1> Contact Us </h1>
 				<div class="separater"></div>

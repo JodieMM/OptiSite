@@ -4,7 +4,7 @@
 <body>	
 	<section class="content">
 		<div class="head">
-			<img src="Design/Images/coverbg2.png" alt="Jodie">
+			<img src="Design/Images/info_bg.png" alt="Blue Question Mark">
 			<div class="headtext">
 				<h1> About Me </h1>
 				<div class="separater"></div>

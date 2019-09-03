@@ -5,7 +5,7 @@
 <body>	
 	<section class="content">
 		<div class="head">
-			<img src="Design/Images/coverbg2.png" alt="TBD">
+			<img src="Design/Images/account_bg.png" alt="Green Padlock">
 			<div class="headtext">
 				<h1> Account Deletion </h1>
 				<div class="separater"></div>
