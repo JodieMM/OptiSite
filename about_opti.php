@@ -18,7 +18,7 @@
 			easier. We also have a strong focus on customisability, combining to create the 
 			Opti motto- 'Optimum Options'. In addition, Opti strives to make our content accessible
 			to as many people as possible with reasonable, one-off prices in a world of pricey subscriptions.</p>
-			<img src="Design/Images/coverbg.png" alt="Lily and friends smiling">
+			<img src="Design/Images/opti_logo_img.png" alt="Opti Logo">
 		</div>
 	</section>
 	
