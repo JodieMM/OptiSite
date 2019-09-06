@@ -44,7 +44,7 @@
 </head>
 <body>
 	<div class="header">
-		<a href="index"><img src="Design/Images/logoPNb.png" alt="Optimator Logo"></a>
+		<a href="index"><img src="Design/Images/header_logo.png" alt="Optimator Logo"></a>
 		<div class="burgerbar" id="burgerbar">
 			<div class="burger" id="burgertop"></div>
 			<div class="burger" id="burgermid"></div>
