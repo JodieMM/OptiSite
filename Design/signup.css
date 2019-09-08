@@ -20,9 +20,9 @@
 }
 
 .inputline input{
-	width: 50%;
+	width: 85%;
 	margin: 0.5em;
-	padding-left: 0.5em;
+	padding-left: 0.25em;
 	border: 1px solid #adadad;
 	border-radius: 3px;
 	font: inherit;
@@ -42,7 +42,7 @@
 }
 
 .inputline button{
-	width: 15em;
+	width: 10em;
 	height: 3em;
 	margin: auto;
 	border: none;
@@ -102,6 +102,18 @@ p.error{
 	box-shadow: none;
 }
 
+
+/* For Larger Mobiles */
+@media only screen and (min-width: 600px){
+	.inputline input{
+		width: 50%;
+		padding-left: 0.5em;
+	}
+	
+	.inputline button{
+		width: 15em;
+	}
+}
 
 /* For Tablets */
 @media only screen and (min-width: 768px){

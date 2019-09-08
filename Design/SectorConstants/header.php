@@ -17,10 +17,12 @@
 	<link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'/>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 	
-	<!-- Images -->
+	<!-- Mobile Icon -->
 	<link rel="icon" href="Design/Images/logo.png"/>
 	<link rel="apple-touch-icon" href="Design/Images/logo.png"/>
 	
+	<!-- Viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
 	
 	<!-- -- Code Components -- -->
 	

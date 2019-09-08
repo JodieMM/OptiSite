@@ -4,11 +4,17 @@
 img.big{
 	display: block;
 	width: 100%;
-	height: 15em;
+	height: 10em;
 	border-bottom: 2px solid #adadad;
 }
 
 @media only screen and (min-width: 860px){
+	img.big{
+		height: 15em;
+	}
+}
+
+@media only screen and (min-width: 960px){
 	img.big{
 		height: 20em;
 	}

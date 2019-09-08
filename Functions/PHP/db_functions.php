@@ -6,7 +6,7 @@
 	// define('DB_USER', 'system');
 	// define('DB_PASS', 'hfktcaYh6SWENae8EJku');
 	// define('DB_NAME', 'opti_db');
-	//$link = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+	// $link = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 	
 	// Server
 	$link = mysqli_connect($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['RDS_PASSWORD'], $_SERVER['RDS_DB_NAME'], $_SERVER['RDS_PORT']);

@@ -15,19 +15,21 @@
 			<h1> Optimator </h1>
 			<p> As the only project currently in progress, Optimator dominates our predicted timeline.</p>
 		</div>
-		<div class="timeline" month="August">
+		<div class="timeline" month="September">
 			<span class="month-pointer"></span>
-			<p>August is a big month for Optimator with the offical site
+			<p>September is a big month for Optimator with the offical site
 			going live! This means accounts will be able to be made for the first time
 			and this will serve as a platform to access the Beta of Optimator when it is ready.</p>
 		</div>
-		<div class="timeline" month="September">
+		<div class="timeline" month="October">
 			<span class="month-pointer"></span>
 			<p>The long-awaited Beta! This will be the first time Optimator is released publicly
-			for you to play around with.</p>
-			<p>It is still uncertain whether the file versions made with the Beta will be included in the 
-			version changer. If they're not, you may be unable to use files created in the Beta in
-			future versions of Optimator.</p>
+			for you to play around with. The beta will be free for everyone as the software will still lack certain features and
+			will have a lower visual quality, but it will allow you to test out the base functionality and get an idea of 
+			how Optimator works.</p>
+			<p>We're very excited here at Opti for this Beta release, but we also think it's important to do it right- this means
+			it is possible the Beta will be pushed back another month. Subscribe to notifications to be informed 
+			as soon as it's ready!</p>
 		</div>
 		<div class="timeline" month="">
 			<br/><br/>
