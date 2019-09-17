@@ -11,14 +11,14 @@
 		global $error;
 		
 		// Clean any old sessions
-		$sql0 = "DELETE FROM logged_in WHERE email = ?";
+		$sql0 = "DELETE FROM opti_db.logged_in WHERE email = ?";
 		if($stmt0 = mysqli_prepare($link, $sql0))
 		{
 			mysqli_stmt_bind_param($stmt0, "s", $email);
 			$email = cleanEmail($email);
 			if(mysqli_stmt_execute($stmt0))
 			{
-				$sql = "INSERT INTO logged_in (email, verikey) VALUES (?, ?)";
+				$sql = "INSERT INTO opti_db.logged_in (email, verikey) VALUES (?, ?)";
         
 				if($stmt = mysqli_prepare($link, $sql))
 				{

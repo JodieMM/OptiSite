@@ -1,17 +1,17 @@
 <?php
-	$headContent = file_get_contents('email_head.php');
+	include 'email_head.php';
 	
 	$registration_email_msg = "
 	<html>"
-	. $headContent . "
+	. $headerContent . "
 		<body>
 		<div class='header'>
-			<img src='../Images/coverbg3.png' alt='Waterfall'>
+			<img src='https://www.opti.technology/Design/Images/coverbg3.png' alt='Waterfall'>
 		</div>
 		<div class='content'>
 			<h1> Please Confirm your Email </h1>
 			<p> Please confirm your email using the button below.</p>
-			<form target='_blank' action='https://opti.technology/account_signed_up?email=" . $email . "?vericode=" . $vericode . "'>
+			<form target='_blank' action='https://opti.technology/account_signed_up.php?email=" . $email . "?vericode=" . $vericode . "'>
 				<button class='button'> Verify Account </button>
 			</form>
 			<p> This link will expire in 10 days </p>
@@ -22,7 +22,7 @@
 		</div>
 		<div class='footer'>
 			<p> You can change your notification settings once your account has been registered
-			<a href='https://www.opti.technology/account_unsubscribe?email=". $email ."' target='_blank'>here</a>. </p>
+			<a href='https://www.opti.technology/account_unsubscribe.php?email=". $email ."' target='_blank'>here</a>. </p>
 		</div>
 		</body>		
 		</html>	

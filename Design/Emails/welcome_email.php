@@ -1,12 +1,12 @@
 <?php
-	$headContent = file_get_contents('email_head.php');
+	include 'email_head.php';
 
 	$welcome_email_msg = "
 	<html>"
-	. $headContent . "
+	. $headerContent . "
 		<body>
 		<div class='header'>
-			<img src='../Images/coverbg3.png' alt='Waterfall'>
+			<img src='https://www.opti.technology/Design/Images/coverbg3.png' alt='Waterfall'>
 		</div>
 		<div class='content'>
 			<h1> Welcome to Opti! </h1>
@@ -17,7 +17,7 @@
 		</div>
 		<div class='footer'>
 			<p> You can change your notification settings 
-			<a href='https://www.opti.technology/account_unsubscribe?email=". $email ."' target='_blank'>here</a>. </p>
+			<a href='https://www.opti.technology/account_unsubscribe.php?email=". $email ."' target='_blank'>here</a>. </p>
 		</div>
 		</body>
 	</html>	

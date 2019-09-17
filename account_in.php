@@ -38,7 +38,7 @@
 			<p class="error" id="reseterror"<?php if (isset($_POST['resetemail']) && $error != '') {echo 'style="display:block;"';}?>>
 				<?php if (isset($_POST['resetemail']) && $error != '') {echo $error;}?>
 			</p>
-			<button class="button lowbtn" id="loginbtn">Reset Password</button>
+			<button class="button lowbtn" id="resetbtn">Reset Password</button>
 		</form>
 		</div>	
 	</section>

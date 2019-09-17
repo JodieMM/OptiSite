@@ -1,22 +1,61 @@
 <?php
+	use PHPMailer\PHPMailer\PHPMailer;
+	use PHPMailer\PHPMailer\Exception;
 	
 	/* EMAIL FUNCTIONS */
 	
 	// Send Email
 	function sendEmail($to, $subject, $message)
 	{
+		// Local
+		//require 'C:\Users\jodie\vendor\autoload.php';
+		
+		// Server
+		if ((include 'vendor/autoload.php') != TRUE) {
+			echo 'An error occurred. Please try again later.';
+			return false;
+		}
+		
 		$from = 'jodie@opti.technology';
-		$headers = "MIME-Version: 1.0" . "\r\n";
-		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-		$headers .= 'From: '. $from . "\r\n";
-		$headers .= 'Reply-To: '. $from . "\r\n";
-		$headers .= 'X-Mailer: PHP/' . phpversion();
-        
-        if(mail($to, $subject, $message, $headers))
-		{
-            return true;
-        }
-		return false;
+		$fromName = 'Opti Jodie';
+		
+		$usernameSmtp = 'AKIATPFSF56B67H6HL4W';
+		$passwordSmtp = 'BJpYHEjpoScVK7G5I1ezvS87iUPL26IUoe5oePAVrm1A';
+		$host = 'email-smtp.us-west-2.amazonaws.com';
+		$port = 587;
+		
+		$mail = new PHPMailer(true);
+		echo 'Made it past mail creater';
+		try {
+			// Specify the SMTP settings.
+			$mail->isSMTP();
+			$mail->setFrom($from, $fromName);
+			$mail->Username   = $usernameSmtp;
+			$mail->Password   = $passwordSmtp;
+			$mail->Host       = $host;
+			$mail->Port       = $port;
+			$mail->SMTPAuth   = true;
+			$mail->SMTPSecure = 'tls';
+			$mail->addAddress($to);
+
+			// Specify the content of the message.
+			$mail->isHTML(true);
+			$mail->Subject    = $subject;
+			$mail->Body       = $message;
+			//$mail->AltBody    = $bodyText;
+			$mail->Send();
+			//echo "Email sent!" , PHP_EOL;
+		} catch (phpmailerException $e) {
+			//echo "An error occurred.";
+			echo "An error occurred {$e->errorMessage()}", PHP_EOL; //Catch errors from PHPMailer.
+			return false;
+		} catch (Exception $e) {
+			//echo "An error occurred."; 
+			echo "Email not sent. {$mail->ErrorInfo}", PHP_EOL; //Catch errors from Amazon SES.
+			return false;
+		}
+		echo 'try successful';
+		return true;
 	}	
 	
 	
@@ -27,7 +66,7 @@
 		// Try Verifying New Account
 		if (!checkEmailUnused($email))
 		{
-			$sql = "SELECT email, vericode FROM verification_codes WHERE email = ? AND vericode = ? AND use_code = 'R'";
+			$sql = "SELECT email, vericode FROM opti_db.verification_codes WHERE email = ? AND vericode = ? AND use_code = 'R'";
 			if ($stmt = mysqli_prepare($link, $sql))
 			{
 				mysqli_stmt_bind_param($stmt, "ss", $email, $vericode);
@@ -39,14 +78,14 @@
 					mysqli_stmt_store_result($stmt);
 					if(mysqli_stmt_num_rows($stmt) > 0)
 					{
-						$sql2 = "UPDATE accounts SET confirmed = 1 WHERE email = ?";
+						$sql2 = "UPDATE opti_db.accounts SET confirmed = 1 WHERE email = ?";
 						if ($stmt2 = mysqli_prepare($link, $sql2))
 						{
 							mysqli_stmt_bind_param($stmt2, "s", $email);
 							if (mysqli_stmt_execute($stmt2))
 							{
 								// Clean DB
-								$sql3 = "DELETE FROM verification_codes WHERE email = ?";
+								$sql3 = "DELETE FROM opti_db.verification_codes WHERE email = ?";
 								if ($stmt3 = mysqli_prepare($link, $sql3))
 								{
 									mysqli_stmt_bind_param($stmt3, "s", $email);
@@ -69,7 +108,7 @@
 		// Try Verifying Updated Email
 		else
 		{
-			$sql = "SELECT email, vericode, replacement FROM verification_codes WHERE replacement = ? AND vericode = ? AND use_code = 'U'";
+			$sql = "SELECT email, vericode, replacement FROM opti_db.verification_codes WHERE replacement = ? AND vericode = ? AND use_code = 'U'";
 			if ($stmt = mysqli_prepare($link, $sql))
 			{
 				mysqli_stmt_bind_param($stmt, "ss", $replacement, $vericode);
@@ -84,14 +123,14 @@
 						mysqli_stmt_bind_result($stmt, $currem, $vericode, $replacement);
 						$currem = cleanEmail($currem);
 						
-						$sql2 = "UPDATE accounts SET email = ? WHERE email = ?";
+						$sql2 = "UPDATE opti_db.accounts SET email = ? WHERE email = ?";
 						if ($stmt2 = mysqli_prepare($link, $sql2))
 						{
 							mysqli_stmt_bind_param($stmt2, "ss", $replacement, $currem);
 							if (mysqli_stmt_execute($stmt2))
 							{
 								// Clean DB
-								$sql3 = "DELETE FROM verification_codes WHERE email = ? OR email = ?";
+								$sql3 = "DELETE FROM opti_db.verification_codes WHERE email = ? OR email = ?";
 								if ($stmt3 = mysqli_prepare($link, $sql3))
 								{
 									mysqli_stmt_bind_param($stmt3, "ss", $email, $currem);
@@ -112,7 +151,7 @@
 	
 	function emailVerificationPassReset($email, $vericode, $pass)
 	{
-		$sql = "SELECT email, vericode FROM verification_codes WHERE email = ? AND vericode = ? AND use_code = 'P'";
+		$sql = "SELECT email, vericode FROM opti_db.verification_codes WHERE email = ? AND vericode = ? AND use_code = 'P'";
 		if ($stmt = mysqli_prepare($link, $sql))
 		{
 			mysqli_stmt_bind_param($stmt, "ss", $email, $vericode);
@@ -124,7 +163,7 @@
 				mysqli_stmt_store_result($stmt);
 				if(mysqli_stmt_num_rows($stmt) >= 1)
 				{
-					$sql2 = "UPDATE accounts SET pass = ? WHERE email = ?";
+					$sql2 = "UPDATE opti_db.accounts SET pass = ? WHERE email = ?";
 					if ($stmt2 = mysqli_prepare($link, $sql2))
 					{
 						mysqli_stmt_bind_param($stmt2, "ss", $pass, $email);
@@ -132,7 +171,7 @@
 						if (mysqli_stmt_execute($stmt2))
 						{
 							// Clean DB
-							$sql3 = "DELETE FROM verification_codes WHERE email = ? AND use_code = 'P'";
+							$sql3 = "DELETE FROM opti_db.verification_codes WHERE email = ? AND use_code = 'P'";
 							if ($stmt3 = mysqli_prepare($link, $sql3))
 							{
 								mysqli_stmt_bind_param($stmt3, "s", $email);

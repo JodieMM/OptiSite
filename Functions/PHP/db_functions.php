@@ -28,7 +28,7 @@
 		global $error;
 		
 		// Email Check
-        $sql = "SELECT email FROM accounts WHERE email = ?";
+        $sql = "SELECT email FROM opti_db.accounts WHERE email = ?";
         
         if($stmt = mysqli_prepare($link, $sql))
 		{
@@ -56,6 +56,10 @@
             }
 			mysqli_stmt_close($stmt);
         }
+		else
+		{
+			$error = 'An error occurred. Please try again later.'.mysqli_error($link);
+		}
 		return false;
 	}
 	
@@ -66,7 +70,7 @@
 		
 		if (checkEmailUnused($email))
 		{
-			$sql = "INSERT INTO accounts (email, pass) VALUES (?, ?)";
+			$sql = "INSERT INTO opti_db.accounts (email, pass) VALUES (?, ?)";
 			 
 			if ($stmt = mysqli_prepare($link, $sql))
 			{
@@ -77,7 +81,7 @@
 				if (mysqli_stmt_execute($stmt))
 				{
 					// Add verification code to DB
-					$sql2 = "INSERT INTO verification_codes (email, vericode, use_code) VALUES (?, ?, 'R')";
+					$sql2 = "INSERT INTO opti_db.verification_codes (email, vericode, use_code) VALUES (?, ?, 'R')";
 			 
 					if ($stmt2 = mysqli_prepare($link, $sql2))
 					{
@@ -88,7 +92,14 @@
 						{
 							// Send registration email
 							include 'Design/Emails/registration_email.php';
-							sendEmail($email, 'Opti Email Registration', $registration_email_msg);
+							if (sendEmail($email, 'Opti Email Registration', $registration_email_msg))
+							{
+								header("location: account_sign_up.php");
+							}
+							else
+							{
+								$error = 'Your confirmation email was unable to be sent. Please contact support.';
+							}
 						}
 						else
 						{
@@ -117,7 +128,7 @@
 		global $link;
 		global $error;
 		
-        $sql = "SELECT email, pass FROM accounts WHERE email = ? AND confirmed = 1";
+        $sql = "SELECT email, pass FROM opti_db.accounts WHERE email = ? AND confirmed = 1";
         
         if($stmt = mysqli_prepare($link, $sql))
 		{
@@ -167,7 +178,7 @@
 		
 		if ($email != "" && checkEmailUnused($email))
 		{
-			$sql = "INSERT INTO verification_codes (email, vericode, replacement, use_code) VALUES (?, ?, ?, 'U')";
+			$sql = "INSERT INTO opti_db.verification_codes (email, vericode, replacement, use_code) VALUES (?, ?, ?, 'U')";
 			 
 			if ($stmt = mysqli_prepare($link, $sql))
 			{
@@ -201,7 +212,7 @@
 		
 		if ($pass != "")
 		{
-			$sql2 = "UPDATE accounts SET pass = ? WHERE email = ?";
+			$sql2 = "UPDATE opti_db.accounts SET pass = ? WHERE email = ?";
         
 			if($stmt2 = mysqli_prepare($link, $sql2))
 			{
@@ -227,7 +238,7 @@
 	{
 		global $link;
 		
-        $sql = "UPDATE accounts SET newSoftwareEmails = ?, generalEmails = ? WHERE email = ?";
+        $sql = "UPDATE opti_db.accounts SET newSoftwareEmails = ?, generalEmails = ? WHERE email = ?";
         
         if($stmt = mysqli_prepare($link, $sql))
 		{
@@ -249,7 +260,7 @@
 		global $link;
 		global $error;
 		
-        $sql = "SELECT email, pass FROM accounts WHERE email = ?";
+        $sql = "SELECT email, pass FROM opti_db.accounts WHERE email = ?";
         
         if($stmt = mysqli_prepare($link, $sql))
 		{
@@ -268,7 +279,7 @@
 					{
                         if(password_verify($pass, $hashed_password) && cleanEmail($_SESSION["email"]) == $email)
 						{
-							$sql2 = "DELETE FROM accounts WHERE email = ?";
+							$sql2 = "DELETE FROM opti_db.accounts WHERE email = ?";
 							if($stmt2 = mysqli_prepare($link, $sql2))
 							{
 								mysqli_stmt_bind_param($stmt2, "s", $email);
@@ -314,7 +325,7 @@
 		if (!checkEmailUnused($email))
 		{
 			// Check Email Confirmed
-			$sql0 = "SELECT email, confirmed FROM accounts WHERE email = ? AND confirmed = 1";
+			$sql0 = "SELECT email, confirmed FROM opti_db.accounts WHERE email = ? AND confirmed = 1";
 			if ($stmt0 = mysqli_prepare($link, $sql0))
 			{	
 				mysqli_stmt_bind_param($stmt0, "s", $email);
@@ -323,7 +334,7 @@
 					mysqli_stmt_store_result($stmt0);
 					if(mysqli_stmt_num_rows($stmt0) >= 1)
 					{
-						$sql = "INSERT INTO verification_codes (email, vericode, use_code) VALUES (?, ?, 'P')";
+						$sql = "INSERT INTO opti_db.verification_codes (email, vericode, use_code) VALUES (?, ?, 'P')";
 						 
 						if ($stmt = mysqli_prepare($link, $sql))
 						{

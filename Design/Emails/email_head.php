@@ -1,33 +1,31 @@
+<?php
+$headerContent = "
 <head>
 	<title>Opti Email</title>
 	<link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'/>
 	<link href='https://fonts.googleapis.com/css?family=Montserrat&display=swap' rel='stylesheet'>
 	
-	<style>
-		body {
-		  text-align: center;
-		  font-family: 'Montserrat', 'Actor', 'Tahoma', sans-serif;
-		  font-size: 24px;
-		  color: black;
-		  margin: 0;
-		  background-color: white;
-		}
-		
-		div {
-			border-bottom: 2px solid #adadad;
-		}
-		
+	<style>			
 		h1{
-			font-size: 36px;
+			font-size: 24px;
 		}
 		  
 		.header img{
 			display: block;
+			max-height: 30em;
 			width: 100%;
-			height: 20%;
+			border-top: 2px solid #adadad;
+			border-bottom: 2px solid #adadad;
 		}
 		
 		.content{
+			text-align: center;
+			font-family: 'Montserrat', 'Actor', 'Tahoma', sans-serif;
+			font-size: 20px;
+			color: black;
+			margin: 0;
+			background-color: white;
+		  
 			height: 70%;
 			padding: 0em 2em;
 		}
@@ -35,22 +33,29 @@
 		.footer{
 			background-color: #9a61b2;
 			padding: 2em;
+			border-top: 2px solid #adadad;
+			border-bottom: 2px solid #adadad;
 		}
 		
 		.footer p{
+			font-family: 'Montserrat', 'Actor', 'Tahoma', sans-serif;
 			margin: 0;
+			border: none;
+			font-size: 20px;
+			color: black;
 		}
 		
 		.footer a{
 			color: white;
+			text-decoration: none;
 		}
 		
-		a{
+		.content a{
 			color: #d147a3;
 			text-decoration: none;
 		}
 		
-		a:active{
+		.content a:active{
 			color: #653b78;
 		}
 		
@@ -81,4 +86,5 @@
 			outline: none;
 		}
 	</style>
-</head>
+</head>";
+?>
