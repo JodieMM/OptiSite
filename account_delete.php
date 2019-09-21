@@ -23,7 +23,7 @@
 			
 			<p> To verify you are the correct user, please confirm your details. </p>
 			<div class="inputline fourty">
-				<input type="textbox" id="deleteemail" name="deleteemail" placeholder="Email" <?php if (isset($_POST['deleteemail'])) {echo 'value = '.cleanEmail($_POST['deleteemail']);}?>>
+				<input type="email" id="deleteemail" name="deleteemail" placeholder="Email" <?php if (isset($_POST['deleteemail'])) {echo 'value = '.cleanEmail($_POST['deleteemail']);}?>>
 				<input type="password" id="deletepass" name="deletepass" placeholder="Password">
 			</div>
 			<div class="inputline">

@@ -50,7 +50,7 @@
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validateUpdate()" method="post">
 			<h1> Account Settings </h1>
 			<div class="inputline details">
-				<p>Email</p><input type="textbox" id="detemail" name="detemail" <?php if (isset($_POST['detemail'])) {echo 'value = '.cleanEmail($_POST['detemail']);}?>></input>
+				<p>Email</p><input type="email" id="detemail" name="detemail" <?php if (isset($_POST['detemail'])) {echo 'value = '.cleanEmail($_POST['detemail']);}?>></input>
 			</div>
 			<div class="inputline details">
 				<p>Password</p><input type="password" id="detpass" name="detpass"></input>

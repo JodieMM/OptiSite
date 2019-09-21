@@ -3,7 +3,7 @@
 		<h1> Sign Up </h1>
 		<p> Create an Opti account to download software or register for updates. </p>
 		<div class="inputline">
-			<input type="textbox" id="email" name="email" placeholder="Email" <?php if (isset($_POST['email'])) {echo 'value = '.cleanEmail($_POST['email']);}?>>
+			<input type="email" id="email" name="email" placeholder="Email" <?php if (isset($_POST['email'])) {echo 'value = '.cleanEmail($_POST['email']);}?>>
 			<input type="password" id="password" name="password" placeholder="Password">
 			<input type="password" id="passwordconfirm" name="passwordconfirm" placeholder="Confirm Password">
 		</div>

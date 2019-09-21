@@ -366,6 +366,8 @@
 		$email = cleanEmail($email);
 		if (!checkEmailUnused($email))
 		{
+			$error = '';
+			
 			// Check Email Confirmed
 			$sql0 = "SELECT email, confirmed FROM opti_db.accounts WHERE email = ? AND confirmed = 1";
 			if ($stmt0 = mysqli_prepare($link, $sql0))
