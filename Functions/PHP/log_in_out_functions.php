@@ -5,7 +5,7 @@
 	function loginSession($email)
 	{
 		$cookieKey = uniqid(rand(0, 1000000));
-		$key = hash('sha512', $random_string);
+		$key = hash('sha512', $cookieKey);
 		
 		global $link;
 		global $error;
@@ -65,7 +65,7 @@
             mysqli_stmt_bind_param($stmt, "ss", $email, $key);
 			$email = cleanEmail($email);
 			$key = hash('sha512', cleanInput($_COOKIE['validuser']));
-            
+			
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt))
 			{
@@ -76,6 +76,7 @@
 				}
 			}
 		}
+		$error = "Please log in again before completing this action.";
 		return false;
 	}
 ?>
