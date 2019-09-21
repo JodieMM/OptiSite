@@ -171,7 +171,8 @@
 					if ($stmt2 = mysqli_prepare($link, $sql2))
 					{
 						mysqli_stmt_bind_param($stmt2, "ss", $pass, $email);
-						$pass = cleanInput($pass);
+						$pass = password_hash(cleanInput($pass), PASSWORD_DEFAULT);
+						
 						if (mysqli_stmt_execute($stmt2))
 						{
 							// Clean DB
