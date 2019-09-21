@@ -12,7 +12,7 @@ $headerContent = "
 		  
 		.header img{
 			display: block;
-			max-height: 30em;
+			max-height: 300px;
 			width: 100%;
 			border-top: 2px solid #adadad;
 			border-bottom: 2px solid #adadad;
@@ -25,13 +25,12 @@ $headerContent = "
 			color: black;
 			margin: 0;
 			background-color: white;
-		  
-			height: 70%;
 			padding: 0em 2em;
 		}
 		
 		.footer{
 			background-color: #9a61b2;
+			margin-top: 1.5em;
 			padding: 2em;
 			border-top: 2px solid #adadad;
 			border-bottom: 2px solid #adadad;
@@ -59,7 +58,7 @@ $headerContent = "
 			color: #653b78;
 		}
 		
-		button.button {
+		a.button {
 			display: block;
 			width: 15em;
 			margin: 1.5em auto;
@@ -76,13 +75,13 @@ $headerContent = "
 			transition: transform 0.3s;
 		}
 
-		button.button:hover{
+		a.button:hover{
 			background-color: #824c9a;
 			border-color: #653b78;
 			transform: scale(1.05, 1.05);
 		}
 
-		button:focus{
+		a.button:focus{
 			outline: none;
 		}
 	</style>

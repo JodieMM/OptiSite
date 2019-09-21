@@ -27,3 +27,10 @@ CREATE TABLE `verification_codes` (
   PRIMARY KEY (`email`),
   CONSTRAINT `emailReplacement` FOREIGN KEY (`email`) REFERENCES `accounts` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `blacklist` (
+  `email` varchar(50) NOT NULL,
+  `requested` tinyint(4) DEFAULT '0',
+  `created` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

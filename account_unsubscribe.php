@@ -10,7 +10,7 @@
 	// Get Notification Settings
 	global $link;
 	$notinewsoft = $notigeneral = false;
-	$sql = "SELECT newSoftwareEmails, generalEmails FROM accounts WHERE email = ?";
+	$sql = "SELECT newSoftwareEmails, generalEmails FROM opti_db.accounts WHERE email = ? AND confirmed = 1";
 	
 	if($stmt = mysqli_prepare($link, $sql))
 	{
@@ -29,6 +29,10 @@
 				$notinewsoft = boolval($notinewsoft);
 				$notigeneral = boolval($notigeneral);
 			} 
+			else
+			{
+				header("location: index");
+			}
 		} 
 		mysqli_stmt_close($stmt);
 	}

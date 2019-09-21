@@ -21,7 +21,7 @@
 	
 	
 	
-	/* CREATE ACCOUNT */
+	/* GENERAL FUNCTIONS */
 	function checkEmailUnused($email)
 	{
 		global $link;
@@ -63,12 +63,54 @@
 		return false;
 	}
 	
+	function checkEmailNotBlacklisted($email)
+	{
+		global $link;
+		global $error;
+		
+		// Email Check
+        $sql = "SELECT email FROM opti_db.blacklist WHERE email = ?";
+        
+        if($stmt = mysqli_prepare($link, $sql))
+		{
+            mysqli_stmt_bind_param($stmt, "s", $email);
+			$email = cleanEmail($email);
+            
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt))
+			{
+                mysqli_stmt_store_result($stmt);
+                
+                if(mysqli_stmt_num_rows($stmt) >= 1)
+				{
+                    $error = 'This email has been blacklisted. Please contact support if this is an error.';
+				}
+				else
+				{
+					mysqli_stmt_close($stmt);
+					return true;
+				}
+            } 
+			else
+			{
+                $error = 'An error occurred. Please try again later.';
+            }
+			mysqli_stmt_close($stmt);
+        }
+		else
+		{
+			$error = 'An error occurred. Please try again later.'.mysqli_error($link);
+		}
+		return false;
+	}
+	
+	/* CREATE ACCOUNT */
 	function createAccount($email, $pass)
 	{
 		global $link;
 		global $error;
 		
-		if (checkEmailUnused($email))
+		if (checkEmailUnused($email) && checkEmailNotBlacklisted($email))
 		{
 			$sql = "INSERT INTO opti_db.accounts (email, pass) VALUES (?, ?)";
 			 
@@ -176,7 +218,7 @@
 		global $link;
 		global $error;
 		
-		if ($email != "" && checkEmailUnused($email))
+		if ($email != "" && checkEmailUnused($email) && checkEmailNotBlacklisted($email))
 		{
 			$sql = "INSERT INTO opti_db.verification_codes (email, vericode, replacement, use_code) VALUES (?, ?, ?, 'U')";
 			 
@@ -189,13 +231,13 @@
 
 				if (mysqli_stmt_execute($stmt))
 				{
-					// Send registration email
-					include 'Design/Emails/registration_email.php';
-					if (sendEmail($email, 'Your New Email Address', $registration_email_msg))
+					// Send warning to old address
+					include 'Design/Emails/new_registered_email.php';
+					if (sendEmail($emailcurr, 'Updated Email Address', $new_registered_email_msg))
 					{
-						// Send warning to old address
-						include 'Design/Emails/new_registered_email.php';
-						sendEmail($emailcurr, 'Updated Email Address', $new_registered_email_msg);
+						// Send registration email
+						include 'Design/Emails/registration_email.php';
+						sendEmail($email, 'Your New Email Address', $registration_email_msg);
 					}
 					else
 					{

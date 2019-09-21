@@ -59,7 +59,7 @@
 		global $error;
 		global $link;
 
-		$sql = "SELECT email, verikey FROM logged_in WHERE email = ? AND verikey = ?";
+		$sql = "SELECT email, verikey FROM opti_db.logged_in WHERE email = ? AND verikey = ?";
 		if (isset($_COOKIE['validuser']) && $stmt = mysqli_prepare($link, $sql))
 		{
             mysqli_stmt_bind_param($stmt, "ss", $email, $key);

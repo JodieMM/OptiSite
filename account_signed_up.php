@@ -5,7 +5,7 @@
 	if (!isset($_GET['vericode']) || !isset($_GET['email']) || !emailVerification($_GET['email'], $_GET['vericode']))
 	{
 		// Unverified get, send to home page
-		header("location: index.php");
+		//header("location: index.php");
 	}	
 ?>
 <body>	

@@ -25,7 +25,6 @@
 		$port = 587;
 		
 		$mail = new PHPMailer(true);
-		echo 'Made it past mail creater';
 		try {
 			// Specify the SMTP settings.
 			$mail->isSMTP();
@@ -46,15 +45,14 @@
 			$mail->Send();
 			//echo "Email sent!" , PHP_EOL;
 		} catch (phpmailerException $e) {
-			//echo "An error occurred.";
-			echo "An error occurred {$e->errorMessage()}", PHP_EOL; //Catch errors from PHPMailer.
+			echo "An error occurred.";
+			//echo "An error occurred {$e->errorMessage()}", PHP_EOL; //Catch errors from PHPMailer.
 			return false;
 		} catch (Exception $e) {
-			//echo "An error occurred."; 
-			echo "Email not sent. {$mail->ErrorInfo}", PHP_EOL; //Catch errors from Amazon SES.
+			echo "An error occurred."; 
+			//echo "Email not sent. {$mail->ErrorInfo}", PHP_EOL; //Catch errors from Amazon SES.
 			return false;
 		}
-		echo 'try successful';
 		return true;
 	}	
 	
@@ -63,6 +61,9 @@
 	
 	function emailVerification($email, $vericode)
 	{
+		global $link;
+		global $error;
+		
 		// Try Verifying New Account
 		if (!checkEmailUnused($email))
 		{
@@ -151,6 +152,9 @@
 	
 	function emailVerificationPassReset($email, $vericode, $pass)
 	{
+		global $link;
+		global $error;
+		
 		$sql = "SELECT email, vericode FROM opti_db.verification_codes WHERE email = ? AND vericode = ? AND use_code = 'P'";
 		if ($stmt = mysqli_prepare($link, $sql))
 		{

@@ -11,9 +11,9 @@
 		<div class='content'>
 			<h1> Please Confirm your Email </h1>
 			<p> Please confirm your email using the button below.</p>
-			<form target='_blank' action='https://opti.technology/account_signed_up.php?email=" . $email . "?vericode=" . $vericode . "'>
-				<button class='button'> Verify Account </button>
-			</form>
+			<a class='button' target='_blank' href='https://www.opti.technology/account_signed_up.php?email=" . $email . "&vericode=" . $vericode . "'>
+				Verify Account
+			</a>
 			<p> This link will expire in 10 days </p>
 			<p>If you did not sign up with Opti, you can ignore this email and nothing will happen. 
 			If you continue to receive this email, please contact <a href='mailto:jodie@opti.technology'>jodie@opti.technology</a>.</p>
