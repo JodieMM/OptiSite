@@ -67,6 +67,7 @@
 		// Try Verifying New Account
 		if (!checkEmailUnused($email))
 		{
+			$error = '';
 			$sql = "SELECT email, vericode FROM opti_db.verification_codes WHERE email = ? AND vericode = ? AND use_code = 'R'";
 			if ($stmt = mysqli_prepare($link, $sql))
 			{
@@ -109,7 +110,7 @@
 		// Try Verifying Updated Email
 		else
 		{
-			$sql = "SELECT email, vericode, replacement FROM opti_db.verification_codes WHERE replacement = ? AND vericode = ? AND use_code = 'U'";
+			$sql = "SELECT email FROM opti_db.verification_codes WHERE replacement = ? AND vericode = ? AND use_code = 'U'";
 			if ($stmt = mysqli_prepare($link, $sql))
 			{
 				mysqli_stmt_bind_param($stmt, "ss", $replacement, $vericode);
@@ -119,28 +120,40 @@
 				if (mysqli_stmt_execute($stmt))
 				{
 					mysqli_stmt_store_result($stmt);
-					if(mysqli_stmt_num_rows($stmt) > 0)
+					if (mysqli_stmt_num_rows($stmt) > 0)
 					{
-						mysqli_stmt_bind_result($stmt, $currem, $vericode, $replacement);
-						$currem = cleanEmail($currem);
-						
-						$sql2 = "UPDATE opti_db.accounts SET email = ? WHERE email = ?";
-						if ($stmt2 = mysqli_prepare($link, $sql2))
-						{
-							mysqli_stmt_bind_param($stmt2, "ss", $replacement, $currem);
-							if (mysqli_stmt_execute($stmt2))
+						mysqli_stmt_bind_result($stmt, $currem);
+						if (mysqli_stmt_fetch($stmt))
+						{						
+							$sql2 = "UPDATE opti_db.accounts SET email = ? WHERE email = ?";
+							if ($stmt2 = mysqli_prepare($link, $sql2))
 							{
-								// Clean DB
-								$sql3 = "DELETE FROM opti_db.verification_codes WHERE email = ? OR email = ?";
-								if ($stmt3 = mysqli_prepare($link, $sql3))
+								mysqli_stmt_bind_param($stmt2, "ss", $replacement, $currem);
+								$currem = cleanEmail($currem);
+								
+								if (mysqli_stmt_execute($stmt2))
 								{
-									mysqli_stmt_bind_param($stmt3, "ss", $email, $currem);
-									mysqli_stmt_execute($stmt3);
-									mysqli_stmt_close($stmt3);
-								}								
-								return true;
+									// Clean DB
+									$sql3 = "DELETE FROM opti_db.verification_codes WHERE email = ? OR email = ?";
+									if ($stmt3 = mysqli_prepare($link, $sql3))
+									{
+										mysqli_stmt_bind_param($stmt3, "ss", $email, $currem);
+										mysqli_stmt_execute($stmt3);
+										mysqli_stmt_close($stmt3);
+										
+										$sql4 = "DELETE FROM opti_db.logged_in WHERE email = ? OR email = ?";
+										if ($stmt4 = mysqli_prepare($link, $sql4))
+										{
+											mysqli_stmt_bind_param($stmt4, "ss", $email, $currem);
+											mysqli_stmt_execute($stmt4);
+											mysqli_stmt_close($stmt4);
+											logoutSession();
+											return true;
+										}
+									}								
+								}
+								mysqli_stmt_close($stmt2);
 							}
-							mysqli_stmt_close($stmt2);
 						}
 					}
 				}

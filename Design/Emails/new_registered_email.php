@@ -14,7 +14,7 @@
 			this email address will no longer be registered with your Opti account and you will not be able to use it to
 			log in or make changes.</p>
 			<p>If you did not register this change, please contact <a href='mailto:jodie@opti.technology'>jodie@opti.technology</a>
-			to ensure you maintain access to your account. If you can still access your account, it is recommended you change 
+			to ensure you maintain access to your account. If you can still access your account, it is recommended that you change 
 			your password to prevent unauthorised access.</p>
 			</br>
 			<p style='font-weight: bold'> Visit <a href='https://www.opti.technology/' target='_blank'>Opti</a></p>
