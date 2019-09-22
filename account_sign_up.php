@@ -14,7 +14,7 @@
 		
 		<div class="full middle">
 			<h1> Account Submitted </h1>
-			<p> Please check your emails for a confirmation from us. </p>
+			<p> Please check your emails for a confirmation from us. Note that the verification email may be sent to your spam folder. </p>
 		</div>
 		
 		<div class="signup">
