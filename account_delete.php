@@ -14,7 +14,7 @@
 		</div>
 		
 		<div class="full middle">	
-		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validateDelete()" method="post">
+		<form action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>" onsubmit="return validateDelete()" method="post">
 			<h1> Delete your Account </h1>
 			<p> Permanently delete your account. All of your credentials will be removed from our system. </p>
 			<p style="font-weight: bold"> Once you delete your account your licenses will also be deleted. This means you will be unable to 

@@ -11,14 +11,14 @@
 		global $error;
 		
 		// Clean any old sessions
-		$sql0 = "DELETE FROM opti_db.logged_in WHERE email = ?";
+		$sql0 = "DELETE FROM ebdb.logged_in WHERE email = ?";
 		if($stmt0 = mysqli_prepare($link, $sql0))
 		{
 			mysqli_stmt_bind_param($stmt0, "s", $email);
 			$email = cleanEmail($email);
 			if(mysqli_stmt_execute($stmt0))
 			{
-				$sql = "INSERT INTO opti_db.logged_in (email, verikey) VALUES (?, ?)";
+				$sql = "INSERT INTO ebdb.logged_in (email, verikey) VALUES (?, ?)";
         
 				if($stmt = mysqli_prepare($link, $sql))
 				{
@@ -59,7 +59,7 @@
 		global $error;
 		global $link;
 
-		$sql = "SELECT email, verikey FROM opti_db.logged_in WHERE email = ? AND verikey = ?";
+		$sql = "SELECT email, verikey FROM ebdb.logged_in WHERE email = ? AND verikey = ?";
 		if (isset($_COOKIE['validuser']) && $stmt = mysqli_prepare($link, $sql))
 		{
             mysqli_stmt_bind_param($stmt, "ss", $email, $key);

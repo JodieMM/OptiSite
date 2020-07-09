@@ -10,7 +10,7 @@
 	// Get Notification Settings
 	global $link;
 	$notinewsoft = $notigeneral = false;
-	$sql = "SELECT newSoftwareEmails, generalEmails FROM opti_db.accounts WHERE email = ? AND confirmed = 1";
+	$sql = "SELECT newSoftwareEmails, generalEmails FROM ebdb.accounts WHERE email = ? AND confirmed = 1";
 	
 	if($stmt = mysqli_prepare($link, $sql))
 	{

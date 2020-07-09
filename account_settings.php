@@ -5,7 +5,7 @@
 	// Get Notification Settings
 	global $link;
 	$notinewsoft = $notigeneral = false;
-	$sql = "SELECT newSoftwareEmails, generalEmails FROM opti_db.accounts WHERE email = ?";
+	$sql = "SELECT newSoftwareEmails, generalEmails FROM ebdb.accounts WHERE email = ?";
 	
 	if($stmt = mysqli_prepare($link, $sql))
 	{
@@ -47,7 +47,7 @@
 			</button></form>
 		
 		<div class="break"></div>
-		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validateUpdate()" method="post">
+		<form action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>" onsubmit="return validateUpdate()" method="post">
 			<h1> Account Settings </h1>
 			<div class="inputline details">
 				<p>Email</p><input type="email" id="detemail" name="detemail" <?php if (isset($_POST['detemail'])) {echo 'value = '.cleanEmail($_POST['detemail']);}?>></input>

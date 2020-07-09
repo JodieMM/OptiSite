@@ -68,7 +68,7 @@
 		if (!checkEmailUnused($email))
 		{
 			$error = '';
-			$sql = "SELECT email, vericode FROM opti_db.verification_codes WHERE email = ? AND vericode = ? AND use_code = 'R'";
+			$sql = "SELECT email, vericode FROM ebdb.verification_codes WHERE email = ? AND vericode = ? AND use_code = 'R'";
 			if ($stmt = mysqli_prepare($link, $sql))
 			{
 				mysqli_stmt_bind_param($stmt, "ss", $email, $vericode);
@@ -80,14 +80,14 @@
 					mysqli_stmt_store_result($stmt);
 					if(mysqli_stmt_num_rows($stmt) > 0)
 					{
-						$sql2 = "UPDATE opti_db.accounts SET confirmed = 1 WHERE email = ?";
+						$sql2 = "UPDATE ebdb.accounts SET confirmed = 1 WHERE email = ?";
 						if ($stmt2 = mysqli_prepare($link, $sql2))
 						{
 							mysqli_stmt_bind_param($stmt2, "s", $email);
 							if (mysqli_stmt_execute($stmt2))
 							{
 								// Clean DB
-								$sql3 = "DELETE FROM opti_db.verification_codes WHERE email = ?";
+								$sql3 = "DELETE FROM ebdb.verification_codes WHERE email = ?";
 								if ($stmt3 = mysqli_prepare($link, $sql3))
 								{
 									mysqli_stmt_bind_param($stmt3, "s", $email);
@@ -110,7 +110,7 @@
 		// Try Verifying Updated Email
 		else
 		{
-			$sql = "SELECT email FROM opti_db.verification_codes WHERE replacement = ? AND vericode = ? AND use_code = 'U'";
+			$sql = "SELECT email FROM ebdb.verification_codes WHERE replacement = ? AND vericode = ? AND use_code = 'U'";
 			if ($stmt = mysqli_prepare($link, $sql))
 			{
 				mysqli_stmt_bind_param($stmt, "ss", $replacement, $vericode);
@@ -125,7 +125,7 @@
 						mysqli_stmt_bind_result($stmt, $currem);
 						if (mysqli_stmt_fetch($stmt))
 						{						
-							$sql2 = "UPDATE opti_db.accounts SET email = ? WHERE email = ?";
+							$sql2 = "UPDATE ebdb.accounts SET email = ? WHERE email = ?";
 							if ($stmt2 = mysqli_prepare($link, $sql2))
 							{
 								mysqli_stmt_bind_param($stmt2, "ss", $replacement, $currem);
@@ -134,14 +134,14 @@
 								if (mysqli_stmt_execute($stmt2))
 								{
 									// Clean DB
-									$sql3 = "DELETE FROM opti_db.verification_codes WHERE email = ? OR email = ?";
+									$sql3 = "DELETE FROM ebdb.verification_codes WHERE email = ? OR email = ?";
 									if ($stmt3 = mysqli_prepare($link, $sql3))
 									{
 										mysqli_stmt_bind_param($stmt3, "ss", $email, $currem);
 										mysqli_stmt_execute($stmt3);
 										mysqli_stmt_close($stmt3);
 										
-										$sql4 = "DELETE FROM opti_db.logged_in WHERE email = ? OR email = ?";
+										$sql4 = "DELETE FROM ebdb.logged_in WHERE email = ? OR email = ?";
 										if ($stmt4 = mysqli_prepare($link, $sql4))
 										{
 											mysqli_stmt_bind_param($stmt4, "ss", $email, $currem);
@@ -168,7 +168,7 @@
 		global $link;
 		global $error;
 		
-		$sql = "SELECT email, vericode FROM opti_db.verification_codes WHERE email = ? AND vericode = ? AND use_code = 'P'";
+		$sql = "SELECT email, vericode FROM ebdb.verification_codes WHERE email = ? AND vericode = ? AND use_code = 'P'";
 		if ($stmt = mysqli_prepare($link, $sql))
 		{
 			mysqli_stmt_bind_param($stmt, "ss", $email, $vericode);
@@ -180,7 +180,7 @@
 				mysqli_stmt_store_result($stmt);
 				if(mysqli_stmt_num_rows($stmt) >= 1)
 				{
-					$sql2 = "UPDATE opti_db.accounts SET pass = ? WHERE email = ?";
+					$sql2 = "UPDATE ebdb.accounts SET pass = ? WHERE email = ?";
 					if ($stmt2 = mysqli_prepare($link, $sql2))
 					{
 						mysqli_stmt_bind_param($stmt2, "ss", $pass, $email);
@@ -189,7 +189,7 @@
 						if (mysqli_stmt_execute($stmt2))
 						{
 							// Clean DB
-							$sql3 = "DELETE FROM opti_db.verification_codes WHERE email = ? AND use_code = 'P'";
+							$sql3 = "DELETE FROM ebdb.verification_codes WHERE email = ? AND use_code = 'P'";
 							if ($stmt3 = mysqli_prepare($link, $sql3))
 							{
 								mysqli_stmt_bind_param($stmt3, "s", $email);

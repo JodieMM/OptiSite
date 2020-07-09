@@ -20,7 +20,7 @@
 		</div>
 		
 		<div class="full middle">
-		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?email=" . cleanEmail($_GET['email']) . "&vericode=" . cleanInput($_GET['vericode']) ?>" onsubmit="return validateResetPass()" method="post">
+		<form action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']) . "?email=" . cleanEmail($_GET['email']) . "&vericode=" . cleanInput($_GET['vericode']) ?>" onsubmit="return validateResetPass()" method="post">
 			<h1> Password Reset </h1>
 			<p> Please enter a new password for your email account <?php echo cleanEmail($_GET['email'])?>.</p>
 			<div class="inputline">

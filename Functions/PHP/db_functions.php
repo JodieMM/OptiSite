@@ -2,11 +2,11 @@
 	/* GENERAL FUNCTIONS */
 	
 	// Local
-	// define('DB_SERVER', 'localhost');
-	// define('DB_USER', 'system');
-	// define('DB_PASS', 'hfktcaYh6SWENae8EJku');
-	// define('DB_NAME', 'opti_db');
-	// $link = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+	//define('DB_SERVER', 'localhost');
+	//define('DB_USER', 'system');
+	//define('DB_PASS', 'hfktcaYh6SWENae8EJku');
+	//define('DB_NAME', 'ebdb');
+	//$link = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 	
 	// Server
 	$link = mysqli_connect($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['RDS_PASSWORD'], $_SERVER['RDS_DB_NAME'], $_SERVER['RDS_PORT']);
@@ -28,7 +28,7 @@
 		global $error;
 		
 		// Email Check
-        $sql = "SELECT email FROM opti_db.accounts WHERE email = ?";
+        $sql = "SELECT email FROM ebdb.accounts WHERE email = ?";
         
         if($stmt = mysqli_prepare($link, $sql))
 		{
@@ -69,7 +69,7 @@
 		global $error;
 		
 		// Email Check
-        $sql = "SELECT email FROM opti_db.blacklist WHERE email = ?";
+        $sql = "SELECT email FROM ebdb.blacklist WHERE email = ?";
         
         if($stmt = mysqli_prepare($link, $sql))
 		{
@@ -112,7 +112,7 @@
 		
 		if (checkEmailUnused($email) && checkEmailNotBlacklisted($email))
 		{
-			$sql = "INSERT INTO opti_db.accounts (email, pass) VALUES (?, ?)";
+			$sql = "INSERT INTO ebdb.accounts (email, pass) VALUES (?, ?)";
 			 
 			if ($stmt = mysqli_prepare($link, $sql))
 			{
@@ -123,7 +123,7 @@
 				if (mysqli_stmt_execute($stmt))
 				{
 					// Add verification code to DB
-					$sql2 = "INSERT INTO opti_db.verification_codes (email, vericode, use_code) VALUES (?, ?, 'R')";
+					$sql2 = "INSERT INTO ebdb.verification_codes (email, vericode, use_code) VALUES (?, ?, 'R')";
 			 
 					if ($stmt2 = mysqli_prepare($link, $sql2))
 					{
@@ -170,7 +170,7 @@
 		global $link;
 		global $error;
 		
-        $sql = "SELECT email, pass FROM opti_db.accounts WHERE email = ? AND confirmed = 1";
+        $sql = "SELECT email, pass FROM ebdb.accounts WHERE email = ? AND confirmed = 1";
         
         if($stmt = mysqli_prepare($link, $sql))
 		{
@@ -220,7 +220,7 @@
 		
 		if ($email != "" && checkEmailUnused($email) && checkEmailNotBlacklisted($email))
 		{
-			$sql = "INSERT INTO opti_db.verification_codes (email, vericode, replacement, use_code) VALUES (?, ?, ?, 'U')";
+			$sql = "INSERT INTO ebdb.verification_codes (email, vericode, replacement, use_code) VALUES (?, ?, ?, 'U')";
 			 
 			if ($stmt = mysqli_prepare($link, $sql))
 			{
@@ -254,7 +254,7 @@
 		
 		if ($pass != "")
 		{
-			$sql2 = "UPDATE opti_db.accounts SET pass = ? WHERE email = ?";
+			$sql2 = "UPDATE ebdb.accounts SET pass = ? WHERE email = ?";
         
 			if($stmt2 = mysqli_prepare($link, $sql2))
 			{
@@ -280,7 +280,7 @@
 	{
 		global $link;
 		
-        $sql = "UPDATE opti_db.accounts SET newSoftwareEmails = ?, generalEmails = ? WHERE email = ?";
+        $sql = "UPDATE ebdb.accounts SET newSoftwareEmails = ?, generalEmails = ? WHERE email = ?";
         
         if($stmt = mysqli_prepare($link, $sql))
 		{
@@ -302,7 +302,7 @@
 		global $link;
 		global $error;
 		
-        $sql = "SELECT email, pass FROM opti_db.accounts WHERE email = ?";
+        $sql = "SELECT email, pass FROM ebdb.accounts WHERE email = ?";
         
         if($stmt = mysqli_prepare($link, $sql))
 		{
@@ -321,7 +321,7 @@
 					{
                         if(password_verify($pass, $hashed_password) && cleanEmail($_SESSION["email"]) == $email)
 						{
-							$sql2 = "DELETE FROM opti_db.accounts WHERE email = ?";
+							$sql2 = "DELETE FROM ebdb.accounts WHERE email = ?";
 							if($stmt2 = mysqli_prepare($link, $sql2))
 							{
 								mysqli_stmt_bind_param($stmt2, "s", $email);
@@ -369,7 +369,7 @@
 			$error = '';
 			
 			// Check Email Confirmed
-			$sql0 = "SELECT email, confirmed FROM opti_db.accounts WHERE email = ? AND confirmed = 1";
+			$sql0 = "SELECT email, confirmed FROM ebdb.accounts WHERE email = ? AND confirmed = 1";
 			if ($stmt0 = mysqli_prepare($link, $sql0))
 			{	
 				mysqli_stmt_bind_param($stmt0, "s", $email);
@@ -378,7 +378,7 @@
 					mysqli_stmt_store_result($stmt0);
 					if(mysqli_stmt_num_rows($stmt0) >= 1)
 					{
-						$sql = "INSERT INTO opti_db.verification_codes (email, vericode, use_code) VALUES (?, ?, 'P')";
+						$sql = "INSERT INTO ebdb.verification_codes (email, vericode, use_code) VALUES (?, ?, 'P')";
 						 
 						if ($stmt = mysqli_prepare($link, $sql))
 						{
