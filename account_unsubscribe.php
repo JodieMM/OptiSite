@@ -41,12 +41,8 @@
 <body>	
 	<section class="content">
 		<div class="head">
-			<img src="Design/Images/settings_bg.png" alt="Orange Cog">
-			<div class="headtext">
-				<h1> Unsubscribe </h1>
-				<div class="separater"></div>
-				<p> Use the checkboxes below to unsubscribe from notifications. </p>
-			</div>
+			<h1> Unsubscribe </h1>
+			<p> Use the checkboxes below to unsubscribe from notifications. </p>
 		</div>
 		
 		<div class="full middle">		

@@ -33,6 +33,11 @@ h1{
 
 a{
 	color: #653b78;
+	transition: color 0.5s ease;
+}
+
+a:hover{
+	color: #993399;
 }
 
 a:active{
@@ -47,29 +52,13 @@ h4{
 	padding-left: 0.5em;
 }
 
-.head img{
-	width: 100%;
+.head{
 	border-bottom: 2px solid #adadad;
-}
-
-.headtext{
 	padding: 1em;
-	background-color: #f2f2f2;
-	border-bottom: 2px solid #adadad;
-}
-
-.headtext p{
-	font-size: 26px;
-	padding-top: 0.5em;
-}
-
-.separater
-{
-    position: absolute;
-    width: 80%;
-    height: 2px;
-	border-radius: 1px;
-    background: #000000;
+    padding-top: 2em;
+    padding-bottom: 6em;
+    color: white;	
+	background: linear-gradient(to bottom right, #9a61b2, #d147a3);
 }
 
 .middle{
@@ -161,12 +150,8 @@ p.tab3{
 	text-align: left;
 }
 
-/* For Larger Movile */
+/* For Larger Mobile */
 @media only screen and (min-width: 600px){
-	.head img{
-		height: 10em;
-	}
-	
 	.middle h1{
 		width: 7em;
 	}
@@ -180,25 +165,6 @@ p.tab3{
 
 /* For Tablets */
 @media only screen and (min-width: 768px){
-	.head img{
-		height: 15em;
-	}
-	
-	.headtext{
-		position: absolute;
-		width: 15em;
-		left: 2em;
-		animation: fadein 1.5s;
-		animation-timing-function: linear;
-		animation-fill-mode: forwards;
-		border: none;
-	}
-	
-	@keyframes fadein{
-		from {top: 4em; opacity: 0;}
-		to {top: 6em; opacity: 1;}
-	}
-	
 	.middle h1{
 		width: 10em;
 	}

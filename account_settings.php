@@ -32,12 +32,8 @@
 <body>	
 	<section class="content">
 		<div class="head">
-			<img src="Design/Images/settings_bg.png" alt="Orange Cog">
-			<div class="headtext">
-				<h1> Your Account </h1>
-				<div class="separater"></div>
-				<p> Update your Settings </p>
-			</div>
+			<h1> Your Account </h1>
+			<p> Update your Settings </p>
 		</div>
 		
 		<div class="full middle">	

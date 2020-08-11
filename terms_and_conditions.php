@@ -4,12 +4,8 @@
 <body>	
 	<section class="content">
 		<div class="head">
-			<img src="Design/Images/secure_bg.png" alt="Blue Shield">
-			<div class="headtext">
-				<h1> Optimator Terms and Conditions </h1>
-				<div class="separater"></div>
-				<p> The terms for using Optimator </p>
-			</div>
+			<h1> Optimator Terms and Conditions </h1>
+			<p> The terms for using Optimator </p>
 		</div>
 		<div class="full middle">
 			<h1> Terms and Conditions </h1>

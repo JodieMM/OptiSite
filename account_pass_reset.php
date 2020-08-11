@@ -11,12 +11,8 @@
 <body>	
 	<section class="content">
 		<div class="head">
-			<img src="Design/Images/account_bg.png" alt="Green Padlock">
-			<div class="headtext">
-				<h1> Password Reset </h1>
-				<div class="separater"></div>
-				<p> Reset your Password </p>
-			</div>
+			<h1> Password Reset </h1>
+			<p> Reset your Password </p>
 		</div>
 		
 		<div class="full middle">

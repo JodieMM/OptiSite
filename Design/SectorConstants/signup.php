@@ -9,7 +9,7 @@
 		</div>
 		<div class="inputline">
 			<input type="checkbox" id="ppcheckbox" name="ppcheckbox"> 
-			I understand and agree to the <a target="_blank", href="privacy_policy">Privacy Policy</a> and Optimator <a target="_blank", href="terms_and_conditions">Terms and Conditions.</a>
+			I understand and agree to the <a target="_blank", href="privacy_policy">Privacy Policy,</a> including Cookie terms, and Optimator <a target="_blank", href="terms_and_conditions">Terms and Conditions.</a>
 		</div>
 		<p class="error" id="signuperror" <?php if (isset($_POST['email']) && $error != '') {echo 'style="display:block;"';}?>>
 			<?php if (isset($_POST['email']) && $error != '') {echo $error;}?>

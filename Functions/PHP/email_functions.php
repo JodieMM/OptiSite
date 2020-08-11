@@ -19,9 +19,9 @@
 		$from = 'jodie@opti.technology';
 		$fromName = 'Opti Jodie';
 		
-		$usernameSmtp = 'AKIATPFSF56B67H6HL4W';
-		$passwordSmtp = 'BJpYHEjpoScVK7G5I1ezvS87iUPL26IUoe5oePAVrm1A';
-		$host = 'email-smtp.us-west-2.amazonaws.com';
+		$usernameSmtp = 'AKIATPFSF56BRXWCXJCS';
+		$passwordSmtp = 'BGmobam8keP/NMU+kpl7VkY5a22sWsjWGGbKAt7AIbCU';
+		$host = 'email-smtp.ap-southeast-2.amazonaws.com';
 		$port = 587;
 		
 		$mail = new PHPMailer(true);

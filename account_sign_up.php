@@ -4,12 +4,8 @@
 <body>	
 	<section class="content">
 		<div class="head">
-			<img src="Design/Images/account_bg.png" alt="Green Padlock">
-			<div class="headtext">
-				<h1> Account Sign Up </h1>
-				<div class="separater"></div>
-				<p> Successful </p>
-			</div>
+			<h1> Account Sign Up </h1>
+			<p> Successful </p>
 		</div>
 		
 		<div class="full middle">

@@ -4,12 +4,8 @@
 <body>	
 	<section class="content">
 		<div class="head">
-			<img src="Design/Images/info_bg.png" alt="Blue Question Mark">
-			<div class="headtext">
-				<h1> Contact Us </h1>
-				<div class="separater"></div>
-				<p> Get in contact with the Opti developers </p>
-			</div>
+			<h1> Contact Us </h1>
+			<p> Get in contact with the Opti developers </p>
 		</div>
 		<div class="middle">
 			<h1> General Enquiries </h1>

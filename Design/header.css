@@ -126,6 +126,36 @@ body{
 }
 
 
+/*--- FOOTER STYLES ---*/
+.footer{
+	padding: 0.5em;
+	background: linear-gradient(to left, #333333, #4d4d4d, #333333);
+	text-align: center;
+}
+
+.footer a{
+	font-size: 30px;
+    color: #adadad;
+    text-decoration: none;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+	transition: padding 0.5s ease;
+}
+
+.footer a:hover{
+	color: #d9d9d9;	
+	padding-left: 0.8em;
+    padding-right: 0.8em;
+}
+
+.footer p{
+	padding-top: 1em;
+    color: #adadad;
+    font-size: 16px;
+}
+
+
+/*--- Non-Mobile Sizing ---*/
 @media all and (min-width: 768px){
 	.header ul{
 		display: inline-block!important;
@@ -179,22 +209,12 @@ body{
 	.burgerbar{
 		display: none;
 	}
+	
+	/*--- FOOTER ---*/
+	.footer a{
+		font-size: 60px;
+	}
 }
-
-
-
-/*--- FOOTER STYLES ---*/
-.footer{
-	padding: 0.5em;
-	background: linear-gradient(to left, #333333, #4d4d4d, #333333);
-	text-align: center;
-}
-
-.footer img{
-	height: 2em;
-	padding-right: 1em;
-}
-
 
 
 	

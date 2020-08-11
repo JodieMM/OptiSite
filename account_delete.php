@@ -5,12 +5,8 @@
 <body>	
 	<section class="content">
 		<div class="head">
-			<img src="Design/Images/account_bg.png" alt="Green Padlock">
-			<div class="headtext">
-				<h1> Account Deletion </h1>
-				<div class="separater"></div>
-				<p> Permanently delete your account. </p>
-			</div>
+			<h1> Account Deletion </h1>
+			<p> Permanently delete your account. </p>
 		</div>
 		
 		<div class="full middle">	

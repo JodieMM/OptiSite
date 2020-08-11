@@ -32,6 +32,7 @@
 	<!-- JavaScript -->
 	<script type="text/javascript" src="Functions/JS/validation.js"/></script>
 	<script type="text/javascript" src="Functions/JS/visuals.js"/></script>	
+	<script src="https://kit.fontawesome.com/63736701d0.js" crossorigin="anonymous"></script>
 	
 	<!-- PHP -->
 	<?php
@@ -54,7 +55,7 @@
 		</div>
 		<ul id="headerul">
 			<div class="dropdown">
-				<li>Projects</li>
+				<li>Products</li>
 				<div class="dropdown-options">
 					<a href="optimator"><li>Optimator</li></a>
 					<a href="timeline"><li>Timeline</li></a>

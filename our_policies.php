@@ -4,12 +4,8 @@
 <body>	
 	<section class="content">
 		<div class="head">
-			<img src="Design/Images/secure_bg.png" alt="Blue Shield">
-			<div class="headtext">
-				<h1> Our Policies </h1>
-				<div class="separater"></div>
-				<p> Our promise to you </p>
-			</div>
+			<h1> Our Policies </h1>
+			<p> Our promise to you </p>
 		</div>
 		<div class="middle full">
 			<h1> Privacy Policy </h1>

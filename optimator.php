@@ -4,12 +4,8 @@
 <body>	
 	<section class="content">
 		<div class="head">
-			<img src="Design/Images/coverbg2.png" alt="Opti Team">
-			<div class="headtext">
-				<h1> Optimator </h1>
-				<div class="separater"></div>
-				<p> Simple 2D Animation Software </p>
-			</div>
+			<h1> Optimator </h1>
+			<p> Simple 2D Animation Software </p>
 		</div>
 		<div class="middle full">
 			<h1> Optimator </h1>

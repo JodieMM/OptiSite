@@ -4,12 +4,8 @@
 <body>	
 	<section class="content">
 		<div class="head">
-			<img src="Design/Images/info_bg.png" alt="Blue Question Mark">
-			<div class="headtext">
-				<h1> About Opti </h1>
-				<div class="separater"></div>
-				<p> OPTImum OPTIons </p>
-			</div>
+			<h1> About Opti </h1>
+			<p> OPTImum OPTIons </p>
 		</div>
 		
 		<div class="middle">
