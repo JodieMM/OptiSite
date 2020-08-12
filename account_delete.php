@@ -1,3 +1,6 @@
+<html>
+<head>
+    <title>Opti Technology | Delete Account</title>
 <?php
 	session_start();
 	include 'Design/SectorConstants/header.php';

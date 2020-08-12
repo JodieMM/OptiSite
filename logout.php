@@ -1,3 +1,6 @@
+<html>
+<head>
+    <title>Opti Technology | Logout</title>
 <?php
 	include 'Design/SectorConstants/header.php';
 	logoutSession();

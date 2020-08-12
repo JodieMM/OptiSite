@@ -1,3 +1,6 @@
+<html>
+<head>
+    <title>Opti Technology | Privacy Policy</title>
 <?php
 	include 'Design/SectorConstants/header.php';
 ?>

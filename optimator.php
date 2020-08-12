@@ -1,3 +1,6 @@
+<html>
+<head>
+    <title>Opti Technology | Optimator</title>
 <?php
 	include 'Design/SectorConstants/header.php';
 ?>
@@ -25,11 +28,12 @@
 				<button>Latest Version Download</button>
 			</div>-->
 			
-			<!--<div class="break"></div>
+			<div class="break"></div>
 			<h1> Tutorials </h1>
 			<p> See Optimator in work and learn new techniques with the official video tutorials! </p>
-			<a class="button">Tutorial Playlist</a>-->
+			<button class="button" rel="noopener noreferrer" onclick=" window.open('https://www.youtube.com/playlist?list=PLPa90e_a9ym09_D2TicBnUTZm3aCdsAPb','_blank')">Tutorial Playlist</button>
 			
+			<!--
 			<div class="break"></div>
 			<h1> Backlog and Bugfixing </h1>
 			
@@ -42,6 +46,7 @@
 			
 			<div class="break"></div>
 			<p> If you find a bug not mentioned here when running the latest version of Optimator, please email us at <a href="mailto:jodie@opti.technology">jodie@opti.technology</a>.</p>
+			-->
 		</div>
 	</section>
 	

@@ -1,3 +1,6 @@
+<html>
+<head>
+    <title>Opti Technology | Unsubscribe</title>
 <?php
 	session_start();
 	if (!isset($_GET['email']))

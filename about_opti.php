@@ -1,3 +1,6 @@
+<html>
+<head>
+    <title>Opti Technology | About Opti</title>
 <?php
 	include 'Design/SectorConstants/header.php';
 ?>

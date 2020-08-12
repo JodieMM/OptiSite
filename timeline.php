@@ -1,3 +1,6 @@
+<html>
+<head>
+    <title>Opti Technology | Timeline</title>
 <?php
 	include 'Design/SectorConstants/header.php';
 ?>

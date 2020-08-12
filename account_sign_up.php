@@ -1,3 +1,6 @@
+<html>
+<head>
+    <title>Opti Technology | Account Sign Up</title>
 <?php
 	include 'Design/SectorConstants/header.php';
 ?>

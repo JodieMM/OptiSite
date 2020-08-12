@@ -6,6 +6,7 @@
 	PINK: #d147a3;
 	GREY: #adadad;
 	GOLD: #ada485;
+	GREEN: #47d147;
 */
 
 /* Sizing Widths */
@@ -59,7 +60,7 @@ h4{
     padding-bottom: 6em;
     color: white;	
 	background: linear-gradient(to bottom right, #9a61b2, #d147a3);
-}
+}	
 
 .middle{
 	padding: 1.5em;

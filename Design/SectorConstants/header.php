@@ -1,7 +1,6 @@
-<html>
-<head>
-    <title>Opti</title>
-	
+	<meta name="description" content="Opti Technology designs custom creative software with the aim to be easy to use, 
+	fast and high-quality. 
+	The main offering is Optimator, 2D animation software that is fast, simple and you can use without knowing how to draw.">
 	
 	<!-- -- Design Components -- -->
 	
