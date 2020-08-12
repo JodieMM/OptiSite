@@ -21,8 +21,8 @@
 				Find out more!
 			</button></form></p>
 			<h1> Downloads and Demos </h1>
-			<p> There is currently no software or demos available for download. Check the timeline
-			to see when releases are coming<?php
+			<p> The Optimator free Beta is available to download! Check the timeline
+			to see when new releases are coming<?php
 			
 			if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] === false)
 			{

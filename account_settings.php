@@ -72,7 +72,7 @@
 			
 			<div class="break"></div>
 			<h1> Licenses </h1>
-			<p> You don't currently have any licenses. Register for a Beta or purchase a product to receive a license. </p>
+			<p> You haven't currently purchased any licenses.</p>
 			<p> If you believe there is an error in your licenses, please contact jodie@opti.technology for assistance. </p>
 		
 			<div class="break"></div><div class="break"></div>

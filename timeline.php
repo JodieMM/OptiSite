@@ -11,7 +11,7 @@
 			<p> The expected projection for Opti </p>
 		</div>
 		
-		<div class="timeline" month="September">
+		<div class="timeline" month="August">
 			<span class="month-pointer"></span>
 			<p>The long-awaited Beta! This will be the first time Optimator is released publicly
 			for you to play around with. The beta will be free for everyone as the software will still lack certain features and
@@ -19,9 +19,13 @@
 			how Optimator works.</p>
 			<p>Subscribe to notifications to be informed as soon as it's ready!</p>
 		</div>
-		<div class="timeline" month="October">
+		<div class="timeline" month="September">
 			<span class="month-pointer"></span>
 			<p>We'll be doing lots of work under the hood to prepare Optimator for its official launch!</p>
+		</div>
+		<div class="timeline" month="October">
+			<span class="month-pointer"></span>
+			<p>Exterminating some bugs...</p>
 		</div>
 		<div class="timeline" month="November">
 			<span class="month-pointer"></span>

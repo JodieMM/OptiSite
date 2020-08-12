@@ -21,12 +21,28 @@
 			
 			<div class="break"></div>
 			<h1> Downloads </h1>
-			<p> Unfortunately as Optimator is still in development, there are no downloads available yet.</p>
-			<p> See the timeline for the anticipated free Beta release! </p>
-			<!--<a class="button">Beta Download</a>
-			<div class="inputline">
-				<button>Latest Version Download</button>
-			</div>-->
+			<p> Whoo! Check out the free open beta!</p>
+			
+			<?php
+				if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] === false)
+				{
+					echo "
+					<p>To download the beta, you must log in. Don't have an account? Sign up for free today!</p>
+					";
+				}
+				else
+				{
+					echo "					
+					<p><form method=\"get\" action=\"Software/OptimatorBeta.zip\"><button class=\"button\">
+						Beta Download
+					</button></form></p>
+					<p>To use the beta, unzip the file and run setup. Note that the files you create in the beta
+					may not be compatible with the full version.</p>
+					<p>If you encounter any issues, please contact <a href=\"mailto:jodie@opti.technology\">jodie@opti.technology</a>. 
+					We'd also love to see the awesome things you create! Get started using our tutorials below.</p>
+					";
+				}
+			?>
 			
 			<div class="break"></div>
 			<h1> Tutorials </h1>
