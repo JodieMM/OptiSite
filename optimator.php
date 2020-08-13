@@ -2,6 +2,7 @@
 <head>
     <title>Opti Technology | Optimator</title>
 <?php
+	session_start();
 	include 'Design/SectorConstants/header.php';
 ?>
 <body>	
@@ -13,7 +14,7 @@
 		<div class="middle full">
 			<h1> Optimator </h1>
 			
-			<iframe class="yt" src="https://www.youtube.com/embed/a9-X-TDy3ZA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe class="yt" src="https://www.youtube.com/embed/vU-PoAxLoUw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			
 			<p> Optimator is animation software that uses orthographic projection to
 			create a full 2D model of a shape. This means it's faster and easier than traditional
@@ -21,7 +22,7 @@
 			
 			<div class="break"></div>
 			<h1> Downloads </h1>
-			<p> Whoo! Check out the free open beta!</p>
+			<p> Whoo! Check out the free open beta- it won't be available forever!</p>
 			
 			<?php
 				if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] === false)
@@ -33,13 +34,15 @@
 				else
 				{
 					echo "					
-					<p><form method=\"get\" action=\"Software/OptimatorBeta.zip\"><button class=\"button\">
+					<p><form method=\"get\" action=\"optimatorOpen\" target='_blank'><button class=\"button\">
 						Beta Download
 					</button></form></p>
 					<p>To use the beta, unzip the file and run setup. Note that the files you create in the beta
 					may not be compatible with the full version.</p>
-					<p>If you encounter any issues, please contact <a href=\"mailto:jodie@opti.technology\">jodie@opti.technology</a>. 
-					We'd also love to see the awesome things you create! Get started using our tutorials below.</p>
+					<p>As a beta version we're really looking for feedback. If you encounter any issues, bugs, or want to
+					see a specific feature added, please contact <a href=\"mailto:jodie@opti.technology\">jodie@opti.technology</a>. 
+					We'd also love to see the awesome things you create!</p>
+					<p>Get started using our tutorials below.</p>
 					";
 				}
 			?>
