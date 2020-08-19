@@ -39,6 +39,8 @@
 					</button></form></p>
 					<p>To use the beta, unzip the file and run setup. Note that the files you create in the beta
 					may not be compatible with the full version.</p>
+					<p> After trying the software, please fill in the <a href=\"https://forms.gle/yYxjXxAJqsPCUKRW6\" target='_blank'>beta survey</a>
+					 so we can improve!</p>
 					<p>As a beta version we're really looking for feedback. If you encounter any issues, bugs, or want to
 					see a specific feature added, please contact <a href=\"mailto:jodie@opti.technology\">jodie@opti.technology</a>. 
 					We'd also love to see the awesome things you create!</p>

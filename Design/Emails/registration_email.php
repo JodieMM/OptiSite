@@ -6,10 +6,9 @@
 	. $headerContent . "
 		<body>
 		<div class='header'>
-			<img src='https://www.opti.technology/Design/Images/coverbg3.png' alt='Waterfall'>
+			<h1> Please Confirm your Email </h1>
 		</div>
 		<div class='content'>
-			<h1> Please Confirm your Email </h1>
 			<p> Please confirm your email using the button below.</p>
 			<a class='button' target='_blank' href='https://www.opti.technology/account_signed_up.php?email=" . $email . "&vericode=" . $vericode . "'>
 				Verify Account

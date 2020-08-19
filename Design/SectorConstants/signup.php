@@ -1,5 +1,5 @@
 	<div class="signup">
-	<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validateSignUp()" method="post">
+	<form action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>" onsubmit="return validateSignUp()" method="post">
 		<h1> Sign Up </h1>
 		<p> Create an Opti account to download software or register for updates. </p>
 		<div class="inputline">

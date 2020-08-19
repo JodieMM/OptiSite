@@ -6,10 +6,9 @@
 	. $headerContent . "
 		<body>
 		<div class='header'>
-			<img src='https://www.opti.technology/Design/Images/coverbg3.png' alt='Waterfall'>
+			<h1> A new email has been registered for your Opti account </h1>
 		</div>
 		<div class='content'>
-			<h1> A new email has been registered for your Opti account </h1>
 			<p> A confirmation email has been sent to " . $email . ". Once that email has been confirmed, 
 			this email address will no longer be registered with your Opti account and you will not be able to use it to
 			log in or make changes.</p>

@@ -1,11 +1,10 @@
-<?php
-$headerContent = "
+<html>
 <head>
-	<title>Opti Email</title>
+	<title>The Beta is Here!</title>
 	<link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'/>
 	<link href='https://fonts.googleapis.com/css?family=Montserrat&display=swap' rel='stylesheet'>
 	
-	<style>	
+	<style>			
 		body{
 			text-align: center;
 			font-family: 'Montserrat', 'Actor', 'Tahoma', sans-serif;
@@ -14,16 +13,14 @@ $headerContent = "
 			margin: 0;
 			background-color: white;
 		}
-	
+		
 		h1{
-			text-align: center;
-			font-family: 'Montserrat', 'Actor', 'Tahoma', sans-serif;
 			font-size: 30px;
 			color: white;
 			padding: 1.5em;
 			font-weight: unset;
 		}
-		  
+		
 		.header{
 			background: linear-gradient(to bottom right, #9a61b2, #d147a3);
 			border-top: 2px solid #adadad;
@@ -33,10 +30,6 @@ $headerContent = "
 		
 		.content{
 			padding: 0em 2em;
-			text-align: center;
-			font-family: 'Montserrat', 'Actor', 'Tahoma', sans-serif;
-			font-size: 20px;
-			color: black;
 		}
 		
 		.footer{
@@ -48,8 +41,8 @@ $headerContent = "
 		}
 		
 		.footer p{
-			text-align: center;
 			font-family: 'Montserrat', 'Actor', 'Tahoma', sans-serif;
+			margin: 0;
 			border: none;
 			font-size: 20px;
 			color: black;
@@ -66,7 +59,7 @@ $headerContent = "
 			transition: color 0.5s ease;
 		}
 
-		content a:hover{
+		.content a:hover{
 			color: #993399;
 		}
 		
@@ -101,5 +94,27 @@ $headerContent = "
 			outline: none;
 		}
 	</style>
-</head>";
-?>
+</head>
+<body>
+		<div class='header'>
+			<h1> The free Optimator beta is now available! </h1>
+		</div>
+		<div class='content'>	
+			<p>  Head on over to <a href='https://www.opti.technology/optimator' target='_blank'> the Optimator page </a>
+			to try it out! Note that you will need to be logged in to access the beta.</p>
+			<p> As this is a beta version, we really appreciate any feedback you can give us. It is quite likely that there will
+			be bugs and other issues. If you can report them to <a href='mailto:jodie@opti.technology'>jodie@opti.technology,</a> we
+			might be able to fix them for the next version. The more you can tell us about the bug, the more likely we will be able to
+			find and fix it. Attaching relevant optimator files can be extremely helpful to us in this process.</p> 
+			<p> Also feel free to send through any feature recommendations or animations you've made. We'd love to see what you create!</p>
+			<p> The free beta will not be available forever. </p>
+			<p> Have fun! </p>
+			</br>
+			<p style='font-weight: bold'> Visit <a href='https://www.opti.technology/' target='_blank'>Opti</a></p>
+		</div>
+		<div class='footer'>
+			<p> You can change your notification settings 
+			<a href='https://www.opti.technology/account_unsubscribe.php?email=jordanjosic@gmail.com' target='_blank'>here</a>. </p>
+		</div>
+		</body>
+</html>

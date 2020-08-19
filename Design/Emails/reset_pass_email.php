@@ -6,10 +6,9 @@
 	. $headerContent . "
 		<body>
 		<div class='header'>
-			<img src='https://www.opti.technology/Design/Images/coverbg3.png' alt='Waterfall'>
+			<h1> Reset your Password </h1>
 		</div>
 		<div class='content'>
-			<h1> Reset your Password </h1>
 			<p> Please reset your password using the button below.</p>
 			<a class='button' target='_blank' href='https://www.opti.technology/account_pass_reset.php?email=" . $email . "&vericode=" . $vericode . "'>
 				Reset Password

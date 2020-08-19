@@ -19,6 +19,10 @@ GRANT SELECT,INSERT,DELETE
   ON ebdb.verification_codes
   TO 'system'@'localhost';
   
+GRANT SELECT,INSERT,UPDATE,DELETE
+  ON ebdb.blacklist
+  TO 'system'@'localhost';
+  
 
 GRANT SELECT,INSERT,UPDATE,DELETE
   ON ebdb.accounts
@@ -30,4 +34,8 @@ GRANT SELECT,INSERT,DELETE
 
 GRANT SELECT,INSERT,DELETE
   ON ebdb.verification_codes
+  TO 'system'@'%.opti.technology';
+  
+GRANT SELECT,INSERT,UPDATE,DELETE
+  ON ebdb.blacklist
   TO 'system'@'%.opti.technology';
