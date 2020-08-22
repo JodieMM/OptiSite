@@ -7,28 +7,7 @@
 ?>
 <body>	
 	<section class="content">
-		<div class="notice">
-			<h1> The Optimator Beta is now here! </h1>
-			
-			<form action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>" onsubmit="return validateAcceptedTC()" method="post">
-				<div class="inputline">
-					<input type="hidden" name="tccheckboxsent" value="0">
-					<input type="checkbox" id="tccheckbox" name="tccheckbox"> 
-					I understand and agree to the <a target="_blank", href="privacy_policy">Privacy Policy</a> and Optimator <a target="_blank", href="terms_and_conditions">Terms and Conditions.</a>
-				</div>
-				<p class="error" id="betaerror" <?php if (isset($_POST['tccheckboxsent']) && $error != '') {echo 'style="display:block;"';}?>>
-					<?php if (isset($_POST['tccheckboxsent']) && $error != '') {echo $error;}?>
-				</p>
-				<div class="inputline">
-					<button id="betacheckbtn">Try it now!</button>
-				</div>
-				<p class='exp'>To use the beta, unzip the file and run setup.</p>
-				<p class='exp'> After trying the software, please fill in the <a href=\"https://forms.gle/yYxjXxAJqsPCUKRW6\" target='_blank'>beta survey</a>
-				 so we can improve!</p>
-				<br>
-			</form>
-			
-		</div>
+		<img class="big" src="Design/Images/coverbg2.png">
 		
 		<div class="middle full">
 			<h1> Welcome to Opti! </h1>

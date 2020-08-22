@@ -22,6 +22,39 @@ img.big{
 	}
 }
 
+/* Homepage Notification */
+.notice{
+	background: linear-gradient(to top, #9a61b2, #d147a3);
+	color: white;
+	text-align: center;
+}
+
+.notice h1{
+	font-size: 2em;
+	padding: 0.5em;
+}
+
+.notice #betacheckbtn{
+	font-size: 1.2em;
+}
+
+p.exp{
+	padding: 0.5em;
+}
+
+.notice .exp a{
+	font-weight: bold;
+}
+
+@media only screen and (min-width: 860px){
+	.notice h1{
+		font-size: 2.5em;
+		padding: 1em;
+	}
+}
+
+
+
 
 /* About Me */
 .icon img{

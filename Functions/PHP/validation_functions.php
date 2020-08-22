@@ -146,4 +146,14 @@
 		return false;
 	}
 	
+	// T&C, P&P For Beta
+	function checkBetaAgree($cb)
+	{		
+		if (!checkCheckbox($cb, 'You must accept the Privacy Policy and Terms and Conditions to try the Optimator Beta.'))
+		{
+			return false;
+		}
+		return true;
+	}
+	
 ?>

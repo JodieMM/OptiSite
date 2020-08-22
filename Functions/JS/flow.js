@@ -8,6 +8,8 @@ var pass2 = $('#passwordconfirm');
 var privacy = $('#ppcheckbox');
 var signuperror = $('#signuperror');
 
+var betaerror = $('#betaerror');
+
 var loginemail = $('#loginemail');
 var loginpass = $('#loginpassword');
 var empasserror = $('#empasserror');

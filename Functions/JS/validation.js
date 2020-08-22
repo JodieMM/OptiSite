@@ -239,6 +239,25 @@ function validateResetPass(){
 	return true;
 }
 
+// T&C, P&P for Beta
+function validateAcceptedTC(){
+	var validated = true;
+	betaerror.html("");
+	showEl(betaerror);
+	
+	if (!validateCb($('#tccheckbox'))){
+		validated = false;
+		if (betaerror.html() == ""){
+			betaerror.html("You must accept the Privacy Policy and Terms and Conditions to try the Optimator Beta.");
+		}
+	}
+	
+	if (betaerror.html() == ""){
+		hideEl(betaerror);
+	}
+	return validated;
+}
+
 
 
 
