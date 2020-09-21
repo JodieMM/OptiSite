@@ -23,7 +23,7 @@
 					<button id="betacheckbtn">Try it now!</button>
 				</div>
 				<p class='exp'>To use the beta, unzip the file and run setup.</p>
-				<p class='exp'> After trying the software, please fill in the <a href=\"https://forms.gle/yYxjXxAJqsPCUKRW6\" target='_blank'>beta survey</a>
+				<p class='exp'> After trying the software, please fill in the <a href="https://forms.gle/yYxjXxAJqsPCUKRW6" target='_blank'>beta survey</a>
 				 so we can improve!</p>
 				<br>
 			</form>
