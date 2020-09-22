@@ -5,6 +5,10 @@ var pieces = [];
 //var WIP: Set;
 var selectedSpots = [];
 var selectedPieces = [];
+// Interactables
+var topMenuBar = ["b1", "b2", "b3"];
+var topMenuSelected = "";
+// Canvas Sizing
 var dpr = window.devicePixelRatio || 1;
 var canvas = document.getElementById("drawingBoard");
 var ctx = canvas.getContext("2d");
@@ -12,14 +16,48 @@ var scrollOffset = [0, 0, 1];
 var resizeOffset = [0, 0];
 var canvasSize;
 // Actions
+$(document).on('keydown', KeyPress);
 canvas.addEventListener('click', CanvasClick, false);
 canvas.addEventListener('DOMMouseScroll', HandleScroll, false);
 canvas.addEventListener('mousewheel', HandleScroll, false);
-//canvas.addEventListener('mousemove', Hover, false);
+$(".optionMenuBtn").on('click', TopMenuSelect);
 // ----- I/O -----
+// Key Pressed
+function KeyPress(action) {
+    var keycode = action.keyCode || action.which;
+    switch (keycode) {
+        // Tab
+        case 9:
+            // Selects the next or first option in the top menu bar
+            // The reverse is true if the shift key is pressed, starting at the end option
+            if (action.shiftKey && (topMenuSelected == "" || topMenuSelected == topMenuBar[0])) {
+                $('#' + topMenuBar[topMenuBar.length - 1]).trigger('click');
+            }
+            else if (!action.shiftKey && (topMenuSelected == "" || topMenuSelected == topMenuBar[topMenuBar.length - 1])) {
+                $('#' + topMenuBar[0]).trigger('click');
+            }
+            else {
+                for (var i = 0; i < topMenuBar.length; i++) {
+                    if (topMenuBar[i] == topMenuSelected) {
+                        $('#' + topMenuBar[i + (action.shiftKey ? -1 : 1)]).trigger('click');
+                        i = topMenuBar.length;
+                    }
+                }
+            }
+            return action.preventDefault() && false;
+        // Enter
+        case 13:
+            break;
+        // Shift
+        case 16:
+            break;
+        // Delete
+        case 46:
+            break;
+    }
+}
 // Canvas Click
 function CanvasClick(action) {
-    var canvasLocation = canvas.getBoundingClientRect();
     var x = action.offsetX / scrollOffset[2] + scrollOffset[0] - resizeOffset[0];
     var y = action.offsetY / scrollOffset[2] + scrollOffset[1] - resizeOffset[1];
     // Take Action
@@ -53,12 +91,13 @@ function HandleScroll(action) {
     return action.preventDefault() && false;
 }
 ;
-//TEMPORARY
-function Hover(action) {
-    var mouseX = action.offsetX / scrollOffset[2] + scrollOffset[0] - resizeOffset[0];
-    var mouseY = action.offsetY / scrollOffset[2] + scrollOffset[1] - resizeOffset[1];
-    var tempSpot = new Spot(mouseX, mouseY);
-    tempSpot.Draw(ctx);
+// Top Menu Button/Toggle Click
+function TopMenuSelect(action) {
+    if (topMenuSelected != "") {
+        $('#' + topMenuSelected).css('background', '#b70727');
+    }
+    $(this).css('background', '#a51010');
+    topMenuSelected = $(this).attr('id');
 }
 // ----- FUNCTIONS -----
 // Resize the panels
@@ -100,9 +139,6 @@ function Redraw() {
         var spot = selectedSpots_1[_d];
         spot.Draw(ctx, highlightShade);
     }
-    // TEMPORARY
-    var current = ctx.getTransform();
-    var values = scrollOffset;
 }
 //// Display Slider Value
 //function updateSlider(id, value)

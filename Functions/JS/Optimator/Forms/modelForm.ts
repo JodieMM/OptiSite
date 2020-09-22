@@ -8,6 +8,11 @@ var pieces: Piece[] = [];
 var selectedSpots: Spot[] = [];
 var selectedPieces: Piece[] = [];
 
+// Interactables
+let topMenuBar: string[] = ["b1", "b2", "b3"];
+let topMenuSelected: string = "";
+
+// Canvas Sizing
 let dpr = window.devicePixelRatio || 1;
 let canvas = <HTMLCanvasElement>document.getElementById("drawingBoard");
 let ctx = canvas.getContext("2d");
@@ -16,13 +21,60 @@ let resizeOffset: number[] = [0, 0];
 let canvasSize: number[];
 
 // Actions
+$(document).on('keydown', KeyPress);
 canvas.addEventListener('click', CanvasClick, false);
 canvas.addEventListener('DOMMouseScroll', HandleScroll, false);
 canvas.addEventListener('mousewheel', HandleScroll, false);
+$(".optionMenuBtn").on('click', TopMenuSelect);
 
 
 
 // ----- I/O -----
+
+// Key Pressed
+function KeyPress(action)
+{
+    var keycode: number = action.keyCode || action.which;
+    switch (keycode)
+    {
+        // Tab
+        case 9:
+            // Selects the next or first option in the top menu bar
+            // The reverse is true if the shift key is pressed, starting at the end option
+            if (action.shiftKey && (topMenuSelected == "" || topMenuSelected == topMenuBar[0]))
+            {
+                $('#' + topMenuBar[topMenuBar.length - 1]).trigger('click');
+            }
+            else if (!action.shiftKey && (topMenuSelected == "" || topMenuSelected == topMenuBar[topMenuBar.length - 1]))
+            {
+                $('#' + topMenuBar[0]).trigger('click');
+            }
+            else
+            {
+                for (var i = 0; i < topMenuBar.length; i++)
+                {
+                    if (topMenuBar[i] == topMenuSelected)
+                    {
+                        $('#' + topMenuBar[i + (action.shiftKey ? -1 : 1)]).trigger('click');
+                        i = topMenuBar.length;
+                    }
+                }
+            }
+            return action.preventDefault() && false;
+
+        // Enter
+        case 13:
+            break;
+
+        // Shift
+        case 16:
+            break;
+
+        // Delete
+        case 46:
+            break;
+    }
+}
 
 // Canvas Click
 function CanvasClick(action)
@@ -69,6 +121,17 @@ function HandleScroll(action)
     Redraw();    
     return action.preventDefault() && false;
 };
+
+// Top Menu Button/Toggle Click
+function TopMenuSelect(action)
+{
+    if (topMenuSelected != "")
+    {
+        $('#' + topMenuSelected).css('background','#b70727');
+    }
+    $(this).css('background','#a51010');
+    topMenuSelected = $(this).attr('id');
+}
 
 
 
