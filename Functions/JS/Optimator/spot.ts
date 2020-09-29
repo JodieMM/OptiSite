@@ -58,4 +58,10 @@ class Spot {
         }
         DrawCross(ctx, this.X, this.Y, colour);
     }
+
+    /// Returns the x/y coordinates of the spot
+    GetPoints()
+    {
+        return [this.X, this.Y];
+    }
 }

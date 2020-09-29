@@ -25,8 +25,8 @@ var OptiFilter = "Optimator Files (*" + PieceExt + ";*" + SetExt + ";*" + SceneE
 var ClickPrecisions = [0, 3, 5, 7, 9];
 var DragPrecision = 5;
 // Piece Defaults
-var defaultFill = new Colour(255, 204, 240, 255);
-var defaultOutline = new Colour(255, 204, 204, 255);
+var defaultFill = new Colour(255, 204, 240, 1);
+var defaultOutline = new Colour(255, 204, 204, 1);
 var defaultOutlineWidth = 2;
 // Piece Options
 var FillOption;

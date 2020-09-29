@@ -34,6 +34,10 @@ var Spot = /** @class */ (function () {
         }
         DrawCross(ctx, this.X, this.Y, colour);
     };
+    /// Returns the x/y coordinates of the spot
+    Spot.prototype.GetPoints = function () {
+        return [this.X, this.Y];
+    };
     return Spot;
 }());
 //# sourceMappingURL=spot.js.map

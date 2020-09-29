@@ -32,7 +32,7 @@ var Piece = /** @class */ (function () {
             //DrawOutline(g, GetPoints(state), new Pen(colours.Outline, (float)OutlineWidth), false);
         }
         else {
-            //DrawPiece(ctx, this);
+            DrawPiece(ctx, this);
         }
     };
     /// <summary>

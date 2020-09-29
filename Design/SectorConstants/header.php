@@ -29,8 +29,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	
 	<!-- JavaScript -->
-	<script type="text/javascript" src="Functions/JS/validation.js"/></script>
-	<script type="text/javascript" src="Functions/JS/visuals.js"/></script>	
+	<script type="text/javascript" src="Functions/JS/validation.js"></script>
+	<script type="text/javascript" src="Functions/JS/visuals.js"></script>	
 	<script src="https://kit.fontawesome.com/63736701d0.js" crossorigin="anonymous"></script>
 	
 	<!-- PHP -->
@@ -56,7 +56,8 @@
 			<div class="dropdown">
 				<li>Products</li>
 				<div class="dropdown-options">
-					<a href="optimator"><li>Optimator</li></a>
+					<a href="optimator_info"><li>Optimator Overview</li></a>
+					<a href="optimator_models"><li>Optimator Demo</li></a>
 					<a href="timeline"><li>Timeline</li></a>
 				</div>
 			</div>

@@ -64,6 +64,30 @@ class ColourLayer
         }
         return saveData + this.Details + ";";
     }
+
+    /// Returns the fillStyle to draw this ColourLayer
+    GetFillStyle()
+    {
+        switch (this.FillOption)
+        {
+            case FillOption.None:
+            {
+                return this.Colours[0].Use();
+            }
+            case FillOption.Fill:
+            {
+                return this.Colours[0].Use();
+            }
+            case FillOption.LinearGradient:
+            {
+                return this.Colours[0].Use();
+            }
+            case FillOption.CenterGradient:
+            {
+                return this.Colours[0].Use();
+            }
+        }
+    }
 }
 
 
@@ -90,5 +114,16 @@ class ColourState
             saveData += i.ToString();
         }
         return saveData;
+    }
+
+    /// Returns an array of fillStyles to use when drawing this ColourState
+    GetFillStyles()
+    {
+        var fillStyles = [];
+        for (let i of this.Layers)
+        {
+            fillStyles.push(i.GetFillStyle());
+        }
+        return fillStyles;
     }
 }

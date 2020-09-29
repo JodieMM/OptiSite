@@ -50,7 +50,7 @@ class Piece
         }
         else
         {
-            //DrawPiece(ctx, this);
+            DrawPiece(ctx, this);
         }
     }
 

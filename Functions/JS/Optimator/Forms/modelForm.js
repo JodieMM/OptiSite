@@ -5,7 +5,7 @@ var pieces = [];
 //var WIP: Set;
 var selectedSpots = [];
 var selectedPieces = [];
-// Interactables
+// Interactables/ UI Elements
 var topMenuBar = ["b1", "b2", "b3"];
 var topMenuSelected = "";
 // Canvas Sizing
@@ -15,11 +15,19 @@ var ctx = canvas.getContext("2d");
 var scrollOffset = [0, 0, 1];
 var resizeOffset = [0, 0];
 var canvasSize;
+var panelWidth;
+var panelMoving = -1;
+var originalPanelWidth;
 // Actions
 $(document).on('keydown', KeyPress);
+$(document).on('mousemove', SidePanelDrag);
+$(document).on('mouseup', SidePanelRelease);
+$('#undoZoom').on('click', UndoZoomClick);
 canvas.addEventListener('click', CanvasClick, false);
 canvas.addEventListener('DOMMouseScroll', HandleScroll, false);
 canvas.addEventListener('mousewheel', HandleScroll, false);
+$('.panel').on('mousemove', SidePanelHover);
+$('.panel').on('mousedown', SidePanelClick);
 $(".optionMenuBtn").on('click', TopMenuSelect);
 // ----- I/O -----
 // Key Pressed
@@ -56,6 +64,16 @@ function KeyPress(action) {
             break;
     }
 }
+// Undo Zoom Click
+function UndoZoomClick(action) {
+    ctx.translate(scrollOffset[0], scrollOffset[1]);
+    ctx.scale(1 / scrollOffset[2], 1 / scrollOffset[2]);
+    resizeOffset[0] *= scrollOffset[2];
+    resizeOffset[1] *= scrollOffset[2];
+    scrollOffset = [0, 0, 1];
+    Redraw();
+    $(this).css('display', 'none');
+}
 // Canvas Click
 function CanvasClick(action) {
     var x = action.offsetX / scrollOffset[2] + scrollOffset[0] - resizeOffset[0];
@@ -87,22 +105,76 @@ function HandleScroll(action) {
     scrollOffset[2] *= zoom;
     resizeOffset[0] /= zoom;
     resizeOffset[1] /= zoom;
+    $('#undoZoom').removeClass('fas fa-search-minus');
+    $('#undoZoom').removeClass('fas fa-search-plus');
+    scrollOffset[2] > 1 ? $('#undoZoom').addClass('fas fa-search-minus') :
+        $('#undoZoom').addClass('fas fa-search-plus');
+    $('#undoZoom').css('display', 'block');
     Redraw();
     return action.preventDefault() && false;
 }
 ;
 // Top Menu Button/Toggle Click
 function TopMenuSelect(action) {
+    // Deselect old selected, if any
     if (topMenuSelected != "") {
-        $('#' + topMenuSelected).css('background', '#b70727');
+        $('#' + topMenuSelected).removeClass('active');
+        $('#' + topMenuSelected.replace("b", "p")).css('display', 'none');
     }
-    $(this).css('background', '#a51010');
-    topMenuSelected = $(this).attr('id');
+    // Select new if not already selected
+    if (topMenuSelected != $(this).attr('id')) {
+        $(this).addClass('active');
+        topMenuSelected = $(this).attr('id');
+        $('.canvas').css('width', $(window).width() * (1 - panelWidth));
+        $('.panel').css('width', $(window).width() * panelWidth);
+        $('.panel').css('display', 'block');
+        $('#' + topMenuSelected.replace("b", "p")).css('display', 'block');
+        $(window).trigger('resize');
+    }
+    // Hide Side Panel
+    else {
+        topMenuSelected = "";
+        $('.panel').css('display', 'none');
+        $('.canvas').css('width', '100%');
+        $(window).trigger('resize');
+    }
+}
+// Side Panel Resize
+function SidePanelHover(action) {
+    if (action.offsetX <= 3) {
+        $(this).css('cursor', 'col-resize');
+    }
+    else {
+        $(this).css('cursor', 'default');
+    }
+}
+// Side Panel Resize
+function SidePanelClick(action) {
+    if (action.offsetX <= 3) {
+        originalPanelWidth = panelWidth;
+        panelMoving = action.pageX;
+    }
+}
+// Side Panel Resize Drag
+function SidePanelDrag(action) {
+    if (panelMoving > 0) {
+        panelWidth = originalPanelWidth - (action.pageX - panelMoving);
+        $(window).trigger('resize');
+    }
+}
+// Side Panel Release
+function SidePanelRelease(action) {
+    panelMoving = -1;
 }
 // ----- FUNCTIONS -----
 // Resize the panels
 window.onresize = function () {
     var currentTransform = ctx.getTransform();
+    // Panel Resize
+    if ($('.panel').css('display') != 'none') {
+        $('.canvas').css('width', $(window).width() - panelWidth);
+        $('.panel').css('width', panelWidth);
+    }
     // DPR Offset
     var rect = $(".canvas")[0].getBoundingClientRect();
     canvas.width = Math.round(rect.width * dpr);
@@ -152,5 +224,7 @@ canvas.height = Math.round(rect.height * dpr);
 canvasSize = [canvas.width, canvas.height];
 ctx = canvas.getContext("2d");
 ctx.scale(dpr, dpr);
+panelWidth = $(window).width() * 0.2;
+$('.panel').css('width', panelWidth);
 Redraw();
 //# sourceMappingURL=modelForm.js.map

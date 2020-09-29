@@ -30,8 +30,8 @@ const ClickPrecisions: number[] = [0, 3, 5, 7, 9];
 const DragPrecision: number = 5;
 
 // Piece Defaults
-const defaultFill: Colour = new Colour(255, 204, 240, 255);
-const defaultOutline: Colour = new Colour(255, 204, 204, 255);
+const defaultFill: Colour = new Colour(255, 204, 240, 1);
+const defaultOutline: Colour = new Colour(255, 204, 204, 1);
 const defaultOutlineWidth: number = 2;
 
 // Piece Options

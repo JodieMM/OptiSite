@@ -41,6 +41,27 @@ var ColourLayer = /** @class */ (function () {
         }
         return saveData + this.Details + ";";
     };
+    /// Returns the fillStyle to draw this ColourLayer
+    ColourLayer.prototype.GetFillStyle = function () {
+        switch (this.FillOption) {
+            case FillOption.None:
+                {
+                    return this.Colours[0].Use();
+                }
+            case FillOption.Fill:
+                {
+                    return this.Colours[0].Use();
+                }
+            case FillOption.LinearGradient:
+                {
+                    return this.Colours[0].Use();
+                }
+            case FillOption.CenterGradient:
+                {
+                    return this.Colours[0].Use();
+                }
+        }
+    };
     return ColourLayer;
 }());
 /// A class to hold the dynamic fill colouring of a piece.
@@ -58,6 +79,15 @@ var ColourState = /** @class */ (function () {
             saveData += i.ToString();
         }
         return saveData;
+    };
+    /// Returns an array of fillStyles to use when drawing this ColourState
+    ColourState.prototype.GetFillStyles = function () {
+        var fillStyles = [];
+        for (var _i = 0, _a = this.Layers; _i < _a.length; _i++) {
+            var i = _a[_i];
+            fillStyles.push(i.GetFillStyle());
+        }
+        return fillStyles;
     };
     return ColourState;
 }());

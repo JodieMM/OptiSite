@@ -2,19 +2,19 @@
 	/* GENERAL FUNCTIONS */
 	
 	// Local
-	//define('DB_SERVER', 'localhost');
-	//define('DB_USER', 'system');
-	//define('DB_PASS', 'hfktcaYh6SWENae8EJku');
-	//define('DB_NAME', 'ebdb');
-	//$link = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+	define('DB_SERVER', 'localhost');
+	define('DB_USER', 'system');
+	define('DB_PASS', 'hfktcaYh6SWENae8EJku');
+	define('DB_NAME', 'ebdb');
+	$link = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 	
 	// Server
-	$link = mysqli_connect($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['RDS_PASSWORD'], $_SERVER['RDS_DB_NAME'], $_SERVER['RDS_PORT']);
+	//$link = mysqli_connect($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['RDS_PASSWORD'], $_SERVER['RDS_DB_NAME'], $_SERVER['RDS_PORT']);
 	
 	$error = '';
 	
 	// Check connection
-	if($link === false)
+	if ($link === false)
 	{
 		die("ERROR: Could not connect. " . mysqli_connect_error());
 	}
